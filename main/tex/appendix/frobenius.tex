@@ -1,0 +1,34 @@
+%use in documents with \subfile{tex/intro}
+\documentclass[../../master.tex]{subfiles}
+
+\begin{document}
+
+\subsection{Ensemble Defect Generalization}
+\label{sub:appendix:frobenius}
+
+\citeauthor{dirks_paradigms_2004} defined \autoref{eq:frobeniusbased} on $N \times (N+1)$ matrices \parencite{dirks_paradigms_2004}.
+In this thesis, I defined base pair probability matrices as square $N \times N$ matrices for their convenient properties.
+The following paragraphs should be seen as a sketch of the relation between \autoref{eq:frobeniusbased} and the metric induced by the Frobenius matrix norm, restricted to symmetric, doubly stochastic matrices $P, P'$ for simplicity.
+Every property used can be found in \parencite{horn_matrix_2013}.
+The Frobenius inner product (\autoref{eq:frobeniusinnerproduct}) is the sum of all pairwise multiplied entries of two (base pair probability) matrices:
+\begin{equation}\label{eq:frobeniusinnerproduct}
+	 \langle P, P' \rangle_F = \sum_{1\le i,j \le N} P_{i,j} P'_{i,j}
+\end{equation}
+The Frobenius norm $||P||_F = \sqrt{\langle P, P \rangle_F}$, induced by \autoref{eq:frobeniusinnerproduct}, can be used to define a metric $\operatorname{d}_F(P,P') = || P - P' ||_F$.
+With these definitions, $\operatorname{d}_F(P,P')^2$ can be expanded to:
+\begin{equation}\label{eq:frobeniusexpanded}
+	\begin{aligned}
+		\operatorname{d}_F(P,P')^2 &= \langle P-P', P-P' \rangle_F = \sum_{i,j} (P_{i,j} - P'_{i,j})^2 \\
+		&= \langle P, P \rangle_F + \langle P', P' \rangle_F - 2 \langle P, P' \rangle_F
+	\end{aligned}
+\end{equation}
+Since $P$ is (doubly) stochastic, $\langle P, P \rangle_F \le \sum_i \sum_j P_{i,j} = \sum_i 1 = N $, applying for $P'$ respectively.
+Therefore, for base pair probability matrices, and with \autoref{eq:frobeniusbased}:
+\begin{equation}\label{eq:frobeniusbpp}
+		\operatorname{d}_F(P,P')^2 \le 2 N - 2 \langle P, P' \rangle_F = 2 \operatorname{d}(P,P')
+\end{equation}
+Naturally, this estimation also holds for non-square base pair probability matrices as defined by \citeauthor{dirks_paradigms_2004} \parencite{dirks_paradigms_2004}.
+The advantage of using symmetric, doubly stochastic matrices would be more apparent by expressing the Frobenius inner product as a trace $ \langle P, P' \rangle_F = \operatorname{tr}(P^\mathrm{T}P') $, observing that $P^\mathrm{T}P'$ is still doubly stochastic and the largest eigenvalue of a doubly stochastic matrix is equal to 1 \parencite{horn_matrix_2013}.
+The \emph{root-mean-square deviation} (RMSD)  is a normalization of $\operatorname{d}_F$ that is being practically used to compare base pair probability matrices \parencite{zhang_linearpartition_2020}.
+
+\end{document}

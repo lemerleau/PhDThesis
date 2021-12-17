@@ -1,0 +1,86 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliographical Information 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushleft}{\bf Bibliographische Daten} \\\rule{120mm}{0.5mm}\end{flushleft}
+\mytitle \\
+(\mytitleDE)\\
+\melast, \mefirst\\
+Universit\"at Leipzig, Dissertation, \year \\
+% NOTE: the number below are placed into files, which is useful, if
+% you decide to generate them automatically (as detailed below). If
+% you are the manual type, you can also just count them and insert a number.
+%\input{\mypaths pages.num}Seiten, \input{\mypaths figs.num}Abbildungen, \input{\mypaths refs.num}Referenzen\\
+
+% Automatizing the counters:
+% General: since you need the counters here, but the information is
+% only present in your thesis file, one needs to write them to disk
+% (the *.num files above)  during typesetting the thesis. 
+% You can do so, by using the newfile latex package (just google it)
+% and insert the following lines in you main file:
+%
+% \newoutputstream{pages}
+% \openoutputfile{pages.num}{pages} 
+% \addtostream{pages}{\arabic{page}}
+% \closeoutputstream{pages}
+% 
+% They need to be adapted for each of the following counters:
+%
+% Page counter:
+% The page counter is already defined in latex: as you see above, its
+% value is written do disk by issueing \arabic{page} in the newfile
+% constructs.
+%
+% Figure counter: 
+% If you have defined a figure environment, e.g. 
+% \newcommand{\Figure}[3][htp]{
+%  \addtocounter{AllFigures}{1}
+%  \begin{figure}[#1]
+%    \centering % if Figure Labels don't work remove this
+%    \includegraphics[width=\textwidth]{Figures/FIG_#2.pdf}
+%    \caption{#3}  
+%    \label{#2}
+%  \end{figure}}
+%
+% If you have not defined a figure environment, use query replace, e.g.
+% end{figure} by addtocounter{AllFigures}{1} \\end{figure}
+% If your thesis is spread out over multiple .tex files use reftex-query-replace-document
+%
+% then (as above), you can just insert the counter increment.
+% Before this definition you need to define the counter:
+% \newcounter{AllFigures}
+% Then you need to adapt the writefile lines above to use the counter
+% AllFigures and write to the file figs.num
+%
+% Ref counter:
+% To automatically count the number of references, it seemed easiest
+% to insert a counter into the .bbl file produced by BiBTeX. Since the
+% .bbl-file is regenerated often, you need to insert the counter in
+% the definition of your BiBTeX-style, i.e. the corresponding .bst
+% file. Which one you use is shown in the BiBTeX output. Once you have
+% found it, look for the place where the \bibitem is inserted, e.g.
+% 
+% FUNCTION {output.bibitem}
+%{ newline$
+%  "\addtocounter{Cites}{1} \bibitem[" write$
+%  label write$
+%  "]{" write$
+%  cite$ write$
+%  "}" write$
+%  newline$
+%  ""
+%  before.all 'output.state :=
+%}
+%
+% where the \addtocounter{Cites}{1} was newly inserted. And again the
+% counter Cites needs to be defined somewhere in your TeX code:
+% \newcounter{Cites}
+%
+% OK, once you have confirmed that these number are written to the
+% hard drive and that the relative paths are correct, you should never
+% have to worry about counting references, figures, or pages again. 
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "dissdocuments.tex"
+%%% End: 

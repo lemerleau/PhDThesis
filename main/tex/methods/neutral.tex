@@ -1,0 +1,37 @@
+%use in documents with \subfile{tex/intro}
+\documentclass[../../master.tex]{subfiles}
+
+\begin{document}
+
+\subsection{Neutral Paths}
+\label{sub:methods:neutral}
+
+%As hinted at in \autoref{sub:intro:outline}, t
+The map between sequences and secondary structures also entails questions about genotype subspaces of RNA sequences of the same phenotype.
+Analogous to neutral mutations, subspaces consisting of sequences folding into the same structure are called neutral networks \parencite{gruner_analysis_1996}.
+Neutral networks percolating RNA sequence space have been shown to exist depending on the nucleotide alphabet \parencite{schuster_sequences_1994, gruner_analysis_1996, reidys_generic_1997}, even in the case of crossing structures \parencite{haslinger_rna_1999}.
+
+To give a lower bound on their extent, neutral paths can be used.
+A neutral path is a walk starting from a random RNA sequence and iterating over neutral neighbors such that the distance to the initial sequence increases with each step until this is no longer possible.
+For convenience, the Hamming distance may be used \parencite{reidys_generic_1997}.
+Analogous to \autoref{par:methods:seqspace}, it is sufficient to restrict the view on sequences compatible with a shared structure.
+In consequence, neutral neighbors may be reached via point or base pair mutations.
+Neutral paths starting from sequence designs were used to estimate the extent of the sequence designs' neutral networks.
+To put neutral path lengths into perspective, it may be noted that the expected Hamming distance of two random RNA sequences is $\mathbf{E}[\operatorname{d_H}(r_1, r_2)] = \nicefrac{3}{4} N$ where N is the sequence length and therefore the maximum Hamming distance. However, this estimation does not define a threshold for percolation.
+It is not directly apparent that this estimation also applies to the restriction on compatible sequence because sequence spaces compatible to a structure depend on the number of base pairs in the structure.
+With $N = u + 2 b$, where $u$ is the number of unpaired positions and $b$ is the number of base pairs in the structure, the expected Hamming distance between to RNA sequences $r_1, r_2$ compatible to a shared structure can be estimated as follows:
+\begin{equation}\label{eq:expected_hamming}
+		\mathbf{E} \left [\operatorname{d_H}(r_1, r_2) \right ] = \frac{3}{4} u + \frac{5}{6} b \left ( \frac{2}{6} \left ( 2 \frac{3}{5} + \frac{2}{5} \right ) + \frac{4}{6} \left ( 2 \frac{4}{5} + \frac{1}{5} \right ) \right )
+		= \frac{3}{4} u + \frac{13}{18} 2 b
+\end{equation}
+In \autoref{eq:expected_hamming}, the previous estimation remains valid for the $u$ unpaired positions.
+For the $b$ pairs, the metaphor of having an unknown RNA sequence and trying to guess the paired positions might be helpful as an intuition:
+
+Because there are six allowed base pairs, one may expect to incorrectly guess $\nicefrac{5}{6}$ of the $b$ pairs.
+Recalling \autoref{fig:compatiblemoves} and assuming independence of base pairs, some cases have to be considered.
+If the \emph{correct} pair were \textbf{GU} or \textbf{UG}, there would be three of five remaining pairs to get both positions involved in the base pair wrong and two of five remaining pairs with one correctly guessed nucleotide in the pair.
+Analogously, with the \emph{correct} base pair being any other than \textbf{GU} or \textbf{UG}, there would be four of five cases of incorrectly guessing both paired positions.
+
+%\todo{\parencite{dingle_structure_2015}?}
+
+\end{document}

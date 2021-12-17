@@ -1,0 +1,25 @@
+%use in documents with \subfile{tex/title}
+\documentclass[../master.tex]{subfiles}
+
+\begin{document}
+\begin{abstract}
+    \thispagestyle{plain}
+    \setcounter{page}{2}
+
+	RNA molecules are ubiquitous in living organisms.
+	Besides their role in translating genetic information into functional, often catalytically active proteins, various classes of RNA molecules are capable of catalysis themselves.
+	Their capability to carry heritable information and perform certain functions makes them promising candidates for pre-cellular self-replicating systems exhibiting Darwinian evolution.
+	One such molecule is the \textit{Azoarcus} group I intron, which has been shown to catalyze self-assembly from smaller fragments.
+	Finding an abundance of similar RNA molecules could strengthen the significance of RNA emerging prior to proteins in the origin of life, a view known as the RNA world hypothesis.
+	
+	In this thesis, I employ computational methods based on thermodynamics in order to design RNA sequences that are structurally similar to the \textit{Azoarcus} group I intron, motivated by the close relation of RNA structure and function.
+	
+	In general, RNA structure is hierarchical, and efficient prediction of secondary structure from RNA sequence is possible, facilitating the reverse process of finding sequences given a secondary target structure.
+	However, the structure of the \textit{Azoarcus} group I intron contains a \emph{pseudoknot} related to its function.
+	This feature is usually considered to be part of the tertiary structure.
+	Prediction of general \emph{pseudoknots} has been shown to be NP-complete, and algorithms restricted to certain classes of \emph{pseudoknots} are still more complex than pure secondary structure prediction methods.
+	
+	The herein described design process accounts for this feature without explicitly modelling it, allowing to apply efficient secondary structure algorithms during RNA design while only requiring structure prediction methods with \emph{pseudoknots} for verification post-design.
+	
+\end{abstract}
+\end{document}

@@ -1,0 +1,33 @@
+%use in documents with \subfile{tex/intro}
+\documentclass[../../master.tex]{subfiles}
+
+\begin{document}
+
+
+\subsubsection{Energy Parameter Sets}
+\label{ssub:methods:eparams}
+
+Although ultimately the default parameter set \texttt{turner2004} \parencite{turner_nndb_2010} was chosen for the structure prediction tools used here, multiple energy parameter sets (\autoref{tab:eparamsets}) for the nearest-neighbor model were tested for structure prediction with the reference data (see \autoref{par:results:eparams}).
+
+\begin{table}[!ht]
+	\centering\setstretch{0.95}
+	\caption[Energy Parameter Sets]{Energy parameter sets that were tested to improve structure prediction.
+	}
+	\label{tab:eparamsets}
+	\begin{tabularx}{1\textwidth}{lrX} \toprule
+		\textbf{Energy Parameter Set} & Reference & Notes \\ \midrule
+		\texttt{turner1999} & \parencite{turner_nndb_2010} & based on experimental data \\
+		\texttt{turner2004} & \parencite{turner_nndb_2010} & based on experimental data \\
+		\texttt{andronescu2007} & \parencite{andronescu_efficient_2007} & computationally trained on structural and thermodynamical data \\
+		\texttt{CG*} & \parencite{andronescu_computational_2010} & extension of \texttt{andronescu2007}\\
+		\texttt{BL*} & \parencite{andronescu_computational_2010} & bayesian-learning based method\\
+		\texttt{langdon2018} & \parencite{langdon_evolving_2018} & evolutionary algorithm updating \texttt{turner2004} parameters \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+
+The partition function algorithm of \texttt{NUPACK} was an exception to this because the energy parameter format is not compatible to the sets from above. 
+This implementation was only used with its default parameter set.
+
+\end{document}

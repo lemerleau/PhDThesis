@@ -1,0 +1,21 @@
+%use in documents with \subfile{tex/intro}
+\documentclass[../../master.tex]{subfiles}
+
+\begin{document}
+
+\section{Methods}
+\label{sec:methods:methods}
+
+The methods used in this work are based on the overall goal of sequence design (see \autoref{sub:intro:outline}).
+Implementations of different thermodynamical structure prediction algorithms and energy parameter sets of the underlying model 
+are introduced in \autoref{sub:methods:sspred}.
+
+In an approximation of inverse folding, the design pipeline described in detail in \autoref{sub:methods:design_pipeline} follows a general feedback loop starting from a candidate sequence whose predicted structure is compared to the target structure. 
+By mutating candidate sequences and repeated structure prediction, the general design goal consists of exploring the sequence space and increasing similarity to the target \parencite{dirks_paradigms_2004}.
+Often, the distinction of positive and negative RNA design is made. 
+The former attempts to increase affinity, whereas the latter aims to amplify specificity for a target structure \parencite{dirks_paradigms_2004}.
+Whether a design pipeline implements positive or negative design depends on the choice of concrete objective functions used to evaluate predicted structures (\autoref{ssub:methods:objectives}).
+
+Information about the exact versions of computational tools used in this work and the availability of self-written code was appended in \autoref{sub:appendix:code_availability}.
+
+\end{document}

@@ -1,0 +1,89 @@
+%use in documents with \subfile{tex/intro}
+\documentclass[../../master.tex]{subfiles}
+
+\begin{document}
+
+\section{Appendix}
+\label{sec:appendix}
+
+\subsection{Code and Data Availability}
+\label{sub:appendix:code_availability}
+
+\paragraph{Source Code.}
+
+\texttt{pKiss} (\url{https://github.com/jlab/fold-grammars}) was used at version \texttt{2.2.12}.
+The \texttt{ViennaRNA} package and accompanying tools were used at version \texttt{2.4.17}, except \texttt{RNAPKplex}, for which the exact changes are available as shown in \autoref{tab:code}.
+The extension of the ensemble defect implementation discussed in \autoref{sub:discussion:methodological} is also listed in \autoref{tab:code}.
+
+\begin{table}[!ht]
+	\centering\setstretch{0.9}
+	\caption[Code Contribution to \texttt{ViennaRNA}]{
+		URLs to contributions made to \texttt{ViennaRNA} during work on this thesis.
+	}
+	\label{tab:code}
+	\begin{tabularx}{\textwidth}{lX} \toprule
+		\texttt{RNAPKplex} & \url{https://github.com/ViennaRNA/ViennaRNA/compare/77861405002d93a35cec3f615e2d1a5d210964d8...7a7e84ae8f6954dff43cc31d581b0bcc63b8a1e1} \\
+		Ensemble Defect & \url{https://github.com/ViennaRNA/ViennaRNA/compare/0f6e876ab4e80aaf5bf2c5f678ba9a7f4c840849...67445f01d690f661138e67e43d2139fdd26dfba0} \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+The low-level bindings for the \texttt{ViennaRNA} library written in Rust during work on this thesis are available at \url{https://github.com/fncnt/librna-sys}, including a base pair distance implementation extended to pseudoknots (cf. \autoref{par:methods:bpdistance}).
+Code implementing the design pipeline, including auxiliary scripts, is both appended digitally (on CD) and made available at \url{https://github.com/fncnt/azodesign}.
+\vspace{-0.5cm}
+\paragraph{Data}
+generated for this work is appended digitally (on CD).
+\vspace{-0.5cm}
+\subsection{Superpositioned Nested Target Structures}
+\label{sub:appendix:superposition}
+
+\autoref{tab:superposition} contains the split target structures used for the alternative design approach  in dot-bracket notation (see \autoref{spar:methods:altapproach}).
+
+\begin{table}[!ht]
+	\centering\setstretch{0.9}
+	\caption[Superpositioned Nested Target Structures]{
+		Structures in dot-bracket notation obtained from the native structure by removing either one of the stacks P3 or P7 forming the pseudoknot (\autoref{spar:methods:altapproach}). The first structure is the native structure for comparison (see \autoref{fig:azodata:b}).
+	}
+	\label{tab:superposition}
+	\begin{tabularx}{0.9\textwidth}{X} \toprule
+		\lstinputlisting{pic/appendix/superposition.fasta} \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+\newpage
+\vspace{-0.5cm}
+\subsection{MFE Predictions for the Reference Sequence}
+\label{sub:appendix:mfepredazo}
+
+\autoref{tab:mfepredazo} contains structures in dot-bracket notation, predicted using different MFE algorithms (see \autoref{tab:predictionstats}).
+
+\begin{table}[!ht]
+	\centering\setstretch{0.9}
+	\caption[MFE Predictions of the Reference Sequence]{
+		Structures in dot-bracket notation as predicted by different MFE prediction tools as summarized in \autoref{tab:predictionstats}. The first structure is the native structure for comparison (see \autoref{fig:azodata:b}).
+		
+	}
+	\label{tab:mfepredazo}
+%	\begin{tabularx}{0.9\textwidth}{X} \toprule
+%		\lstinputlisting{pic/appendix/azo-mfe-predictions-listing.fasta} \\
+%		\bottomrule
+%	\end{tabularx}
+	\scriptsize\ttfamily
+	\input{tex/pic/appendix/azo-mfe-predictions-listing.fasta}
+\end{table}
+\vspace{-0.5cm}
+\subsection{Sequence Design Examples}
+\label{sub:appendix:examplesequence}
+
+The exact RNA sequences used to produce dot plots for examples of each constraint set can be found in \autoref{tab:examplefasta}.
+
+%\begin{table}%[!ht]
+%	\centering\setstretch{0.9}
+%	\caption[Sequences Used in Dot Plots]{
+%		Sequences in FASTA format used in dot plots of base pair probability matrices. The locations of the corresponding figures are noted in the header lines.
+%	}
+%	\label{tab:examplefasta}
+%	\scriptsize\ttfamily
+%	\input{tex/pic/appendix/example-range-listing.fasta}
+%\end{table}
+\input{tex/pic/appendix/example-range-listing.fasta}
+\end{document}

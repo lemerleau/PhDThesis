@@ -1,0 +1,66 @@
+%use in documents with \subfile{tex/intro}
+\documentclass[../../master.tex]{subfiles}
+
+\begin{document}
+
+\subsection{Design Challenges and Limitations}
+\label{sub:discussion:challenges_limitations}
+
+A central problem in the design stems from the prediction of pseudoknots.
+Although both design approaches did not directly depend on explicit pseudoknot models, designed sequences still had to be evaluated with the desired pseudoknot in mind.
+Hence, the prediction accuracy of the used tooling with respect to the \textit{Azoarcus} group I intron largely determined the reliability of the designs.
+Furthermore, the thermodynamical energy parameters used in MFE prediction were modified as little as possible to keep predicted free energies interpretable.
+
+Although limited by these considerations, the heuristics of \texttt{pKiss} could successfully recover large parts of the target pseudoknot with two caveats; firstly, the \unit[1]{nt} bulge in P7 was not modelled and secondly, region P6 was not well predicted.
+Consequently, the default energy parameters were interpreted as generally reliable, and the missing bulge was addressed by applying sequence constraints with the assumption of it being a structural feature primarily determined by local interactions.
+Inaccuracies in the prediction of the P4-P6 domain were seen as non-critical because this scaffold domain is not strictly necessary for catalytic activity \parencite{hayden_intramolecular_2015}.
+
+Recognizing these decisions, all four constraint sets yielded good designs in terms of base pair distance to the target structure.
+However, the similarity to the target according to this metric varied considerably across sequences of different constraint sets, necessitating quality control of design candidates.
+
+Between the two approaches pursued, some noteworthy differences should be mentioned.
+The constrained approach depends on sequence constraints matching the structural constraints.
+In the case of this work, this worked well because of the conserved P7 region.
+Consequently, there is manual adjustment needed in order to apply the design pipeline to other targets.
+
+The alternative approach does not require structural constraints imposed on structure prediction, mitigating the need for manual adjustment.
+Still, with this approach, applying sequence constraints corresponding to P7 might be beneficial as the nucleotides of P7 are conserved among group I introns and the region itself is relevant to the catalytic activity of the native ribozyme. 
+The decision to not impose such constraints using the alternative approach was made to demonstrate increased versatility.
+
+Besides positions in P7, sequence constraints were also used to preserve nucleotide identities at positions involved in tertiary interactions, with the primary effect of reducing complexity during sequence design.
+Nucleotides involved in those interactions are paired less specifically than canonical base pairs. 
+It is questionable that preserving nucleotide identities, as attempted herein, also preserves these interactions.
+Initially, this strategy was motivated by the influence of the secondary structure on tertiary interactions according to Mustoe \parencite{mustoe_secondary_2016}.
+
+Strictly speaking, modelling tertiary interactions apart from pseudoknots was beyond the scope of this thesis.
+Having said that, tertiary interactions are quintessential to RNA structure as secondary structure does not define three-dimensional conformations uniquely; more attention should be paid to tertiary interactions regarding their influence on catalytic activity.
+In group I introns, they are significantly involved in joining scaffold and catalytic domain \parencite{tanner_joining_1997}.
+On top of that, there is evidence of tertiary interactions stabilizing substrate binding in the \textit{Azoarcus} group I intron and RNA folding in general \parencite{gleitsman_kinetic_2014, chauhan_tertiary_2008}.
+
+%\parencite{jabbari_rna_2018}
+%\parencite{janssen_investigating_2011}: illustrates why constraints were useful
+
+
+\subsubsection{Revisiting Assumptions}
+\label{ssub:discussion:assumptions}
+
+Prediction of a single most stable (MFE) structure is undoubtedly a very simplistic foundation for the design of catalytically active RNAs.
+Catalysts like the \textit{Azoarcus} group I intron are not static molecules. 
+In fact, self-splicing of this molecule involves changes of its structural conformation \parencite{adams_crystal_2004-1, gleitsman_kinetic_2014}.
+Therefore a suitable kinetic model of the desired catalytic function could be of value.
+
+The insufficiency of a single most stable structure prediction was partly addressed by utilizing the partition function.
+However, in the pursued alternative approach, diversity of the structure ensemble was reduced as a side effect.
+Despite secondary structure guiding tertiary structure in naturally occurring RNAs, designing for secondary structure alone should not be assumed sufficient to achieve a function similar to the reference ribozyme.
+
+A solution to the problem of finding a suitable design objective beyond secondary structure and relating this objective to an experimentally verifiable function is not directly apparent.
+
+%\parencite{gupta_identifying_2012, tinoco_how_1999}: they use \texttt{UNAfold} and make a different assumption: near-MFE structures w/o PK look similar to PK-structure (but missing one of the crossing stems). If that's the case, design becomes easier and it's actually plausible (RNA folding is generally assumed hierarchical). However, with the tools used here (RNAfold) this is not the case (at least for the prediction of the native azoarcus structure, it still justifies both design approaches).
+%Somehow I need to make this clear very early. This makes constraining the fold actually plausible.
+%The alternative approach fits to this view as well.
+
+
+%GIIs generally rather difficult to inverse-fold (there's a paper I should cite)
+
+
+\end{document}

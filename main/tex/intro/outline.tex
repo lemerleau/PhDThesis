@@ -1,0 +1,34 @@
+%use in documents with \subfile{tex/intro}
+\documentclass[../../master.tex]{subfiles}
+
+\begin{document}
+
+\subsection{Outline}
+\label{sub:intro:outline}
+
+%\todo{overall structure}
+%\todo{structure as proxy for function}
+
+This work aims to design sequences exhibiting secondary structures similar to a naturally occurring ribozyme \textit{in silico} as a basis for artificial RNA catalysts.
+The motivation for this task is tied to the RNA world hypothesis as an abundance of such catalysts could strengthen the hypothesized role of RNA molecules in the origin of life.
+The ribozyme used as design reference is the \textit{Azoarcus} group I intron (GII), which is introduced in \autoref{sec:theory:gii} with more details on its catalytic activity and distinctive structural features involved therein.
+In order to understand them, the previously introduced notion of secondary structures is concretized in \autoref{sec:theory:rna_secstructures} and slightly extended to cover an important tertiary structural feature called a \emph{pseudoknot} (\autoref{sub:theory:pseudoknots}).
+
+Central to the relationship between RNA sequences and secondary structure is the process of RNA \emph{folding}, i.e. the formation of secondary structure from sequence and the prediction thereof.
+Historically, different approaches to structure prediction emerged, such as examining all possible structures or extracting phylogenetic information RNA sequences of a similar function \parencite{zuker_rna_1984}.
+The techniques used in this work all have an extensively developed thermodynamical foundation in common whose principles and application to prediction have been outlined in \autoref{sub:theory:thermodynamics}.
+
+With RNA, assigning secondary structures to sequences can be interpreted as a mapping from genotype space to phenotype space.
+This genotype-phenotype map is not a one-to-one mapping; there are considerably more sequences than structures \parencite{stadler_genotype-phenotype_2006}.
+There are $4^N$ possible sequences of length $N$, composed from four different nucleotides, to be precise.
+In contrast, estimated numbers of structures range from $1.65^N$ to $2.35^N$, depending on the exact definition of secondary structure \parencite{stadler_genotype-phenotype_2006, haslinger_rna_1999}.
+Consequently, given a target structure, there are potentially many sequences of that structure to find.
+The mapping process yielding a single such sequence is aptly named RNA \emph{inverse folding} and builds, in practice, upon structure prediction.
+
+Similarly, structure prediction is also the basis of the design pipeline implemented in this work, which is described in \autoref{sec:methods:methods} including the specific structure prediction methods used.
+The approaches taken for the design pipeline had to match the distinct characteristics of the target structure while simultaneously keeping computational complexity as manageable as possible, which is mirrored in the concrete design objectives and constraints specified in \autoref{sub:methods:design_pipeline}.
+
+The pipeline was assessed with a focus on sequence designs containing pseudoknots similar to the target structure and the diversity of the designed sequences (\autoref{sec:results}).
+Finally, limitations and possible changes in methodology were discussed in \autoref{sec:discussion}.
+
+\end{document}

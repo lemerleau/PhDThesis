@@ -1,0 +1,65 @@
+%use in documents with \subfile{tex/intro}
+\documentclass[../../master.tex]{subfiles}
+
+\begin{document}
+
+\subsubsection{Secondary Structure Prediction}
+\label{ssub:theory:folding}
+
+The nearest-neighbor model enables realistically estimating the free energy of a given secondary structure or substructures, which is essential to thermodynamical structure prediction.
+Here, two common approaches to prediction used in this work are introduced.
+
+\paragraph{Minimum Free Energy.}
+\label{par:theory:mfe}
+
+With the notion of structure stability introduced earlier, predicting the most stable structure of an RNA sequence corresponds to finding the conformation with minimum (Gibbs) free energy (MFE) at thermodynamical equilibrium \parencite{tinoco_estimation_1971, zuker_rna_1984}.
+
+A simple approach to the problem would require exhaustively enumerating all possible structures and computing their free energies.
+However, the number of possible structures grows exponentially with sequence length \parencite{schuster_sequences_1994}.
+Nevertheless, efficient MFE prediction is feasible; the key to algorithms of polynomial complexity is the loop decomposition underlying the nearest-neighbor model and the additivity assumed for thermodynamical stability, both allowing to re-use substructures.
+
+One of the most influential algorithms to achieve efficient MFE RNA secondary structure prediction was developed by Zuker \parencite{zuker_optimal_1981}.
+The Zuker algorithm essentially implements a recursion for the loop decomposition of the nearest-neighbor model, weighting possible loops by their energy contribution.
+
+This alone does not solve the problem of finding the structure with minimum free energy.
+The key to achieving a polynomial time complexity of $O(N^3)$ for sequences of length $N$ lies in storing and using already computed MFEs of substructures shared by superstructures, a technique known as dynamic programming.
+The corresponding MFE structure is then obtained via backtracking on the stored intermediate computations.
+
+Still, MFE structure prediction has some limitations; thermodynamical equilibrium is assumed, but that might not be the actual case.
+In long sequences, the additivity assumption for free energies breaks down with increasing occurrence of long-range base pairs restricting conformational options of enclosed subsequences  \parencite{dill_additivity_1997}.
+MFE prediction of such long-range pairs tends to be inaccurate, possibly due to many alternative conformations with wide-spanning pairs \parencite{amman_trouble_2013}.
+More generally, the MFE structure of an RNA sequence is not necessarily unique.
+Since experimentally determined energy values are likely inaccurate to a certain degree, considering other possible, similar structures seems sensible.
+
+
+\paragraph{Partition Function.}
+\label{par:theory:partfunc}
+
+Given the free energy change $\Delta G(s)$ of a structure $s$, the Boltzmann distribution describes the structure's probability at constant temperature $T$ among all other possible structures of a sequence (\autoref{eq:boltzmann}).
+\begin{equation}\label{eq:boltzmann}
+	p(s) = \frac{1}{Q} e^{-{\Delta G(s)}/{RT}}
+\end{equation}
+Here, $R$ is the ideal gas constant, and the precise probability depends on a factor $\nicefrac{1}{Q}$.
+$Q$ is the \emph{partition function} and is defined on the Boltzmann ensemble $\Omega$ of all possible structures of a given sequence (\autoref{eq:partfunc}).
+\begin{equation}\label{eq:partfunc}
+	Q = \sum_{s \in \Omega} e^{-{\Delta G(s)}/{RT}}
+\end{equation}
+Assuming one is not only interested in the minimum free energy structure but also in other probable structures,
+the partition function becomes very useful to know.
+In particular, the probability $P_{i,j}$ of a specific base pair in the ensemble of structures of an RNA sequence is given by summation of all structures containing that base pair:
+\begin{equation}\label{eq:bppart}
+	P_{i, j} = \frac{1}{Q} \sum_{\genfrac{}{}{0pt}{3}{s \in \Omega:}{(i,j) \in s}} e^{-{\Delta G(s)}/{RT}}
+\end{equation}
+The sum in \autoref{eq:bppart} closely resembles \autoref{eq:partfunc} and can thus be seen as a constrained partition function.
+Although individual base pair probabilities seem especially useful, this may also be applied to ensembles with arbitrary shared structural features.
+Effectively, the partition function computation for the ensemble of all secondary structures of an RNA sequence comes down to considering disjoint subensembles characterised by specific structural features.
+Indeed, McCaskill developed an algorithm computing the partition function (and base pair probabilities) with the same polynomial time complexity as the Zuker algorithm  \parencite{mccaskill_equilibrium_1990}.
+
+This is made possible due to the functional equation $f(x+y) = f(x) f(y)$ satisfied by the exponential function in \autoref{eq:partfunc}, allowing to decompose subensembles according to the constituents of their defining structural features after a change of algebra.
+A similar problem was already solved efficiently by Zuker's algorithm. However, in contrast, the uniqueness of the loop decomposition is paramount for McCaskill's partition function computation to ensure disjointness of the subensembles.
+
+
+%\parencite{mathews_using_2004}
+
+
+\end{document}

@@ -1,0 +1,358 @@
+\documentclass[a4paper,12pt,titlepage]{article} %report for chapters
+%showframe option for visual debugging
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, twoside=false, bindingoffset=10mm]{geometry}
+%pdflatex
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%lualatex
+\usepackage{lineno}
+\usepackage{luaotfload}
+\usepackage{fontspec}
+\usepackage{fontawesome}
+%If Futura Book is installed on your system (and loaded with luaotfload) use Futura Book, else fall back to Latin Modern Sans
+\IfFontExistsTF{Futura Book}
+{\newfontfamily\FuturaBook{Futura Book}[Ligatures=TeX]}
+{\newfontfamily\FuturaBook{Latin Modern Sans}[Ligatures=TeX]}
+
+\usepackage{lmodern}
+%\usepackage{ngerman}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, shapes.multipart}
+\usepackage{quiver}
+%\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{blkarray}
+\usepackage{textcomp} % for ° (alternatively use gensymb)
+%\usepackage{amssymb}
+\usepackage{unicode-math}
+\usepackage{chemformula}
+\usepackage{chemfig}
+\usepackage{units}
+\usepackage{siunitx}
+%\usepackage{color}
+\usepackage{hyperref}
+\usepackage{seqsplit}
+\usepackage{stackengine}
+%\usepackage[nomain, nonumberlist]{glossaries}
+%\usepackage[automake, toc, sanitizesort=false]{glossaries-extra}
+%\usepackage{glossary-mcols}
+\usepackage[onehalfspacing]{setspace}
+%\usepackage[authoryear]{natbib} %or \cite won't work
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{xltabular}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage[inline]{enumitem}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[margin=4pt, justification=justified,singlelinecheck=false, font=footnotesize]{subcaption}
+\usepackage[nottoc]{tocbibind}
+
+%For debugging layout
+%\usepackage[grid,
+%gridcolor=black!20,
+%subgridcolor=red!20,
+%gridunit=cm]{eso-pic}
+
+\usepackage{subfiles}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+%Remove before printing!
+\hypersetup{
+%    colorlinks=true,
+%    linkcolor={red!0!black},
+%    citecolor={blue!50!black},
+%    urlcolor={blue!30!black},
+%	pdfborderstyle={\S \U \W 1},
+	pdftitle={Designing RNA Sequences with \textit{Azoarcus}-like Secondary Structures -- Master's Thesis},
+	pdfauthor={Vincent Messow}
+}
+% I don't like uniquelist=false but some prefer it.
+\usepackage[style=numeric-comp, maxnames=2, language=english, uniquelist=false, url=false,sorting=none, giveninits=true]{biblatex}
+ %\DefineBibliographyStrings{ngerman}{andothers={et\addabbrvspace al\adddot}} 
+\DeclareNameAlias{default}{family-given}
+\addbibresource{res/literature.bib} % Papers imported from zotero
+% remove BibTeX fields from bibliography
+\AtEveryBibitem{
+    %\clearlist{address}
+    %\clearfield{date}
+    \clearfield{day}
+    \clearfield{month}
+    \clearfield{issn}
+    \clearfield{note}
+    \clearfield{isbn}
+    \clearfield{pmid}
+    %\clearfield{url}
+    %\clearfield{doi} % I like to have DOIs
+    % Remove stuff except for books
+    %\ifentrytype{book}{}{
+    %    \clearfield{booktitle}
+    %    \clearfield{pages}
+    %    \clearlist{publisher}
+    %    \clearname{editor}
+    %}
+}
+
+%\renewcommand{\glsmcols}{3}
+%\setglossarystyle{mcolindex}
+%\setglossarystyle{index} %list
+%\glssetwidest{\ch{Na2MoO4* 2 H2O}}
+%\setglossarystyle{alttree}
+%\newglossary*{abbr}{Abbreviations}
+%\newglossary*{glos}{Stichwortverzeichnis}
+%Attempt to make custom glossary types work with latexmkrc provided by overleaf (not working so far)
+%\newglossary[abbr.glg]{abbr}{abbr.gls}{abbr.glo}{Abkürzungsverzeichnis}
+%\newglossary[glos.glg]{glos}{glos.gls}{glos.glo}{Stichwortverzeichnis}
+
+%\makeglossaries
+%\setabbreviationstyle{long-short} % glossaries-extra.sty
+%\loadglsentries{tex/glossary}
+%\loadglsentries{tex/abbrev}
+
+\newcommand{\todo}[1]{(\textcolor{red}{TODO: #1})\message{LaTeX Warning: TODO note left on line \the\inputlineno!}}
+
+\tikzstyle{decision} = [diamond, draw, fill=gray!15, text width=5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=gray!15, text width=8em, align=left, rounded corners, minimum height=4em, line width=0.5pt]%text centered
+\tikzstyle{line} = [draw, -latex', line width=1pt]
+%\tikzstyle{arrow} = [draw, thick, ->]
+\tikzstyle{cloud} = [draw, ellipse,fill=gray!15, node distance=3cm, minimum height=2em]
+
+
+\definecolor{igs}{RGB}{141,211,199}
+\definecolor{terminalg}{RGB}{128,177,211}
+\definecolor{tetraloop}{RGB}{251,128,114}
+\definecolor{tertiary}{RGB}{190,186,218}
+\definecolor{pseven}{gray}{0.7}
+\definecolor{approach}{gray}{0.8}
+\definecolor{transparent}{gray}{1.0}
+%\babelhyphenation{Stich-wort-ver-zeich-nis}
+%\babelhyphenation{Phae-o-dac-ty-lum}
+%\babelhyphenation{tri-cor-nu-tum}
+%\babelhyphenation{Thy-la-ko-i-de}
+
+\newcommand{\vcbox}[2]{\tcbox[on line, colback=#1, colframe=transparent, left=0pt, right=0pt, top=0pt, bottom=0pt, boxsep=2pt]{#2}}
+\newcommand{\scbox}[2]{\tcbox[on line, colback=#1, colframe=transparent, left=0pt, right=0pt, top=2pt, bottom=2pt, boxrule=0pt, arc=0.5mm, boxsep=0pt, nobeforeafter]{#2}}
+\newcommand{\ecbox}[1]{\tcbox[on line, colback=transparent, colframe=black, left=2pt, right=2pt, top=2pt, bottom=2pt, boxrule=0.5pt, arc=0.5mm, boxsep=0pt, nobeforeafter]{#1}}
+\newcommand{\icbox}[1]{\tcbox[on line, colback=transparent, colframe=black, left=-0.5pt, right=-0.5pt, top=2pt, bottom=2pt, boxrule=0.5pt, arc=0.5mm, boxsep=0pt, nobeforeafter]{#1}}
+\newcommand{\approachsymbol}{
+	%\tcbox[on line, colback=approach, colframe=transparent, left=0pt, right=0pt, top=1pt, bottom=1pt, boxrule=0pt, arc=1mm, boxsep=0pt, nobeforeafter]{
+	%	\texttt{\textbf{\textcolor{gray}{[}\textcolor{white}{]}}}
+	%}
+	\includegraphics[height=2ex]{pic/approachsymbol.eps}
+}
+
+\addto\extrasenglish{%
+\def\subsectionautorefname{section}
+\def\subsubsectionautorefname{section}
+\def\sectionautorefname{section}
+%\def\figureautorefname{Fig.}
+%\def\tableautorefname{Tab.}
+\def\equationautorefname{equation}
+}
+
+\lstset{
+	inputpath={tex/},
+	basicstyle=\scriptsize\ttfamily,
+	escapechar=\%,
+	breaklines=true,
+	breakindent=0pt,
+	breakautoindent=false,
+	linewidth=\linewidth,
+	aboveskip=-0.25cm,
+	belowskip=-0.5cm
+}
+
+
+\setchemfig{
+	atom sep=1.8em,
+	double bond sep=0.3em,
+	bond offset=0.18em,
+	bond join=true,
+	bond style = {line width=0.1em, cap=round},
+	cram width=2.5pt
+}
+
+\definesubmol{start}{-[::-60,2,,,draw=none]-[,2,,,draw=none]-[::120,,,,draw=none]}
+\definesubmol{end}{	*5(-[,,,,draw=none](*6(-[,,,,draw=none]-[,,,,draw=none]-[,,,,draw=none](-[,,,,draw=none]))))}
+\definesubmol{end2}{	*5(-[,,,,draw=none](*6(-[,,,,draw=none]-[,,,,draw=none]-[,,,,draw=none]-[,,,,draw=none](-[,,,,draw=none]))))}
+\definesubmol{uracil}{
+	N*6(%(-H)
+	-=-(=O?[h0,,{dash pattern=on 1pt off 4pt}, {line width=1.5pt}, gray])-N(-H?[h1,,{dash pattern=on 1pt off 4pt}, {line width=1.5pt}, gray])-(=O?[h2,,{dash pattern=on 1pt off 4pt}, {line width=1.5pt}, gray])-)
+}
+\definesubmol{cytosine}{
+	*6()
+	N*6(%(-H)
+	-=-(-N([::60]-H?[h1,,{dash pattern=on 1pt off 4pt}, {line width=1.5pt}, gray])([::-60]-H))=N?[h2,,{dash pattern=on 1pt off 4pt}, {line width=1.5pt}, gray]-(=O?[h3,,{dash pattern=on 1pt off 4pt}, {line width=1.5pt}, gray])-)
+}
+\definesubmol{guanine}{
+	N*5(
+	%(-H)
+	-(*6(
+	-N=(-N([::60]-H?[h3])([::-60]-H))
+	-N(-H?[h2])
+	-(=O?[h1])-=
+	))
+	--N=-
+	)
+}
+\definesubmol{adenine}{
+	N*5(
+	%(-H)
+	-(*6(
+	-N=-N?[h1]
+	=(-N([::60]-H)([::-60]-H?[h0]))-=
+	))
+	--N=-
+	)
+}
+\definesubmol{AU}{
+	-[::42]!{adenine}
+	!{end}
+	\phantom{A}-[,0.45,,,draw=none]
+	!{start}
+	!{uracil}
+	-[::180]
+}
+\definesubmol{GC}{
+	-[::42]!{guanine}
+	!{end}
+	\phantom{A}-[,0.45,,,draw=none]
+	!{start}
+	!{cytosine}
+	-[::180]
+}
+\definesubmol{GU}{
+	-[::42]!{guanine}
+	!{end2}
+	\phantom{A}-[,1.45,,,draw=none]
+	!{start}
+	!{uracil}
+	-[::180]
+}
+\definesubmol{GMP}{
+	% 1
+	-[,1.202,,,line width=3.5pt, shorten <=-.05pt, shorten >=-.05pt](-[:-90,,,,line width=1.5pt, shorten >=.5pt]OH)% 2
+	>[:44.6,0.521](-[:90]!{guanine})% 1
+	-[:167]O% 0
+	-[:193,0.998]% 4
+	(
+	-[:90](-[,0.1,,,draw=none]\chemabove[1ex]{}{\textcolor{gray}{5'}})% 5
+	-[::60]O(-[::30]P(-[2]OH)(-[4]HO)(=[6]O))
+	)
+	(
+	<[:315.6,0.522](-[:-90,,,,line width=1.5pt, shorten >=.5pt]OH)(-[::-150,0.4,,,draw=none]\chembelow[1ex]{}{\textcolor{gray}{3'}})% 3
+	)
+}
+%\linenumbers
+\begin{document} 
+%LAYOUT STUFF
+\graphicspath{{tex/}}
+
+%include empty pages (1 for single-sided, 2 for doublesided print service)
+%\subfile{tex/empty}
+%\subfile{tex/empty}
+%\subfile{../documents/firstpage_submit}
+\subfile{tex/title}
+\newpage
+\subfile{tex/abstract}
+\clearpage
+\subfile{tex/acknowledgements}
+\clearpage
+%\setcounter{page}{2}
+
+\setcounter{tocdepth}{3}
+\setcounter{page}{4}
+\tableofcontents
+\newpage
+{
+	\small
+	\listoffigures
+	\vspace{-0.5cm}
+	\listoftables
+}
+
+
+\newpage
+%\subfile{tex/intro/intro}
+%\newpage
+\subfile{tex/intro/rna_world}
+%\newpage
+\subfile{tex/intro/outline}
+
+\newpage
+\subfile{tex/theory/sec_structures}
+%\newpage
+\subfile{tex/theory/nnm}
+%\newpage
+\subfile{tex/theory/folding}
+%\newpage
+\subfile{tex/theory/pseudoknots}
+
+\newpage
+\subfile{tex/theory/giis}
+%\newpage
+\subfile{tex/theory/native_structure}
+
+\newpage
+\subfile{tex/methods/methods}
+%\newpage
+\subfile{tex/methods/structure_pred}
+%\newpage
+\subfile{tex/methods/eparams}
+%\newpage
+\subfile{tex/methods/design}
+%\newpage
+\subfile{tex/methods/neutral}
+
+\newpage
+\subfile{tex/results/results}
+%\newpage
+\subfile{tex/results/structure_pred}
+%\newpage
+\subfile{tex/results/sequence_designs}
+%\newpage
+\subfile{tex/results/seqspacepercolation}
+%\newpage
+%\clearpage
+\subfile{tex/results/exp_results}
+
+\clearpage
+\subfile{tex/discussion/discussion}
+%\newpage
+\subfile{tex/discussion/challenges_limitations}
+%\newpage
+\subfile{tex/discussion/methodological_considerations}
+%\newpage
+\subfile{tex/discussion/other_approaches}
+%\clearpage
+\subfile{tex/conclusion/conclusion}
+\clearpage
+
+%BIBLIOGRAPHY
+%\nocite{*}
+\printbibliography[heading=bibintoc, title={Bibliography}]
+
+\clearpage
+
+\appendix
+\renewcommand{\thefigure}{A.\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{A.\arabic{table}}
+\setcounter{table}{0}
+%\renewcommand{\theequation}{A.\arabic{equation}}
+%\setcounter{equation}{0}
+\subfile{tex/appendix/appendix}
+%\newpage
+%\subfile{tex/appendix/structure_comp}
+\subfile{tex/appendix/designs_proto}
+%\newpage
+\subfile{tex/appendix/frobenius}
+%\printglossaries
+%\printglossary[type=abbr]
+%\printglossary[type=glos]
+\clearpage
+\subfile{tex/declaration}
+\end{document}

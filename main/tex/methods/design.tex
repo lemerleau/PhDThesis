@@ -1,0 +1,408 @@
+%use in documents with \subfile{tex/intro}
+\documentclass[../../master.tex]{subfiles}
+
+\begin{document}
+
+
+\subsection{RNA Design}
+\label{sub:methods:design_pipeline}
+
+The hereinafter described design pipeline was constructed with the \textit{Azoarcus} GII used as the reference in mind.
+The primary design goal was to design sequences with similar structures as the reference data (see \autoref{sec:theory:gii}).
+A strong focus was put on retaining structural features related to the catalytic activity of the \textit{Azoarcus} GII (\autoref{sub:theory:azoarcus_selfsplicing}).
+Specifically, the conserved P7 region containing a \unit[1]{nt} bulge as the guanosine binding site is also involved in a pseudoknot with P3 (\autoref{sub:theory:azoarcus_structurefeatures}).
+Additionally, some sequence constraints were imposed with tertiary interactions and catalytic activity in mind (see \autoref{ssub:methods:seq_constraints} for details).
+
+
+Two metrics were used to compare designs to the reference data.
+The \emph{base pair distance} of two secondary structures measures the number of dissimilar base pairs.
+The (normalized) \emph{ensemble defect} compares a structure ensemble of a sequence with a single structure and measures the average number (fraction) of incorrectly paired or unpaired nucleotides in the ensemble \parencite{dirks_paradigms_2004}.
+A detailed description of these measures used as objective functions is postponed until \autoref{ssub:methods:objectives} because the design approaches pursued in this work determined how they were used. 
+
+\paragraph{Design Approaches.}
+\label{par:methods:design_approaches}
+
+Due to the pseudoknot in the target structure related to catalytic activity, using structure prediction methods capable of predicting pseudoknots would have been a straightforward choice.
+Yet, for the design, computational methods explicitly modelling solely nested structures were used for multiple reasons.
+First and foremost, the nucleotide identities in the catalytically relevant P7 are conserved among group I introns, which was utilized with the first \emph{constrained} approach described below.
+An \emph{alternative} approach leveraged the observation of potential pseudoknots recovered by the McCaskill algorithm (cf. \autoref{sub:theory:pseudoknots}).
+
+Moreover, the prediction of structures with pseudoknots is more complex than without pseudoknots. 
+It requires heuristics restricting types or amount of pseudoknots as done in \texttt{pKiss} and \texttt{RNAPKplex} respectively.
+These tools were only used to evaluate designed sequences as described in \autoref{ssub:methods:selection}.
+
+\subparagraph{Constrained Approach.}
+\label{spar:methods:constapproach}
+
+For this approach, nucleotide identities at positions corresponding to P7 of the target structure were fixed to be the same as in the reference sequence to retain the conserved native guanosine binding site in sequence designs.
+With the assumption of hierarchical folding of RNA, i.e. tertiary interactions such as pseudoknots forming after secondary structure, the design process was simplified by explicitly prohibiting base pairs in P7 during structure prediction using \texttt{RNAfold} (see \autoref{ssub:methods:rnafold}).
+Consequently, base pairs of P7 were disregarded during the computation of objective functions relative to the target structure.
+
+\subparagraph{Alternative Approach.}
+\label{spar:methods:altapproach}
+
+As described in \autoref{sub:theory:pseudoknots}, even a partition function algorithm only considering nested structures as implemented in \texttt{ViennaRNA} may recover base pair probabilities for potentially pseudoknotted positions.
+This enabled a design approach without structural and sequence constraints on P7 positions during structure prediction while still not explicitly modelling pseudoknots.
+
+With base pairs of P3 and P7 being involved in the pseudoknot, the target structure was split into two pseudoknot-free structures, each containing the base pairs of either P3 \emph{or} P7 in addition to all base pairs not involved in the pseudoknot (cf. \autoref{tab:superposition}).
+Designing for two target structures entails an important subtlety necessary to address in the design pipeline; there is an inherent conflict in designing sequences with a predicted structure as close as possible to both target structures.
+
+
+\subsubsection{Objective Functions}
+\label{ssub:methods:objectives}
+
+In this work, two metrics were used for comparison between secondary structures but also between Boltzmann ensembles of a sequence with a single structure.
+Although their actual use in the implemented pipeline may be more apparent in \autoref{ssub:methods:pipeline}, the technical details are introduced below.
+
+\paragraph{Base Pair Distance.}
+\label{par:methods:bpdistance}
+
+%On the other hand, string-based distance measures operate on simple data structures and tend to be quite fast.
+The base pair distance of two secondary structures is a widely used and computationally cheap metric in the mathematical sense.
+Interpreting secondary structures as sets containing their base pairs as elements, the base pair distance is defined as the cardinality of their symmetric difference \parencite{lorenz_rna_2014}:
+\begin{equation}\label{eq:bpdistance}
+	\operatorname{d}_{\mathrm{bp}}(s_1, s_2) = |s_1 \triangle s_2| = |(s_1 \cup s_2) \smallsetminus (s_1 \cap s_2)|
+\end{equation}
+While \texttt{ViennaRNA} provides a base pair distance implementation only for nested secondary structures, this measure is not restricted to them \parencite{haslinger_rna_1999}. 
+Lifting the implementation to secondary structures with pseudoknots requires only the addition of base pairs that may cross.
+%\todo{clarify: lifting to 1-diagrams}
+For this thesis, this was done by generating a low-level wrapper around the \texttt{ViennaRNA} library written in Rust and translating the implementation directly while replacing the pair tables used as structure representations. 
+This implementation can be easily imported into Python as a library (see \autoref{sub:appendix:code_availability} for availability). 
+
+In general, the base pair distance is helpful in conjunction with MFE algorithms which produce a single predicted structure.
+Using this metric as an objective function to be minimized may be seen as negative RNA design. 
+
+%This could have been done equivalently in C \todo{somehow say that I just wanted to do it this way and learn Rust}.
+
+%\paragraph{Tree-based Distances.}
+
+%\todo{rework necessary. ASPRA stuff in appendix: remove or heavily}
+%\todo{\parencite{fallmann_recent_2017} limitations of tree based methods for sequences with prior unknown structure}
+
+%Comparisons of secondary structures are fundamental to more advanced problems such as alignment or inverse-folding.
+%Following the unique loop decomposition described\todo{mentioned} in \todo{\autoref{ssub:intro:loops}}, trees provide a natural expression framework for nested structures.
+%Trees representing RNA secondary structures are particularly well suited in the alignment of structures and can be used to measure similarity between them \parencite{jiang_alignment_1994}.
+%However, tree alignment and other methods operating on trees like tree editing (\parencite{jiang_general_2002, berkemer_algebraic_2017, wang_comparison_2020}) may add too much complexity to an RNA design pipeline requiring to evaluate many candidate structures.
+
+
+
+%\todo{\parencite{agius_comparing_2010}}
+
+%Tree-based methods are not necessarily specific to RNA secondary structures.
+%The inclusion of pseudoknots rather depends on the grammar used to generate trees from structures.
+%\todo{refer to appendix for details about aspralign and the decision againstit}
+
+%\todo{see \parencite{ponty_combinatorial_2011}}
+
+%\todo{for the design, I do not even need PK BP distance. but it is helpful afterwards}
+
+\paragraph{Ensemble Defect.}
+\label{par:methods:ensembledefect}
+
+The ensemble defect of an arbitrary target structure $s^*$, given an RNA sequence $r$, is defined as the average number (over all structures in the Boltzmann ensemble $\Omega$) of incorrectly paired or unpaired positions with respect to $s^*$.
+This can be expressed as 
+\begin{equation}\label{eq:ed1}
+	\begin{aligned}
+		\operatorname{ed}_r(s^*) &= N - \sum_{s \in \Omega} 
+		\left [ p(s) \sum_{1\le i, j \le N}
+		S_{i,j} S^*_{i,j} \right ] \\
+		&= N - \sum_{1\le i, j \le N} 
+		\left [ \sum_{s \in \Omega}
+		p(s) S_{i,j} \right ] S^*_{i,j}
+	\end{aligned}
+\end{equation}
+where $p(s)$ is the probability of a structure in the Boltzmann ensemble, as defined using the partition function (\autoref{eq:boltzmann}), and $S, S^* \in \{0,1\}^{N\times N}$ are base pairing matrices, i.e. having entries set to 1 if their (unequal) indices form a base pair in the structures $s, s^*$ and 0 otherwise \parencite{dirks_paradigms_2004}.
+For convenience, non-zero diagonal entries correspond to unpaired positions.
+Therefore, $S$ and $S^*$ are symmetric and doubly stochastic, i.e. their rows and columns sum up to one, respectively.
+Note that \citeauthor{dirks_paradigms_2004} use an additional column for unpaired positions~\parencite{dirks_paradigms_2004}.
+The right-hand side expression in \autoref{eq:bppart}
+\begin{equation}\label{eq:bpprob}
+	P_{i,j} = \sum_{s \in \Omega} p(s) S_{i,j} 
+\end{equation}
+sums over all structures of the ensemble containing the base pair $(i, j)$ for $1\le j \le N$, or containing an unpaired position at $i$ for $i = j$ respectively.
+A matrix $P$ with entries from \autoref{eq:bpprob} is called a base pair probability matrix.
+Per definition, $P$ is symmetric and doubly stochastic, just as $S$ and $S^*$.
+Since $P$ consists of $N$ rows (columns), each summing up to one,
+the \emph{normalized} ensemble defect is well defined:
+\begin{equation}\label{eq:ned}
+	\operatorname{ned}_P(s^*) = 1 - \frac{1}{N} \sum_{1\le i, j \le N} P_{i,j} S_{i,j}^*
+\end{equation}
+%\begin{equation}\label{eq:ned}
+%	\operatorname{ned}(s^*) = 1 - \frac{1}{N} \sum_{(i,j) \in s^*} P_{i,j} - \frac{1}{N} \sum_{(i,\cdot) \notin s^*} P_{i,N+1} 
+%\end{equation}
+The notation of $\operatorname{ned}_P(s^*)$ is a little overloaded. 
+Like $\operatorname{ed}_r(s^*)$, the normalized ensemble defect implicitly depends on the RNA sequence $r$ via $P$.
+
+In practice, the probability of a position $i$ being unpaired is often not directly stored in $P_{i,i}$, but computed as $1 - \sum_{j, j \ne i} P_{i,j}$.
+Base pair probability matrices visualized as \emph{dot plots} follow this convention throughout this work.
+
+Since there are algorithms of polynomial complexity available to compute the partition function and base pair probabilities (see \autoref{par:theory:partfunc}), the normalized ensemble defect can be used to measure the whole Boltzmann ensemble of a sequence given a target structure.
+Using ensemble defect based objective functions, simultaneous positive and negative RNA design can be implemented \parencite{dirks_paradigms_2004}.
+Note that the dependence on the sequence is implicitly given via the base pair probability matrix in the equations above.
+
+In order to implement the alternative design approach given two target structures, the maximum normalized ensemble defect of two structures was used:
+\begin{equation}\label{eq:maxned}
+	\widehat{\operatorname{ned}}_P(s_1^*, s_2^*) = \max \{ \operatorname{ned}_P(s_1^*), \operatorname{ned}_P(s_2^*) \} 
+\end{equation}
+It is essential to mention that this objective function cannot be zero. 
+Its minimal possible value depends on the two target structures used (see \autoref{sub:discussion:methodological} for a discussion of alternatives).
+
+\subsubsection{Sequence Constraints}
+\label{ssub:methods:seq_constraints}
+
+Certain positions of design candidate sequences were fixed to the same nucleotide identities as in the (truncated) reference sequence (see \autoref{sub:theory:seqtargetstruct}).
+These \emph{sequence constraints} were employed to support the design for the desired function of the reference ribozyme.
+Due to the assumptions made for the constrained approach--- namely, the pseudoknot folding after secondary structure and conservation of P7 ---, nucleotides in P7 had to be constrained (see \autoref{spar:methods:constapproach}).
+As a side effect, the \unit[1]{nt} bulge acting as the guanosine binding site in the native ribozyme was not explicitly modelled.
+This is potentially advantageous as the stability of such bulges does primarily depend on non-nearest neighbor interactions \parencite{blose_non-nearest-neighbor_2007}.
+
+Additionally, the terminal position was constrained to guanine (\texttt{G}) because this nucleotide binds to the guanosine binding site in the native ribozyme at the \emph{pre-S2} state during self-splicing (see \autoref{fig:selfsplicing}).
+Analogously, the first three nucleotides were left identical to the internal guide sequence (IGS) of the native ribozyme because the 5'-exon binds to it.
+
+Further potential sequence constraints were defined by nucleotides involved in tertiary interactions in the structure of the native ribozyme due to their stabilizing effects (see \autoref{fig:azostructure}).
+The tetraloop formed by P2 (L2) was considered in particular as it was shown to have a substantial effect on the thermostability of the \textit{Azoarcus} GII \parencite{tanner_activity_1996}.
+In conjunction with the previously introduced sequence constraints, these constraints were considered \texttt{minimal} to use designed sequences \textit{in vitro} for experiments.
+Other positions of tertiary interactions were included for a subset of all sequence designs to provide a set of \texttt{complete} sequence constraints.
+
+Due to the similarity of the sequences obtained from \parencite{mustoe_secondary_2016} and GISSD, the tertiary interaction sites could be easily transferred to the latter sequence.
+The exact positions and nucleotide identities used as constraints are depicted in \autoref{fig:constraints}.
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tabularx}{0.883\textwidth}{X}
+		\ttfamily
+		\seqsplit{%{\textcolor{gray}{gcggacucauauuucgau}}
+			{\scbox{igs}{GUG}}C
+			{\scbox{tertiary}{C}}UUGCGCCGG
+			{\scbox{tetraloop}{GAAA}}CCACGCAA
+			{\scbox{tertiary}{G}}GG
+			{\scbox{tertiary}{A}}UGGUGU
+			{\scbox{tertiary}{C}}A
+			{\scbox{tertiary}{AAU}}U
+			{\scbox{tertiary}{CG}}G
+			{\scbox{tertiary}{C}}GAAAC
+			{\scbox{tertiary}{CUAAG}}CGCCCGCCCGGGCG
+			{\scbox{tertiary}{UAUG}}GCAAC
+			{\scbox{tertiary}{G}}C
+			{\scbox{tertiary}{CG}}AG
+			{\scbox{tertiary}{CCA}}AGCUUCGGCGCC
+			%{\frame{\phantom{{AUUGCACUCC}}}}
+			UGCGCCGAUGAA
+			{\scbox{tertiary}{GG}}U
+			{\scbox{tertiary}{GUA}}
+			{\scbox{pseven}{GAGACUA}}GAC
+			{\scbox{tertiary}{G}}GCACCCAC
+			{\scbox{tertiary}{CUAAG}}GCAAACGC
+			{\scbox{tertiary}{UAUG}}GUGAAGG
+			{\scbox{tertiary}{CA}}
+			{\scbox{pseven}{UAGUCC}}AGGGAGUGGC
+			{\scbox{tertiary}{GAAA}}GUCACACAAACCG
+			{\scbox{terminalg}{G}}}
+		%{\textcolor{gray}{aauccguugg}}}
+	\end{tabularx}
+	\caption[Sequence Constraints]{The sequence constraints used in the design procedure. The differently shaded positions were fixed during sequence sampling: \vcbox{igs}{IGS}, \vcbox{terminalg}{terminal G}, \vcbox{tetraloop}{L2}, \vcbox{tertiary}{tertiary interactions} and \vcbox{pseven}{P7}.
+		Note that \vcbox{tetraloop}{\texttt{GAAA}} is actually part of the tertiary interactions.
+		The displayed sequence is the truncated version of  \autoref{fig:azodata:b}.
+	}\label{fig:constraints}
+\end{figure}
+
+\autoref{tab:constraintsets} summarizes the defined  constraint sets based on the individual constraints as depicted in \autoref{fig:constraints}.
+Two additional constraint sets suffixed \texttt{-alt} for use in conjunction with an alternative objective function (see \autoref{par:methods:ensembledefect}) were defined by omitting the constrained positions of P7.
+
+\begin{table}[!ht]
+	\centering\setstretch{0.95}
+	\caption[Constraint Sets]{The different combinations of constraints used. 
+		$+$ marks the inclusion of a feature as introduced in \autoref{fig:constraints} into the set. 
+		Note that \texttt{proto} was only used with the non-truncated sequence in \autoref{fig:azodata:a}. 
+		The \texttt{*-alt} constraint sets were only used for designs applying the alternative objective function defined in \autoref{eq:maxned}. 
+		\texttt{\#}: total number of fixed positions in this set.
+	}
+	\label{tab:constraintsets}
+	\begin{tabularx}{1\textwidth}{lXccccc} \toprule
+		\textbf{Set} &\texttt{\#}& \vcbox{igs}{IGS} & \vcbox{terminalg}{term. G} & \vcbox{tetraloop}{L2} & \vcbox{tertiary}{tert. Interactions} & \vcbox{pseven}{P7} \\ \midrule
+		\texttt{minimal} &$21$& $+$ & $+$ & $+$ & $-$ & $+$ \\
+		\texttt{complete} &$67$& $+$ & $+$ & $+$ & $+$ & $+$ \\ \midrule
+		\texttt{minimal-alt} &$\hphantom{0}8$& $+$ & $+$ & $-$ & $-$ & $-$ \\
+		\texttt{complete-alt} &$54$& $+$ & $+$ & $+$ & $+$ & $-$ \\ \midrule
+		\texttt{proto} &$63$& $-$ & $-$ & $+$ & $+$ & $+$ \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+Sequences designed using the constraints of the \texttt{proto} set differed from the other sequence designs; in this case, the untruncated target structure from \parencite{mustoe_secondary_2016} was used (see \autoref{fig:azodata:a}).
+The reason for this deviation is that these sequences were the first designs for which preliminary experimental results are available.
+
+
+\subsubsection{Pipeline}
+\label{ssub:methods:pipeline}
+
+With design approaches, objective functions and sequence constraints described, most parts of the general design feedback loop outlined in \autoref{sec:methods:methods} are in place for pipeline construction.
+
+\paragraph{Exploring Sequence Space.}
+\label{par:methods:seqspace}
+
+Perhaps the simplest way to obtain a new RNA sequence of the same length from a given one consists of point mutations.
+In doing so repeatedly, the sequence space may be explored.
+Usually, the sequence space is viewed as a graph with sequences of equal length as vertices and edges between sequences differing in exact one nucleotide.
+Such a graph is called a Hamming graph, and the (Hamming) distance between any two vertices corresponds to the minimal number of point mutations between two RNA sequences \parencite{reidys_generic_1997}.
+
+For this work, some sequences are inherently less interesting than others; RNA sequences not \emph{compatible} to the target structure should be disregarded (cf. rule \ref{eq:rule4}, \autoref{sec:theory:rna_secstructures}) \parencite{gruner_analysis_1996}.
+%In fact, rule \ref{eq:rule4} in \autoref{sec:theory:rna_secstructures} corresponds to this restriction, although this is sometimes not included in the definition \parencite{hofacker_combinatorics_1998}.
+Ideally, a walk on the sequence space suitable for RNA sequence design would allow base pair mutations to move only between compatible sequences.
+The necessary moves enabling such walks are depicted in \autoref{fig:compatiblemoves}.
+%Note that the space of compatible sequences (given a secondary structure) is no longer a Hamming graph but isomorphic to the direct product of two Hamming graphs \parencite{gruner_analysis_1996}\todo{excellent to know, but I probably remove this. Does not change much}.
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzcd}
+		{\textbf{GC}} & {\textbf{GU}} & {\textbf{AU}} \\
+		\\
+		\\
+		{\textbf{CG}} & {\textbf{UG}} & {\textbf{UA}}
+		\arrow[tail reversed, from=4-2, to=4-1]
+		\arrow[tail reversed, from=4-2, to=4-3]
+		\arrow[tail reversed, from=1-3, to=1-2]
+		\arrow[tail reversed, from=1-1, to=1-2]
+		\arrow["{\phantom{A}}"{description}, shift right=3, curve={height=32pt}, shorten <=4pt, shorten >=2pt, Rightarrow, 2tail reversed, from=1-3, to=4-3]
+		\arrow["{\phantom{A}}"{description}, shift left=3, curve={height=-32pt}, shorten <=4pt, shorten >=2pt, Rightarrow, 2tail reversed, from=1-1, to=4-1]
+		\arrow["{\ecbox{\scriptsize\textrm{necessary two-point moves}}}"{description}, Rightarrow, 2tail reversed, from=1-2, to=4-2]
+	\end{tikzcd}
+	\caption[Move Set in Space of Compatible Sequences]{
+		To move in the space of sequences compatible to a given structure, one-point mutations only cover unpaired compatible positions.
+		Additionally, moves changing (up to) two points are necessary for positions that are involved in base pairs. 
+		The latter moves are shown above. 
+		One-point mutations are visualized as single double-ended arrows.
+		Double arrows denote moves between base pairs that necessarily involve two-point mutations.
+		For example, changing a base pair with nucleotides \textbf{CG} to \textbf{AU} requires changing both nucleotides in a single move.
+		Otherwise, the mutated sequence would be incompatible to the given structure \parencite{haslinger_rna_1999}.
+	}\label{fig:compatiblemoves}
+\end{figure}
+
+In the implementation of the design pipeline, \texttt{RNAblueprint}~\parencite{hammer_rnablueprint_2017} was used to enable exploration of the sequence space primarily for practical reasons.
+Most importantly, the library already existed, so no custom code had to be written.
+Although sampling uniformly from sequence spaces compatible to a single (bi-)secondary structure is relatively simple to achieve by considering unpaired and paired positions separately, the graph-coloring approach of \texttt{RNAblueprint} guarantees uniform sampling with multiple structural constraints, enabling more elaborate RNA designs.
+As a bonus, the library provides easy integration of sequence constraints.
+
+%\texttt{RNAblueprint} is a library allowing to uniformly sample sequences compatible with multiple structural and sequence constraints \parencite{hammer_rnablueprint_2017}.
+%Although enabling complex sets of target structures, \texttt{RNAblueprint} was used here primarily to implement an adaptive walk moving via point mutations where possible and mutations of two paired positions where necessary.
+%Specifically, due to the construction of the dependency graph used in \texttt{RNAblueprint}, its connected components correspond to unpaired and paired positions for sets of structural constraints, where for each position, there is at most one constraint (i.e. a paired position).
+
+%For single nested or crossing structures, this is the case.
+%While uniform sampling of unpaired and paired mutation sites certainly is not complex for single target structures, this approach was chosen for simplicity and flexibility, allowing for extensions of the design procedure covering multiple structural states if demanded.
+
+%For the adaptive walk implemented here, an initial sequence was chosen uniformly random from the ensemble of compatible sequences with respect to the target structure.
+%However, an arbitrary compatible sequence could be provided, e.g. to refine previously designed sequences or to explore the neutral neighborhood of a native sequence.
+%Steps of the walk then were realized by uniformly sampling component-locally and evaluating the objective function.
+
+%\todo{explain dependency graph/colouring in more detail? stop condition and stochastic thingy here or extra section for adaptive walk?} 
+
+%Using \texttt{RNAblueprint}, this was possible using its component-local sampling functionality because the target structures used here were at most bi-secondary.
+
+
+\paragraph{Pipeline Overview.}
+\label{par:methods:pipelineoverview}
+
+The design pipeline resembles an adaptive walk on the space of sequences compatible to the target structure, minimizing the objective functions depending on the design approach.
+
+Following the schematic in \autoref{fig:pipelineoverview}, the design process is initialized by uniformly sampling a random RNA sequence using \texttt{RNAblueprint}.
+Instead of directly computing objective function scores for the initial candidate, conservative choices were made for the initial scores; $N$, the sequence length, as an initial score for base pair distance derived objective functions and $1$ for normalized ensemble defect based objectives.
+At the next step, a point or base pair of the candidate sequence is mutated as a first move on sequence space.
+These first two steps of the pipeline are subject to sequence constraints and must be compatible to the target structure as previously described.
+Afterwards, MFE structure prediction and base pair probability computation is performed.
+This step differs between the design approaches; structural constraints are imposed in the constrained approach.
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}[node distance = 2cm, auto]
+		\footnotesize
+		% Place nodes
+		\node [decision, label={[shift={(0,0.7)}]south:\approachsymbol}] (objective) {%
+			%			\begin{tabularx}{\textwidth}{X}
+			%				$\operatorname{d}_\mathrm{bp}(s,s^*)$ \\ $\operatorname{d}_\mathrm{bp}(s,s_i^*)$ \\ \midrule
+			%				$\operatorname{ned}_Q(s^*)$ \\ $\widehat{\operatorname{ned}}_Q(s_1^*, s_2^*)$
+			%			\end{tabularx}
+			%objective functions
+			based on $\operatorname{d}_\mathrm{bp}$, $\operatorname{ned}_P$
+		};
+		
+		\node [decision, below of=objective, node distance=4.5cm] (stop) {check stop condition};
+		
+		\node [block, left of=stop, node distance=4.5cm, label={[shift={(0.3,0.3)}]south west:\faChain}] (mutate) {point or pair mutation of unconstrained positions};
+		
+		\node [block, above of=mutate, node distance=2.5cm, rectangle split, rectangle split parts=2, rectangle split horizontal, text width=4em, align=center, label={[shift={(0.3,0.3)}]south west:\approachsymbol}] (foldbpp) {MFE structure $s$ \nodepart{two} $Q$ \& $P$}; 
+		
+		\node [block, left of=foldbpp, node distance=4cm, text width=9em, align=center, label={[shift={(0.3,0.3)}]south west:\faChain}] (init) {sample sequence compatible to target $s^*$};
+		
+		\node [block, right of=foldbpp, node distance=7cm, align=center, text width=6em] (revert) {revert last mutation};
+		\node [below right of=stop] (return) {};
+		
+		% Draw edges
+		\path [line] (init) |- (mutate);
+		\path [line] (mutate) -- node [fill=white,anchor=center, yshift=-0.1cm] {predict} (foldbpp);
+		\path [line] (foldbpp) |- node [near end] {compute} (objective);
+		\path (foldbpp) |- node [near end, anchor=north] {objective functions} (objective);
+		%		\path [line] (foldbpp) |- node [at end] {%
+		%			\begin{tabularx}{\textwidth}{c|c}
+		%				$\operatorname{d}_\mathrm{bp}(s,s^*)$ & $\operatorname{d}_\mathrm{bp}(s,s_i^*)$ \\
+		%				$\operatorname{ned}_Q(s^*)$ & $\widehat{\operatorname{ned}}_Q(s_1^*, s_2^*)$
+		%			\end{tabularx}		
+		%		} (objective);
+		\path [line] (objective) -| node [near start] {reject} (revert);
+		\path [line] (objective) -- node [fill=white,anchor=center] {accept} (stop);
+		\path (objective) -- node [at start, anchor=east] {$p_\mathrm{acc}$} (stop);
+		\path [line] (revert) |- (stop);
+		\path [line] (stop) -- node {repeat} (mutate);
+		\path [line] (stop) |- node [near end] {stop} (return);
+	\end{tikzpicture}
+	\caption[Schematic of the Design Pipeline]{
+		Schematic overview of the design pipeline resembling an adaptive walk on the space of sequences compatible to the target structure.
+		$Q$ and $P$ denote the partition function and base pair probability matrix respectively.
+		The objective function scores were compared to the scores of the previous step. 
+		In the context of RNA design, lower base pair distances $\operatorname{d}_\mathrm{bp}$ and normalized ensemble defect values $\operatorname{ned}_P$ are seen as better.
+		The precise minimization procedure including stop conditions is described in the main text for both constrained and alternative design approach.
+		Objective function evaluation was relaxed by accepting  worse-scoring candidates with probability $p_\mathrm{acc}$.
+		\faChain\, indicates application of sequence constraints.
+		Steps marked with \approachsymbol depend on the design approach taken.
+	}\label{fig:pipelineoverview}
+\end{figure}
+\newpage
+In the constrained approach, the normalized ensemble defect defined in \autoref{eq:ned} serves as the primary objective with the same structural constraints applied during structure prediction.
+The base pair distance of the MFE prediction to the target structure is used as a secondary objective only required not to increase with every iteration.
+Acceptance of the current candidate sequence is decided relative to the scores of the previous candidate sequence; candidates are accepted if their scores decrease or with some probability $p_\mathrm{acc} = 0.001$ as a relaxation parameter in order not to get trapped in local minima.
+If rejected, the mutation step is reverted.
+The adaptive walk is stopped if $\operatorname{ned}_P(s^*) \leq 0.05$ or the MFE prediction differs from the target structure by at most two pairs.
+
+The pipeline variant for the alternative approach works very similar with some changes necessitated by the alternative objective function $\widehat{\operatorname{ned}}_P$ given two \emph{superposed} target structures (cf. \autoref{eq:maxned}, \autoref{tab:superposition}).
+With that approach, no secondary objective is evaluated.
+The relaxation parameter is set higher $p_\mathrm{acc} = 0.01$ to counteract walking into local minima more often due to the construction of the objective function.
+Additionally, the minimization is stopped at a higher threshold of $\widehat{\operatorname{ned}}_P(s_1^*, s_2^*) \leq 0.15$ or when the pseudoknot-free base pair distance of the \texttt{RNAfold} MFE prediction without structural constraints to one of both target structures was at most two.
+The choice of the higher score threshold is made plausible as follows:
+
+Given a sequence design with $\operatorname{ned}_P(s_1^*) = 0$, the Boltzmann ensemble of the design would contain a single structure $s_1^*$ and the alternative objective function would reduce to $\widehat{\operatorname{ned}}_P(s_1^*, s_2^*) = \operatorname{ned}_P(s_2^*) = \frac{2 \operatorname{d}_\mathrm{bp}(s_1^*, s_2^*)}{N} = \frac{24}{197} \approx 0.122$ with the specific target structures from \autoref{tab:superposition}.
+The factor $2$ arises from the fact that the ensemble defect sums over \emph{all} incorrect nucleotides, both paired and unpaired (see \autoref{eq:ed1}).
+Therefore, further minimization would necessarily increase $\operatorname{ned}_P(s_1^*)$.
+This is, of course, the extreme case and halving this estimation yields the minimum possible value of $\widehat{\operatorname{ned}}_P$.
+Yet, the chosen threshold was considered sufficient for the purpose of this work.
+
+
+\subsubsection{Quality Control and Selection of Designed Sequences}
+\label{ssub:methods:selection}
+
+There are two primary reasons why a notion of \emph{good} sequence designs is required in this work.
+Most importantly, the design pipeline itself only relies on computational methods developed for comparison and prediction of nested secondary structures, but the reference ribozyme contains prominent tertiary structural features; the pseudoknot formed between P3 and P7 and a \unit[1]{nt} bulge.
+
+In addition, $n = 1000$ sequences were designed for each constraint set.
+It is practically infeasible to assess that amount of different RNA sequences \textit{in vitro} with regard to their catalytic activity.
+In consequence, only subsets of those sequence designs were selected for later use in experimental assays. 
+MFE structures predicted using \texttt{pKiss}, and \texttt{RNAPKplex} were used to assess recovery of the pseudoknot present in the reference data and similarity to the target structure in general.
+
+For sequences designed with the constrained approach, \texttt{RNAfold} with constraints was used as well.
+Recovery of the \unit[1]{nt} bulge was not used as an explicit criterion because \texttt{pKiss} does not model bulges in pseudoknots, and sequence constraints were applied on P7 nucleotides in the first place.
+With the alternative design approach, no constraints were applied at P7, so \texttt{RNAfold} was used without constraints.
+
+With three MFE predictions per designed sequence, the quality of the designs was measured as a consensus by computing the mean and standard deviation of the base pair distance between predicted structures and target structure.
+For each constraint set, subsets containing the best sequences according to this metric were manually checked for the presence of the pseudoknot.
+Furthermore, base pair probability matrices computed using the McCaskill algorithm were compared to the target structure for individual sequence designs. 
+
+
+\end{document}
