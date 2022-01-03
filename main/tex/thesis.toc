@@ -1,0 +1,193 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {american}{}
+\defcounter {refsection}{0}\relax 
+\vspace {-\cftbeforepartskip }
+\babel@toc {american}{}
+\babel@toc {ngerman}{}
+\babel@toc {american}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\numberline {i}{Introduction}}{1}{part.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}{RNA Bioinformatics}}{3}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Important Note:}}{4}{paragraph*.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Yet Another Important Note:}}{4}{paragraph*.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}{Organization}}{4}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}{Style Options}}{6}{section.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}{Customization}}{7}{section.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}{Issues}}{8}{section.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}{Future Work}}{8}{section.1.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.6}{Beyond a Thesis}}{9}{section.1.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.7}{License}}{9}{section.1.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{GNU General Public License:}}{9}{paragraph*.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{classicthesis Authors' note:}}{9}{paragraph*.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}{RNA folding}}{11}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}{A New Section}}{11}{section.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}{Test for a Subsection}}{11}{subsection.2.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}{Autem Timeam}}{11}{subsection.2.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}{Another Section in This Chapter}}{12}{section.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}{Personas Initialmente}}{12}{subsection.2.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.1.1}{A Subsubsection}}{12}{subsubsection.2.2.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{A Paragraph Example}}{13}{paragraph*.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}{Linguistic Registrate}}{13}{subsection.2.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}{RNA design}}{15}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}{Some Formulas}}{15}{section.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}{Various Mathematical Examples}}{16}{section.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}{Experimental setups and benchmark data}}{17}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Important Note:}}{18}{paragraph*.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Yet Another Important Note:}}{18}{paragraph*.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}{Organization}}{18}{section.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}{Style Options}}{20}{section.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}{Customization}}{21}{section.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}{Issues}}{22}{section.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}{Future Work}}{22}{section.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}{Beyond a Thesis}}{23}{section.4.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}{License}}{23}{section.4.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{GNU General Public License:}}{23}{paragraph*.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{classicthesis Authors' note:}}{23}{paragraph*.15}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}{Outline }}{25}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Important Note:}}{26}{paragraph*.16}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Yet Another Important Note:}}{26}{paragraph*.17}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}{Organization}}{26}{section.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}{Style Options}}{28}{section.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}{Customization}}{29}{section.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}{Issues}}{30}{section.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}{Future Work}}{30}{section.5.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.6}{Beyond a Thesis}}{31}{section.5.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.7}{License}}{31}{section.5.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{GNU General Public License:}}{31}{paragraph*.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{classicthesis Authors' note:}}{31}{paragraph*.19}%
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\numberline {ii}{Results and evaluations}}{33}{part.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}{RAFFT: Efficient prediction of fast-folding pathways of RNAs}}{35}{chapter.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Important Note:}}{36}{paragraph*.20}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Yet Another Important Note:}}{36}{paragraph*.21}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}{Organization}}{36}{section.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}{Style Options}}{38}{section.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}{Customization}}{39}{section.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.4}{Issues}}{40}{section.6.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.5}{Future Work}}{40}{section.6.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.6}{Beyond a Thesis}}{41}{section.6.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.7}{License}}{41}{section.6.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{GNU General Public License:}}{41}{paragraph*.22}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{classicthesis Authors' note:}}{41}{paragraph*.23}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}{\texttt {aRNAque}: AN evolutionary algorithm for inverse folding inspired by Lévy flights.}}{43}{chapter.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Important Note:}}{44}{paragraph*.24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Yet Another Important Note:}}{44}{paragraph*.25}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}{Organization}}{44}{section.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}{Style Options}}{46}{section.7.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}{Customization}}{47}{section.7.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.4}{Issues}}{48}{section.7.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.5}{Future Work}}{48}{section.7.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.6}{Beyond a Thesis}}{49}{section.7.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.7}{License}}{49}{section.7.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{GNU General Public License:}}{49}{paragraph*.26}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{classicthesis Authors' note:}}{49}{paragraph*.27}%
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\numberline {iii}{Discussion and Perspectives}}{51}{part.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}{RAFFT and continuous transition in evolution}}{53}{chapter.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Important Note:}}{54}{paragraph*.28}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{Yet Another Important Note:}}{54}{paragraph*.29}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}{Organization}}{54}{section.8.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}{Style Options}}{56}{section.8.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}{Customization}}{57}{section.8.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.4}{Issues}}{58}{section.8.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.5}{Future Work}}{58}{section.8.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.6}{Beyond a Thesis}}{59}{section.8.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.7}{License}}{59}{section.8.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{GNU General Public License:}}{59}{paragraph*.30}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{{classicthesis Authors' note:}}{59}{paragraph*.31}%
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\numberline {iv}{Appendix}}{61}{part.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}{Appendix Test}}{63}{appendix.A}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}{Appendix Section Test}}{63}{section.A.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}{Another Appendix Section Test}}{63}{section.A.2}%
+\defcounter {refsection}{0}\relax 
+\vspace {\beforebibskip }
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {}{Bibliography}}{65}{section*.34}%
