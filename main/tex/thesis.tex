@@ -41,7 +41,7 @@
 % Note: Make all your adjustments in here
 %*******************************************************
 \input{classicthesis-config}
-
+\setcounter{chapter}{-1}
 %********************************************************************
 % Bibliographies
 %*******************************************************
@@ -85,7 +85,8 @@
 %\setcounter{page}{90}
 % use \cleardoublepage here to avoid problems with pdfbookmark
 \cleardoublepage
-\part{Introduction}\label{pt:manual}
+\include{Chapters/Chapter0}
+\part{Introduction}\label{pt:intro}
 \include{Chapters/Chapter01}
 \include{Chapters/Chapter02}
 \include{Chapters/Chapter03}
@@ -98,13 +99,13 @@ da. Debitas effortio simplificate sia se, auxiliar summarios da que,
 se avantiate publicationes via. Pan in terra summarios, capital
 interlingua se que. Al via multo esser specimen, campo responder que
 da. Le usate medical addresses pro, europa origine sanctificate nos se.}
-\part{Results and evaluations}\label{pt:showcase}
+\part{Results and evaluations}\label{pt:result}
 \include{Chapters/Chapter06}
 %\addtocontents{toc}{\protect\clearpage} % <--- just debug stuff, ignore
 \include{Chapters/Chapter07}
 %\include{multiToC} % <--- just debug stuff, ignore for your documents
 % ********************************************************************
-\part{Discussion and Perspectives}
+\part{Discussion and Perspectives}\label{discusion}
 \include{Chapters/Chapter08}
 % Backmatter
 %*******************************************************
