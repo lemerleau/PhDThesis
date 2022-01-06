@@ -1,0 +1,21 @@
+---
+version: 2
+multicolumn: false
+web-width: 600px
+align: center
+float: h!
+grid:
+  rows: 1
+  columns: 1
+  grid_elements:
+  - path: figures/Screenshot 2021-01-20 at 01-53-46/RNA_representation.png
+    type: static
+    from:
+    - 1
+    - 1
+    to:
+    - 1
+    - 1
+    folder_url: "/users/293083/articles/495177/master/folder/figures/Screenshot 2021-01-20
+      at 01-53-46"
+    url: "/users/293083/articles/495177/master/file/figures/Screenshot%202021-01-20%20at%2001-53-46/RNA_representation.png"
