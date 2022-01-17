@@ -38,7 +38,9 @@
 \defcounter {refsection}{0}\relax 
 \ttl@tocsep 
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {6.1}{\ignorespaces \textbf {Average performance displayed in terms of PPV and sensitivity.} The metrics were first averaged at fixed sequence length, limiting the over-representation of shorter sequences. The first two rows show the average performance for all the sequences for each method. The bottom two rows correspond to the performances for the sequences of length \(\leq \) $200$ nucleotides. For the ML and MFE only one prediction per sequence and for \texttt {RAFFT} $50$ predictions per sequence were used. Here \texttt {RAFFT} (respectively \texttt {RAFFT}*) refers to the case when the lowest free energy (resp. highest PPV) out of the $50$ predictions is selected.\relax }}{25}{table.caption.8}% 
+\contentsline {table}{\numberline {6.1}{\ignorespaces \textbf {Average performance displayed in terms of PPV and sensitivity.} The metrics were first averaged at fixed sequence length, limiting the over-representation of shorter sequences. The first two rows show the average performance for all the sequences for each method. The bottom two rows correspond to the performances for the sequences of length \(\leq \) $200$ nucleotides. For the ML and MFE only one prediction per sequence and for \texttt {RAFFT} $50$ predictions per sequence were used. Here \texttt {RAFFT} (respectively \texttt {RAFFT}*) refers to the case when the lowest free energy (resp. highest PPV) out of the $50$ predictions is selected.\relax }}{29}{table.caption.9}%
+\defcounter {refsection}{0}\relax 
+\ttl@tocsep 
 \defcounter {refsection}{0}\relax 
 \ttl@tocsep 
 \defcounter {refsection}{0}\relax 

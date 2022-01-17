@@ -2,10 +2,13 @@
 \chapter{\texttt{aRNAque}: An evolutionary algorithm for inverse folding inspired by Lévy flights.}\label{ch:arnaque}
 
 	A Lévy flight is a random walk with step sizes that follow a heavy-tailed probability distribution. This type of random walk, with many small steps and a few large ones, has inspired many applications in genetic programming and evolutionary algorithms in recent years, but is yet to be applied to RNA design. Here we study the inverse folding problem for RNA, viz. the discovery of sequences that fold into given target secondary structures. We implement a Lévy mutation scheme in an updated version of \texttt{aRNAque}, an evolutionary inverse folding algorithm, and apply it to the design of RNAs with and without pseudoknots. We find that the Lévy mutation scheme increases the diversity of designed RNA sequences and reduces the average number of evaluations of the evolutionary algorithm. The results show improved performance on both \texttt{Pseudobase++} and the \texttt{Eterna100} datasets, outperforming existing inverse folding tools. We propose that a Lévy flight offers a better standard mutation scheme for optimizing RNA design.
+	
+	We provide in this work an updated version of \texttt{aRNAque} supporting pseudoknotted RNA target structures. In addition to the  support for pseudoknots, we provide an updated mutation mode based on a Zipf distribution. For a given population of RNA sequences, an exponent $c$ of the Zipf distribution, and the mutation parameters: $P_N$ and $P_C$, we present the mutation algorithm in Algorithm \ref{Algo:Lévy}.
+	
+\section{Material and methods}
 
-\section*{Evolutionary algorithm (EA)}
+\subsection{Inverse folding evolutionary algorithm (EA)}
 Below, we provide a brief overview of our evolutionary search algorithm and our mutation scheme. 
-\subsection*{Overview}
 In general, an evolutionary search algorithm on any fitness landscape consists of three main parts, which in the context of RNA inverse folding are as follows: %(Figure \ref{Fig:model}):
 \begin{itemize}
 	\item Initialization: generating a random initial population of RNA sequences compatible with the given target secondary structure.
@@ -58,10 +61,6 @@ Figure \ref{Fig:histomut} Figure 3 shows the distribution of the number of point
 In the rest of this work, a local mutation will refer to a binomial mutation with parameter $\mu \approx 1/L$.
 
 
-\subsection*{New feature}
-We provide in this work an updated version of \texttt{aRNAque} supporting pseudoknotted RNA target structures. In addition to the  support for pseudoknots, we provide an updated mutation mode based on a Zipf distribution. For a given population of RNA sequences, an exponent $c$ of the Zipf distribution, and the mutation parameters: $P_N$ and $P_C$, we present the mutation algorithm in Algorithm \ref{Algo:Lévy}.
-
-
 \begin{algorithm}[b!]
 	\tcc{$P'=\{S'_1\dots S'_n\}$: the mutated population\; 
 		$P= \{S_1\dots S_n\}$: a list of $n$ RNA sequences to mutate\;
@@ -99,17 +98,17 @@ We provide in this work an updated version of \texttt{aRNAque} supporting pseudo
 %%                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Parameter analysis and benchmark}
+\subsection{Parameter analysis and benchmark}
 Here we analyse mutation parameters and compare local and Lévy mutation modes. 
 
-\subsection*{Benchmark data}
+\subsubsection{Benchmark data used}
 To compare our new version of \texttt{aRNAque} with existing tools in the literature, we used the \texttt{PseudoBase++} benchmark datasets for  pseudoknotted target structures and the \texttt{Eterna100} dataset for pseudoknot-free target structures.
 
 The \texttt{PseudoBase++} is a set of $265$ pseudoknotted RNA structures used to benchmark \texttt{Modena}. It was initially $304$ RNA secondary structures, but we excluded $37$ because they had non-canonical base pairs. We then grouped the structures into four pseudoknot motifs (Figure \ref{Fig:pk_type}): $209$ hairpin pseudoknots (H), $29$ bulge pseudoknots (B), $8$ complex hairpin pseudoknots (cH) and $4$ kissing hairpin pseudoknots (K).  
 
 The~\(\texttt{Eterna100}\) dataset \cite{Eterna} is available in two versions and both contain a set of \(100\) target structures extracted from the \texttt{EteRNA} puzzle game and classified by their degree of difficulty. The \texttt{Eterna100-V1} was initially designed using \texttt{ViennaRNA} 1.8.5, which relies on Turner1999 energy parameters \cite{Turn1999}. Out of the $100$ targets secondary structures, $19$ turned out to be unsolvable using the recent version of \texttt{ViennaRNA} (Version $2.14$). Subsequently, an \texttt{Eterna100-V2} \cite{Eterna} was released in which the $19$ targets were slightly modified to be solvable using \texttt{ViennaRNA 2.14}. 
 
-\subsection*{Methodology}
+\subsection{Benchmark protocol}
 \begin{figure*}[t!]
 	\centering
 	\includegraphics[width=1.0\linewidth]{../res/images/arnaque/Tuning.pdf}
@@ -119,10 +118,10 @@ The~\(\texttt{Eterna100}\) dataset \cite{Eterna} is available in two versions an
 \end{figure*}
 The best mutation parameters obtained for both binomial and Lévy mutation modes are used to benchmark and compare the results on the entire datasets of RNA structures ($265$ from \texttt{PseudoBase++} and $100$ from \texttt{EteRNA100}). First, for each of the $365$ target structures $\sigma^*$ in the datasets, $20$ sequences were designed. To measure the performance of each tool, each designed sequence $s$ is folded into a secondary structure $\sigma$ and the similarities between $\sigma$ and $\sigma^*$ are computed using the base pair distance. Second, for each of the \texttt{Eterna100} target structures and a maximum of $5000$ generations (i.e. $50,000$ evaluations), $5$ to $20$ runs were launched independently, which results in at least $5$ designed sequences per target. We define success rate simply as the number of successfully designed targets. A target is considered successfully designed when at least one of the designed sequence folds into the target structure (i.e. the Hamming distance between the target structure and the MFE structure is $0$).
 
-\subsubsection*{Folding tools}
+\subsubsection{Folding tools}
 Two tools for pseudoknotted RNA folding are considered in this work: \texttt{HotKnots} and \texttt{IPknot}. For pseudoknot-free RNA folding, we used \texttt{RNAfold}.
 For the mutation parameter analysis presented here, we used \texttt{IPknot}, and both \texttt{HotKnots} and \texttt{IPknot} for pseudoknotted targets. Furthermore, we considered \texttt{pkiss}, a well know tool for K-type pseudoknot prediction, but since the \texttt{PseudoBase++} dataset contains just $5$ K-type pseudoknotted structures and \texttt{pKiss} has higher time complexity ($O(n^6)$), we did not find it efficient for the benchmark we performed here. 
-\subsubsection*{Mutation parameters tuning}
+\subsubsection{Mutation parameters tuning}
 One of the main challenges for an evolutionary algorithm is to find optimum parameters such as mutation rate, population size and selection function.
 We used $81$ pseudoknotted targets with lengths from $25$ to $181$ nucleotides for the mutation parameter analysis. We set the maximum number of generations to $200$ and the population size to $100$. The best Lévy mutation parameter $c*$ (respectively $\mu*$ for the binomial mutation) has the lowest median number of generations. 
 
@@ -157,14 +156,14 @@ The main observation is that when using a Lévy mutation, the optimal mutation r
 	\small.
 \end{figure*}
 
-\section*{Results}
+\section{Experimental results}
 A Lévy mutation scheme offers a compromise between exploration at different scales (mostly local search combined with rare big jumps). Such a scheme significantly improves the number of evaluations needed to hit the target structure, while better avoiding getting trapped in local optima. We first compared the performance of \texttt{aRNAque} using Lévy mutations to the previous version with local mutations (binomial number of point-mutations with $\mu \approx \frac{1}{L}$). Secondly, we compared \texttt{aRNAque} to the existing pseudoknotted RNA inverse folding tool \texttt{antaRNA} using two folding tools: \texttt{HotKnots} and \texttt{IPknot}. We used the \texttt{PseudoBase++} dataset for both benchmarks. 
 
 
-\subsection*{Performance on \texttt{PseudoBase++}: Levy mutation \emph{vs.} Local mutation}
+\subsection{Performance on \texttt{PseudoBase++}: Levy mutation \emph{vs.} Local mutation}
 Figure \ref{Fig:OP_vs_aRNAque} shows box plots for the base pair distance (Hamming distance) and the number of generations for increasing target lengths under our two mutation schemes: binomial at low mutation rate (or one point mutation) and the Lévy mutation. For each pseudoknotted RNA target structure in the \texttt{PseudoBase++} dataset, we designed $20$ sequences.  The results show that using the Lévy mutation instead of a local mutation scheme can significantly increase the performance of \texttt{aRNAque}.  The gain was less significant in terms of designed sequences quality  (base pair distance distributions, with a $t$-value $\approx -1.04$ and $p$-value $\approx 0.16$) but more significant in terms of the average minimum number of generations needed for successful matches to target structures (with a $t$-value $\approx -3.6$ and $p$-value $\approx 0.0004$). This result demonstrates a substantial gain in computational time when using a Lévy mutation scheme instead of a purely local mutation.
 
-\subsection*{Performance on \texttt{PseudoBase++}: \texttt{aRNAque} \emph{vs.} \texttt{antaRNA}}
+\subsection{Performance on \texttt{PseudoBase++}: \texttt{aRNAque} \emph{vs.} \texttt{antaRNA}}
 
 We also compared the sequences designed using \texttt{aRNAque} (with the Lévy mutation scheme) to those produced by \texttt{antaRNA}. Figures \ref{Fig:antaRNA_vs_aRNAque}A and \ref{Fig:antaRNA_vs_aRNAque}C show the base pair distance distribution for each category of pseudoknotted target structure and the mean of the base pair distance plotted against the length of the target secondary structures. For \texttt{antaRNA}, and when using \texttt{IPknot} as a folding tool, finding sequences that fold into the target becomes increasingly difficult with pseudoknot complexity (median base-pair distance distribution increases). On the other hand, \texttt{aRNAque}’s performance improves as pseudoknot complexity increases (e.g. the mean base-distance decreases with the pseudoknot complexity). In sum, as target length increases, the performance of \texttt{antaRNA} (local search) is considerably degraded , while \texttt{aRNAque} (Lévy flight search) stays almost constant.
 
@@ -179,7 +178,7 @@ We also compared the sequences designed using \texttt{aRNAque} (with the Lévy m
 A second benchmark using \texttt{HotKnots} as a folding tool was performed on the same dataset. For both \texttt{aRNAque} and \texttt{antaRNA}, the more complex the pseudoknot motifs, the worse is the tool performance (median of the base-pair distance distribution increases). Figures \ref{Fig:antaRNA_vs_aRNAque}B and \ref{Fig:antaRNA_vs_aRNAque}D show the base pair distance distributions with respect to the pseudoknot motifs for both \texttt{aRNAque} and \texttt{antaRNA}. Even though both performances degrade as target length increases, \texttt{aRNAque} (Lévy flight evolutionary search) performance remains almost constant for all the target lengths greater than $60$.
 
 
-\subsection*{Performance on \texttt{Eterna100} dataset}
+\subsection{Performance on \texttt{Eterna100} dataset}
 
 Finally, we performed a third benchmark on the \texttt{Eterna100} datasets. First, on the \texttt{Eterna100-V1} dataset, the Lévy flight version of \texttt{aRNAque} successfully designed $89\%$ of the targets and the one-point mutation (local mutation) version achieved $91\%$ of success. Combining the two datasets, \texttt{aRNAque} solved in total $92\%$ of the targets of \texttt{Eterna100-V1} (see also \cite{merleau2021simple}). When analysing the performance of Lévy flight for low and high base pair densities separately, the median number of generations of high base pair density targets was lower than the one with low base-pair density ($8$ generations for high density and $18$ for the low base pairs density targets). The same observation was drawn for the success rate. For the low base-pair density targets, the Lévy flight achieved $87\%$ ($49/56$) of success whereas, for the high base-pair density, it achieved $91\%$ ($40/44$). The same analysis can be done when comparing the one-point mutation results for the high-density targets to the Lévy flight mutation. The median number of generations for the low-density targets when using a one-point mutation operator was $34$ (respectively $24$ for the high base pair density targets) (see Figure \ref{Fig:diversity2}A). Second, a new benchmark was performed on \texttt{Eterna100-V2} with \texttt{aRNAque} achieving a $93\%$ success rate. Compared to recently reported benchmark results \cite{Eterna}, \texttt{aRNAque} achieved the similar performance to \texttt{NEMO} on \texttt{Eterna-V2}: one target was unsolved by all existing tools and one target solved only by \texttt{NEMO} remained unsolved by \texttt{aRNAque}. 
 
@@ -199,7 +198,7 @@ Finally, we performed a third benchmark on the \texttt{Eterna100} datasets. Firs
 %\label{tab:my_label}
 %\end{table}
 
-\section*{Discussion}
+\section{Conclusion}
 
 In this work, we provide an updated version of \texttt{aRNAque} implementing a Lévy flight mutation scheme that supports pseudoknottted RNA secondary structures. The benefit of a Lévy flight over a purely local (binomial with $\mu<<1$ or a single point mutation) mutation search allowed us to explore RNA sequence space at all scales. Such a heavy tailed distribution in the number of point mutations permitted the design of more diversified sequences and reduced the number of evaluations of the evolutionary algorithm implemented in \texttt{aRNAque}. The main advantage of using a Lévy flight over local search is a reduction in the number of generations required to reach a target. This is because the infrequent occurrence of a high number of mutations allow a diverse set of sequences among early generations, without the loss of robust local search. One consequence is a rapid increase in the population mean fitness over time and a rapid convergence to the target of the maximally fit sequence. To illustrate that advantage, we ran \texttt{aRNAque} starting from an initial population of unfolded sequences both for a "one point mutation" and "Lévy mutation".
 
