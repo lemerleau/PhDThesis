@@ -19,6 +19,9 @@
 \PassOptionsToPackage{utf8}{inputenc}
   \usepackage{inputenc}
 
+\PassOptionsToPackage{margin=4pt, justification=justified,singlelinecheck=false, list=false}{subcaption}
+\usepackage{subcaption}
+
 \PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
   \usepackage{fontenc}
   
@@ -132,6 +135,18 @@
 \newcommand{\tableheadline}[1]{\multicolumn{1}{l}{\spacedlowsmallcaps{#1}}}
 \newcommand{\myfloatalign}{\centering} % to be used with each float for alignment
 \usepackage{subfig}
+
+% chemfig is used to draw molecular structures
+\usepackage{chemfig}
+\setchemfig{
+	atom sep=1.8em, 
+	double bond sep=0.3em, 
+	bond offset=0.18em, 
+	bond join=true, 
+	bond style= {line width=0.1em}, 
+	cram width=2.5pt
+}
+\usepackage{float}
 % ****************************************************************************************************
 
 
@@ -241,7 +256,6 @@
 %  \usepackage{nag}
 %\PassOptionsToPackage{warning, all}{onlyamsmath}
 %  \usepackage{onlyamsmath}
-
 
 % ****************************************************************************************************
 % 7. Further adjustments (experimental)

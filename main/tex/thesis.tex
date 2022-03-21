@@ -28,13 +28,15 @@
 % PLEASE SEE ALSO THE AUTHORS' NOTE REGARDING THIS LICENSE
 % IN THE DOCUMENTATION (ClassicThesis.pdf --> Chapter 1 / Chapter01.tex)
 % **************************************************************************************************************
+
 \RequirePackage{silence} % :-\
     \WarningFilter{scrreprt}{Usage of package `titlesec'}
     %\WarningFilter{scrreprt}{Activating an ugly workaround}
     \WarningFilter{titlesec}{Non standard sectioning command detected}
+
 \documentclass[ twoside,openright,titlepage,numbers=noenddot,%1headlines,
                 headinclude,footinclude,cleardoublepage=empty,abstract=on,
-                BCOR=5mm,paper=a4,fontsize=11pt
+                BCOR=5mm,paper=a4,fontsize=12pt
                 ]{scrreprt}
 
 %********************************************************************
@@ -47,6 +49,7 @@
 %*******************************************************
 \addbibresource{Bibliography.bib}
 \addbibresource[label=ownpubs]{AMiede_Publications.bib}
+
 
 %********************************************************************
 % Hyphenation
@@ -86,21 +89,19 @@
 % use \cleardoublepage here to avoid problems with pdfbookmark
 \cleardoublepage
 \include{Chapters/Chapter0}
-\part{Introduction}\label{pt:intro}
 \include{Chapters/Chapter01}
-\include{Chapters/Chapter02}
-\include{Chapters/Chapter03}
-\include{Chapters/Chapter04}
-\include{Chapters/Chapter05}
+%\include{Chapters/Chapter04}
 \cleardoublepage
 \ctparttext{You can put some informational part preamble text here.}
-\part{Results and evaluations}\label{pt:result}
+\part{RNA folding}\label{pt:result}
+\include{Chapters/Chapter02}
 \include{Chapters/Chapter06}
-%\addtocontents{toc}{\protect\clearpage} % <--- just debug stuff, ignore
+\part{RNA Design}
+\include{Chapters/Chapter03}
 \include{Chapters/Chapter07}
 %\include{multiToC} % <--- just debug stuff, ignore for your documents
 % ********************************************************************
-\part{Discussion and Perspectives}\label{discusion}
+\part{Discussion and Perspective}\label{discusion}
 \include{Chapters/Chapter08}
 % Backmatter
 %*******************************************************
