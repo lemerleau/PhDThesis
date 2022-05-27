@@ -19,17 +19,20 @@
 \PassOptionsToPackage{utf8}{inputenc}
   \usepackage{inputenc}
 
-\PassOptionsToPackage{margin=4pt, justification=justified,singlelinecheck=false, list=false}{subcaption}
-\usepackage{subcaption}
+%\PassOptionsToPackage{margin=4pt, justification=justified,singlelinecheck=false, list=false}{subcaption}
+%\usepackage{subcaption}
 
 \PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
   \usepackage{fontenc}
   
 \usepackage[noend]{algpseudocode}
+
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{marginnote}
 \SetKwInput{KwInput}{Input}                % Set the Input
 \SetKwInput{KwOutput}{Output}              % set the Output
-
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
 % ****************************************************************************************************
 % 1. Configure classicthesis for your needs here, e.g., remove "drafting" below
 % in order to deactivate the time-stamp on the pages
@@ -52,19 +55,19 @@
 % ****************************************************************************************************
 % 2. Personal data and user ad-hoc commands (insert your own data here)
 % ****************************************************************************************************
-\newcommand{\myTitle}{A Classic Thesis Style\xspace}
-\newcommand{\mySubtitle}{An Homage to The Elements of Typographic Style\xspace}
-\newcommand{\myDegree}{Doktor-Ingenieur (Dr.-Ing.)\xspace}
-\newcommand{\myName}{André Miede \& Ivo Pletikosić\xspace}
-\newcommand{\myProf}{Put name here\xspace}
-\newcommand{\myOtherProf}{Put name here\xspace}
-\newcommand{\mySupervisor}{Put name here\xspace}
-\newcommand{\myFaculty}{Put data here\xspace}
-\newcommand{\myDepartment}{Put data here\xspace}
-\newcommand{\myUni}{Put data here\xspace}
-\newcommand{\myLocation}{Saarbrücken\xspace}
-\newcommand{\myTime}{June 2018\xspace}
-\newcommand{\myVersion}{\classicthesis}
+\newcommand{\myTitle}{Folding and Inverse forlding of RNA molecules\xspace}
+\newcommand{\mySubtitle}{An heuristic exploration \xspace}
+\newcommand{\myDegree}{Master of science (MSc.)\xspace}
+\newcommand{\myName}{Nono Saha Cyrille Merleau \xspace}
+\newcommand{\myProf}{Dr. Matteo Smerlak\xspace}
+\newcommand{\myOtherProf}{Prof. Peter Stadler \xspace}
+\newcommand{\mySupervisor}{Prof. Peter Stadler\xspace}
+\newcommand{\myFaculty}{Max Planck Institut for mathematics in the science\xspace}
+\newcommand{\myDepartment}{Structure of Evolution\xspace}
+\newcommand{\myUni}{University of Leipzig\xspace}
+\newcommand{\myLocation}{Leipzig\xspace}
+\newcommand{\myTime}{June 2022\xspace}
+\newcommand{\myVersion}{1.0}
 
 % ********************************************************************
 % Setup, finetuning, and useful commands
@@ -173,6 +176,7 @@
   belowcaptionskip=.75\baselineskip
   %frame=L
 }
+
 % ****************************************************************************************************
 
 
@@ -246,6 +250,19 @@
       \providecommand{\subfigureautorefname}{\figureautorefname}%
     }{\relax}
 \makeatother
+
+% ********************************************************************
+% Colors
+% ********************************************************************
+\usepackage[dvipsnames]{xcolor}
+\definecolor{CTsemi}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
+\definecolor{CTcitation}{rgb}{0,0.5,0} % WebGreen
+\definecolor{CTurl}{named}{Maroon} % Maroon
+\definecolor{CTtitle}{named}{Maroon} % Maroon {cmyk}{0, 0.87, 0.68, 0.32}
+\definecolor{CTlink}{named}{RoyalBlue} % RoyalBlue {cmyk}{1, 0.50, 0, 0}
+\definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
+\definecolor{webgreen}{rgb}{0,0.5,0}
+\definecolor{webbrown}{rgb}{0.6,0,0}
 
 
 % ********************************************************************
