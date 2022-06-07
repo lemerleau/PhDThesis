@@ -11,7 +11,7 @@ Our work focuses on nucleic acids. The nucleic acids are made up of small repeti
 \section{Deoxy-nucleic Acids (DNAs)}
 DNAs are macromolecules in the nucleus of eukaryotic cells that allow storing information with the help of nucleotides. Nucleotides consist of a five-carbon sugar, a phosphate group, and a nucleobase. There are four nucleotides in the DNA, distinguished by their nucleobase: A for Adenine, T for Thymine, G for Guanine, and C for Cytosine. Even though the basis blocks constituting the DNA were known for many years, in 1953, James Watson and Francis Crick \cite{watson1953molecular} succeeded in putting them together and suggested a reasonable DNA structure. Their work counted on DNA X-ray diffraction patterns produced by Rosalind Franklin and Maurice Wilking and the data from Erwin Charganp. This work revealed for the first time that the structure of DNA molecules has helical chains, each coiled around the same axis where the chain consists of phosphate dieter groups. The two chains are held together by the purimide and pyrimidine bases; they are joined together in pairs, a single base from the other chain bonded to a single base from the other chain. For the bounding to occur, one of the pairs must be Adenine and thymine or Guanine and Cytosine. The complementary pairing of the bases was then compatible with Chargaff's empirical rules---the amount of pyrimidine nucleotides (T+C) always equals the total number of purine nucleotides (A+G). 
 \graffito{\includegraphics[width=1\linewidth]{../res/images/dna.png}
-		Helical representation of DNA structures.}
+		Helical representation of DNA structures \cite{watson1953molecular}.}
 
 Watson and Crick's elucidation of DNA structure has motivated many other scientists for further investigations and gave rise to modern molecular biology. Later in the same year, Watson and Crick formulated the central dogma of molecular biology that describes the flow of information between DNA, RNA, and proteins. They described the dogma in two steps: from DNA to mRNA through transcription and from mRNAs to proteins through translation. Since this central dogma was proposed, more works have been done to investigate each step. DNAs are transcribed into RNA molecules (messenger RNAs) that contain the same information as the template DNAs. Subsequently, these RNA messengers are translated into proteins according to the genetic code [Miller et al., 2009]. 
 Several works also revealed that DNAs could perform some catalytic reactions. Still, the implication of RNAs in most vital chemical reactions in living systems and its broader range of chemical reactions have motivated many scientists in the last decay to study RNA molecules in more detail as an independent entity. The next section of our work focuses on the biochemistry of RNA structure in general, especially highlighting the biological importance of non-coding RNAs. 
@@ -55,6 +55,9 @@ Another method of SELEX (Systematic Evolution of Ligands by EXponential Enrichme
 				)
 		}	}{Structure of an RNA nucleotide}
 	}
+\vspace*{6cm}\\
+\includegraphics[width=1\linewidth]{../res/images/mfe.png}
+An example of secondary structure with a MFE of $8.5$kcal.$mol^{-1}$ (Produced using \texttt{RNAfold} from the \texttt{ViennaRNA} package)
 }
 RNAs are synthesized from DNAs through a process often termed transcription. The transcription process occurs in the cell's nucleus, and RNA polymerases perform it. Depending on the type of cells, there are many (or one) types of RNA polymerase responsible for synthesizing a specific type of RNA. An RNA polymerase uses the 3’-5' DNA template strand to synthesize a 5’-3' RNA strand with complementary nucleotides during transcription. Similar to DNAs, nucleotides constitute the basis of  RNA molecules, and each nucleotide consists of a phosphate residue, a pentose sugar and a nucleobase. Similar to DNA, we also find four different nucleotides in RNA, distinguished by the nucleobase with only one exception; the Uracil (U), which replaces Thymine in DNA. Figure \ref{fig:nucleotide} depicts the chemical structure of each of the four different nucleobases found in RNA. Chemically, a nucleotide is a nucleoside which has a (mono, di, trip) phosphate residue bound to its 5'-carbon atom. The typical chemical structure of a nucleotide is depicted on the right side of the page. By convention, the carbon atoms of the pentose sugar in nucleotides are numbered with primes.
 
@@ -146,15 +149,13 @@ RNAs are synthesized from DNAs through a process often termed transcription. The
 	
 	\caption{RNA nucleotides. Adenine and guanine belongs into the chemical class of purine molecules and the uracil and thymine in the class of pyrimidines}\label{fig:nucleotide}
 \end{figure}
-\reversemarginpar
-\graffito{\includegraphics[width=1\linewidth]{../res/images/mfe.png}
-	An example of secondary structure with a MFE of $8.5$kcal.$mol^{-1}$ (Produced using \texttt{RNAfold} from the \texttt{ViennaRNA} package).}
 RNA molecules are simply represented as a list of nucleobase characters, and their functions often depend on their complex multidimensional structures. The 5'-3' phosphodiester bonds attach the different nucleotides composing the RNA molecule between ribose to form the primary structure of RNA. The direction of the chain is conventionally designed as 5' to 3' (i.e. from 5'-phosphate of the first sugar backbone to the 3'-hydroxyl of the last sugar in the sequence). The process in which RNA sequences are mapped to their corresponding structures is called RNA folding. In nature, this process is thought to be hierarchical \cite{brion1997hierarchy,tinoco1999rna}. Nucleotides form a chain given their sequence of bases (primary structure); RNAs fold into secondary structures, such as stem-loops and helices, before folding into higher-level (tertiary and quaternary) structures. Our work is restricted here to the secondary level of RNA structures.
 
 In contrast to the RNA primary structure, the secondary structure consists of a list of nucleobase pairs, and the base pairs are formed via hydrogen bonds between the bases. Different interactions are possible between the bases depending on the structure level considered. At the secondary level, we have the Watson-Crick (or canonical) pairs \cite{seeman1976rna, rosenberg1976rna} (A-U and G-C), the Wobble (or non-canonical) (G-U) pairs that occur with reduced frequency. Figure \ref{fig:basepairing} shows the chemical base pairs for the Watson-Crick and Wobble interactions. 
-\reversemarginpar
-\reversemarginpar
-\graffito{\includegraphics[width=1\linewidth]{../res/images/Hpk.png}
+
+\graffito{
+	\vspace*{-3cm}\\
+	\includegraphics[width=1\linewidth]{../res/images/Hpk.png}
 	Hairpin pseudoknot (H-type).
 	
 	\includegraphics[width=1\linewidth]{../res/images/Kissingpk.png}
@@ -165,7 +166,7 @@ In contrast to the RNA primary structure, the secondary structure consists of a 
 
 
 \begin{figure}
-	\hspace*{-4cm}
+	\hspace*{-5cm}
 	\begin{minipage}[b]{0.7 \linewidth}
 		\centering
 		\subfloat[Adenine-Uracil Interaction]{
@@ -188,7 +189,7 @@ In contrast to the RNA primary structure, the secondary structure consists of a 
 	
 		}
 	\end{minipage}%
-	%\hspace*{1cm}
+	%\hspace*{4cm}
 	\begin{minipage}[b]{0.7 \linewidth}
 		\centering
 		\subfloat[Guanine-Cytosine Interaction]{
@@ -295,7 +296,6 @@ Figure \ref{fig:representation} shows some examples of RNA secondary structure r
 
 By definition, $\forall  \mathcal{L} \in \mathbb{L}_{\phi, \mathcal{S}} \Rightarrow \mathcal{L}  = \mathcal{L}_p \cup \mathcal{L}_u$ where $\mathcal{L}_p$ and $\mathcal{L}_u$ denote respectively the set of loop base pairs and the unpaired positions. $\mathcal{L}_p$ contains only one closing loop and the rest are enclosed base pairs. We say $(i,j) \in \mathcal{L}_p$ is a closing pair if and only if $\forall \mathcal{L}_p \ni (i',j') \neq (i,j) \colon i<i'<j'<j$.
 
-\reversemarginpar
 \graffito{\includegraphics[width=1\linewidth]{../res/images/interior.png}
 	An example of closing and enclosed base pairs of an interior loop.
 }
