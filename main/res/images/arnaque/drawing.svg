@@ -1,0 +1,3263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg6841"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)"
+   sodipodi:docname="drawing.svg">
+  <defs
+     id="defs6835">
+    <rect
+       x="71.438679"
+       y="217.44598"
+       width="246.84229"
+       height="16.325315"
+       id="rect8898" />
+    <rect
+       x="355.85336"
+       y="-4.6359665"
+       width="370.76572"
+       height="144.27149"
+       id="rect8854" />
+    <rect
+       x="333.05198"
+       y="13.860664"
+       width="197.56658"
+       height="75.610024"
+       id="rect8848" />
+    <rect
+       x="98.497453"
+       y="11.74701"
+       width="110.44398"
+       height="196.44796"
+       id="rect7534" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5959793"
+     inkscape:cx="513.80198"
+     inkscape:cy="355.35551"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g7530"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="82"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid8954" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata6838">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g7530"
+       transform="matrix(0.8039319,0,0,0.81581367,10.492086,-3.8120576)">
+      <text
+         x="255.93513"
+         y="96.771461"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="13.5547px"
+         fill="#000000"
+         id="text7393-0"
+         transform="scale(0.93473241,1.0698249)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#000000;stroke-width:0.753037">(C) Linear representation</text>
+      <line
+         x1="37.77404"
+         y1="162.60559"
+         x2="44.153633"
+         y2="162.60559"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7141" />
+      <line
+         x1="48.4067"
+         y1="158.57751"
+         x2="48.4067"
+         y2="150.52135"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7143" />
+      <line
+         x1="48.4067"
+         y1="142.46516"
+         x2="48.4067"
+         y2="134.409"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7145" />
+      <line
+         x1="48.4067"
+         y1="126.35282"
+         x2="48.4067"
+         y2="118.29662"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7147" />
+      <line
+         x1="48.4067"
+         y1="110.24046"
+         x2="48.4067"
+         y2="102.18427"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7149" />
+      <line
+         x1="47.479393"
+         y1="94.225014"
+         x2="46.088417"
+         y2="88.328171"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7151" />
+      <line
+         x1="43.351097"
+         y1="80.751862"
+         x2="39.731117"
+         y2="73.461647"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7153" />
+      <line
+         x1="36.111122"
+         y1="66.171425"
+         x2="32.491127"
+         y2="58.881207"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7155" />
+      <line
+         x1="26.930737"
+         y1="53.336407"
+         x2="21.305202"
+         y2="50.486862"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7157" />
+      <line
+         x1="15.712628"
+         y1="44.956589"
+         x2="12.949212"
+         y2="39.510719"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7159" />
+      <line
+         x1="11.883754"
+         y1="31.919819"
+         x2="13.048983"
+         y2="25.979324"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7161" />
+      <line
+         x1="16.921886"
+         y1="19.257313"
+         x2="21.566023"
+         y2="15.114784"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7163" />
+      <line
+         x1="28.882643"
+         y1="11.855868"
+         x2="35.213463"
+         y2="11.110019"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7165" />
+      <line
+         x1="43.150139"
+         y1="12.571901"
+         x2="48.724358"
+         y2="15.510575"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7167" />
+      <line
+         x1="54.218102"
+         y1="21.129074"
+         x2="56.884483"
+         y2="26.618156"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7169" />
+      <line
+         x1="57.815117"
+         y1="34.224945"
+         x2="56.54464"
+         y2="40.146057"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7171" />
+      <line
+         x1="57.507668"
+         y1="47.738571"
+         x2="61.127644"
+         y2="55.028797"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7173" />
+      <line
+         x1="64.74762"
+         y1="62.319016"
+         x2="68.367615"
+         y2="69.60923"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7175" />
+      <line
+         x1="72.783218"
+         y1="76.437981"
+         x2="76.691635"
+         y2="81.213455"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7177" />
+      <line
+         x1="78.369904"
+         y1="88.328255"
+         x2="76.978928"
+         y2="94.225014"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7179" />
+      <line
+         x1="76.051605"
+         y1="102.18427"
+         x2="76.051605"
+         y2="110.24046"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7181" />
+      <line
+         x1="76.051605"
+         y1="118.29662"
+         x2="76.051605"
+         y2="126.35282"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7183" />
+      <line
+         x1="76.051605"
+         y1="134.409"
+         x2="76.051605"
+         y2="142.46516"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7185" />
+      <line
+         x1="76.051605"
+         y1="150.52135"
+         x2="76.051605"
+         y2="158.57751"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7187" />
+      <line
+         x1="80.304657"
+         y1="162.60559"
+         x2="86.684265"
+         y2="162.60559"
+         stroke="#595959"
+         stroke-width="0.82781"
+         id="line7189" />
+      <line
+         x1="52.659767"
+         y1="161.59859"
+         x2="71.798538"
+         y2="161.59859"
+         stroke="#0000ff"
+         stroke-width="0.82781"
+         id="line7191" />
+      <line
+         x1="52.659767"
+         y1="146.49326"
+         x2="71.798538"
+         y2="146.49326"
+         stroke="#0000ff"
+         stroke-width="0.82781"
+         id="line7195" />
+      <line
+         x1="52.659767"
+         y1="129.37389"
+         x2="71.798538"
+         y2="129.37389"
+         stroke="#0000ff"
+         stroke-width="0.82781"
+         id="line7201" />
+      <line
+         x1="52.659767"
+         y1="114.26855"
+         x2="71.798538"
+         y2="114.26855"
+         stroke="#0000ff"
+         stroke-width="0.82781"
+         id="line7205" />
+      <line
+         x1="52.659767"
+         y1="97.149178"
+         x2="71.798538"
+         y2="97.149178"
+         stroke="#0000ff"
+         stroke-width="0.82781"
+         id="line7207" />
+      <line
+         x1="48.557304"
+         y1="81.771454"
+         x2="65.876419"
+         y2="74.05732"
+         stroke="#0000ff"
+         stroke-width="0.82781"
+         id="line7211" />
+      <line
+         x1="41.769814"
+         y1="68.102287"
+         x2="59.088951"
+         y2="60.388168"
+         stroke="#0000ff"
+         stroke-width="0.82781"
+         id="line7215" />
+      <line
+         x1="34.077324"
+         y1="52.610569"
+         x2="51.396461"
+         y2="44.896431"
+         stroke="#0000ff"
+         stroke-width="0.82781"
+         id="line7217" />
+      <ellipse
+         cx="33.520973"
+         cy="162.60559"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7221"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="33.520973"
+         cy="162.60559"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7223"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="32.622414"
+         y="169.56828"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7225"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">C</text>
+      <ellipse
+         cx="48.4067"
+         cy="162.60559"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7227"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="48.4067"
+         cy="162.60559"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7229"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="47.109077"
+         y="169.56828"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7231"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">G</text>
+      <ellipse
+         cx="48.4067"
+         cy="146.49326"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7233"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="48.4067"
+         cy="146.49326"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7235"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="47.109077"
+         y="153.01207"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7237"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">G</text>
+      <ellipse
+         cx="48.4067"
+         cy="130.38091"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7239"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="48.4067"
+         cy="130.38091"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7241"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="47.109077"
+         y="136.45587"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7243"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">C</text>
+      <ellipse
+         cx="48.4067"
+         cy="114.26855"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7245"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="48.4067"
+         cy="114.26855"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7247"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="47.109077"
+         y="119.89967"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7249"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">A</text>
+      <ellipse
+         cx="48.4067"
+         cy="98.156219"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7251"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="48.4067"
+         cy="98.156219"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7253"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="47.109077"
+         y="103.34353"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7255"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">C</text>
+      <ellipse
+         cx="45.161095"
+         cy="84.396988"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7257"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="45.161095"
+         cy="84.396988"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7259"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="43.950478"
+         y="89.205269"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7261"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">G</text>
+      <ellipse
+         cx="37.92112"
+         cy="69.816536"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7263"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="37.92112"
+         cy="69.816536"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7265"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="36.904594"
+         y="74.223183"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7267"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">A</text>
+      <ellipse
+         cx="30.681124"
+         cy="55.236103"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7269"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="30.681124"
+         cy="55.236103"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7271"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="29.858704"
+         y="59.241104"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7273"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">C</text>
+      <ellipse
+         cx="17.554869"
+         cy="48.587173"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7275"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="17.554869"
+         cy="48.587173"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7277"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="17.084288"
+         y="52.409012"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7279"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">A</text>
+      <ellipse
+         cx="11.106958"
+         cy="35.880146"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7281"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="11.106958"
+         cy="35.880146"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7283"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="10.809189"
+         y="39.351959"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7285"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">C</text>
+      <ellipse
+         cx="13.825821"
+         cy="22.018997"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7287"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="13.825821"
+         cy="22.018997"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7289"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="13.455169"
+         y="25.10898"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7291"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">U</text>
+      <ellipse
+         cx="24.662106"
+         cy="12.353104"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7293"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="24.662106"
+         cy="12.353104"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7295"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="24.00106"
+         y="15.176817"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7297"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">A</text>
+      <ellipse
+         cx="39.433998"
+         cy="10.612788"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7299"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="39.433998"
+         cy="10.612788"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7301"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="38.376915"
+         y="13.388563"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7303"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">G</text>
+      <ellipse
+         cx="52.440514"
+         cy="17.46969"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7305"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="52.440514"
+         cy="17.46969"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7307"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="51.034737"
+         y="20.434351"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7309"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">C</text>
+      <ellipse
+         cx="58.662086"
+         cy="30.277542"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7311"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="58.662086"
+         cy="30.277542"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7313"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="57.089531"
+         y="33.59502"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7315"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">A</text>
+      <ellipse
+         cx="55.69767"
+         cy="44.09346"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7317"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="55.69767"
+         cy="44.09346"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7319"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="54.204582"
+         y="47.791527"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7321"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">G</text>
+      <ellipse
+         cx="62.93763"
+         cy="58.673908"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7323"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="62.93763"
+         cy="58.673908"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7325"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="61.250481"
+         y="62.773605"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7327"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">U</text>
+      <ellipse
+         cx="70.177612"
+         cy="73.254341"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7329"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="70.177612"
+         cy="73.254341"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7331"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="68.296379"
+         y="77.755699"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7333"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#2b0000;stroke-width:0.82781">C</text>
+      <ellipse
+         cx="79.297226"
+         cy="84.397095"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7335"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="79.297226"
+         cy="84.397095"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7337"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="77.171501"
+         y="89.205414"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7339"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">A</text>
+      <ellipse
+         cx="76.051605"
+         cy="98.156219"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7341"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="76.051605"
+         cy="98.156219"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7343"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="74.012886"
+         y="103.34353"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7345"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">G</text>
+      <ellipse
+         cx="76.051605"
+         cy="114.26855"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7347"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="76.051605"
+         cy="114.26855"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7349"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="74.012886"
+         y="119.89967"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7351"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">U</text>
+      <ellipse
+         cx="76.051605"
+         cy="130.38091"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7353"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="76.051605"
+         cy="130.38091"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7355"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="74.012886"
+         y="136.45587"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7357"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">G</text>
+      <ellipse
+         cx="76.051605"
+         cy="146.49326"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7359"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="76.051605"
+         cy="146.49326"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7361"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="74.012886"
+         y="153.01207"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7363"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">U</text>
+      <ellipse
+         cx="76.051605"
+         cy="162.60559"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7365"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="76.051605"
+         cy="162.60559"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7367"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="74.012886"
+         y="169.56828"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7369"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">C</text>
+      <ellipse
+         cx="90.937332"
+         cy="162.60559"
+         stroke="none"
+         stroke-width="0.82781"
+         fill="#f0f0f0"
+         id="circle7371"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <ellipse
+         cx="90.937332"
+         cy="162.60559"
+         stroke="#595959"
+         stroke-width="0.82781"
+         fill="none"
+         id="circle7373"
+         rx="4.2530646"
+         ry="4.0280871" />
+      <text
+         x="88.49955"
+         y="169.56828"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#000000"
+         id="text7375"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">A</text>
+      <line
+         x1="33.520973"
+         y1="168.64772"
+         x2="33.520973"
+         y2="172.67581"
+         stroke="#3f3f3f"
+         stroke-width="0.82781"
+         id="line7377" />
+      <text
+         x="32.622414"
+         y="190.78999"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#3f3f3f"
+         id="text7379"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.30124px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">1</text>
+      <line
+         x1="12.947649"
+         y1="52.766514"
+         x2="9.8761396"
+         y2="55.552738"
+         stroke="#3f3f3f"
+         stroke-width="0.82781"
+         id="line7381" />
+      <text
+         x="5.1276379"
+         y="63.860916"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#3f3f3f"
+         id="text7383"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">10</text>
+      <line
+         x1="85.523346"
+         y1="83.079712"
+         x2="89.674088"
+         y2="82.201454"
+         stroke="#3f3f3f"
+         stroke-width="0.82781"
+         id="line7385" />
+      <text
+         x="93.329384"
+         y="85.595604"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#3f3f3f"
+         id="text7387"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">20</text>
+      <line
+         x1="90.937332"
+         y1="168.64772"
+         x2="90.937332"
+         y2="172.67581"
+         stroke="#3f3f3f"
+         stroke-width="0.82781"
+         id="line7389" />
+      <text
+         x="88.49955"
+         y="190.78999"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="5.64778px"
+         fill="#3f3f3f"
+         id="text7391"
+         transform="scale(1.0275466,0.97319187)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.30124px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.82781">26</text>
+      <text
+         x="70.194473"
+         y="181.0988"
+         text-anchor="middle"
+         font-family="Verdana"
+         font-size="13.5547px"
+         fill="#000000"
+         id="text7393"
+         transform="scale(0.93473241,1.0698249)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.53412px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#000000;stroke-width:0.753037">(B) Planar representation</text>
+      <text
+         xml:space="preserve"
+         id="text7532"
+         style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:13.06824761999999929px;white-space:pre;shape-inside:url(#rect7534);" />
+      <g
+         id="g8190"
+         transform="matrix(0.9432559,0,0,0.86358432,-64.090755,-197.32257)"
+         inkscape:transform-center-x="15.515643"
+         inkscape:transform-center-y="-0.75971929">
+        <line
+           x1="310.10266"
+           y1="491.14273"
+           x2="305.24579"
+           y2="489.48056"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7822" />
+        <line
+           x1="295.80612"
+           y1="485.02289"
+           x2="291.48785"
+           y2="482.35236"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7824" />
+        <line
+           x1="283.39594"
+           y1="475.96793"
+           x2="279.84906"
+           y2="472.43298"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7826" />
+        <line
+           x1="273.54114"
+           y1="464.46597"
+           x2="270.95688"
+           y2="460.2572"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7828" />
+        <line
+           x1="266.77298"
+           y1="451.13712"
+           x2="265.29065"
+           y2="446.48138"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7830" />
+        <line
+           x1="263.45636"
+           y1="436.69989"
+           x2="263.15582"
+           y2="431.84824"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7832" />
+        <line
+           x1="263.77002"
+           y1="421.93265"
+           x2="264.66751"
+           y2="417.14661"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7834" />
+        <line
+           x1="267.69711"
+           y1="407.63147"
+           x2="269.74426"
+           y2="403.16904"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7836" />
+        <line
+           x1="275.02588"
+           y1="394.56735"
+           x2="278.11234"
+           y2="390.66913"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7838" />
+        <line
+           x1="285.36124"
+           y1="383.44455"
+           x2="289.32062"
+           y2="380.32068"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7840" />
+        <line
+           x1="298.14603"
+           y1="374.86276"
+           x2="302.76483"
+           y2="372.68164"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7842" />
+        <line
+           x1="312.69104"
+           y1="369.28455"
+           x2="317.72028"
+           y2="368.16379"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7844" />
+        <line
+           x1="328.2121"
+           y1="367.01071"
+           x2="333.38065"
+           y2="367.01071"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7846" />
+        <line
+           x1="343.87244"
+           y1="368.16379"
+           x2="348.9017"
+           y2="369.28455"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7848" />
+        <line
+           x1="358.82791"
+           y1="372.68164"
+           x2="363.44666"
+           y2="374.86276"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7850" />
+        <line
+           x1="372.27213"
+           y1="380.32068"
+           x2="376.23148"
+           y2="383.44455"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7852" />
+        <line
+           x1="383.48041"
+           y1="390.66913"
+           x2="386.56686"
+           y2="394.56735"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7854" />
+        <line
+           x1="391.84848"
+           y1="403.16904"
+           x2="393.89563"
+           y2="407.63147"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7856" />
+        <line
+           x1="396.92517"
+           y1="417.14661"
+           x2="397.82272"
+           y2="421.93265"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7858" />
+        <line
+           x1="398.43692"
+           y1="431.84824"
+           x2="398.13638"
+           y2="436.69989"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7860" />
+        <line
+           x1="396.30209"
+           y1="446.48138"
+           x2="394.81973"
+           y2="451.13712"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7862" />
+        <line
+           x1="390.63586"
+           y1="460.2572"
+           x2="388.05157"
+           y2="464.46597"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7864" />
+        <line
+           x1="381.74365"
+           y1="472.43298"
+           x2="378.19675"
+           y2="475.96793"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7866" />
+        <line
+           x1="370.10486"
+           y1="482.35236"
+           x2="365.78656"
+           y2="485.02289"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7868" />
+        <line
+           x1="356.34695"
+           y1="489.48056"
+           x2="351.49008"
+           y2="491.14273"
+           stroke="#595959"
+           stroke-width="1.03127"
+           id="line7870" />
+        <line
+           x1="305.56647"
+           y1="487.77042"
+           x2="356.02625"
+           y2="487.77042"
+           stroke="#0000ff"
+           stroke-width="1.03127"
+           id="line7872" />
+        <line
+           x1="292.36267"
+           y1="479.6048"
+           x2="369.23007"
+           y2="479.6048"
+           stroke="#0000ff"
+           stroke-width="1.03127"
+           id="line7874" />
+        <line
+           x1="281.51749"
+           y1="468.79611"
+           x2="380.07523"
+           y2="468.79611"
+           stroke="#0000ff"
+           stroke-width="1.03127"
+           id="line7876" />
+        <line
+           x1="273.61566"
+           y1="455.92706"
+           x2="387.97708"
+           y2="455.92706"
+           stroke="#0000ff"
+           stroke-width="1.03127"
+           id="line7878" />
+        <line
+           x1="269.0831"
+           y1="441.69144"
+           x2="392.50964"
+           y2="441.69144"
+           stroke="#0000ff"
+           stroke-width="1.03127"
+           id="line7880" />
+        <line
+           x1="268.12827"
+           y1="426.27621"
+           x2="390.72021"
+           y2="412.80301"
+           stroke="#0000ff"
+           stroke-width="1.03127"
+           id="line7882" />
+        <line
+           x1="270.87253"
+           y1="411.64209"
+           x2="384.46066"
+           y2="399.15842"
+           stroke="#0000ff"
+           stroke-width="1.03127"
+           id="line7884" />
+        <line
+           x1="277.13205"
+           y1="397.9975"
+           x2="375.02335"
+           y2="387.23895"
+           stroke="#0000ff"
+           stroke-width="1.03127"
+           id="line7886" />
+        <ellipse
+           cx="315.09952"
+           cy="492.85281"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7888"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="315.09952"
+           cy="492.85281"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7890"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="305.54568"
+           y="511.35721"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7892"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">C</text>
+        <ellipse
+           cx="300.24887"
+           cy="487.77042"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7894"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="300.24887"
+           cy="487.77042"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7896"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="291.14532"
+           y="506.11588"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7898"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">G</text>
+        <ellipse
+           cx="287.0451"
+           cy="479.6048"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7900"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="287.0451"
+           cy="479.6048"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7902"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="278.34186"
+           y="497.69495"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7904"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">G</text>
+        <ellipse
+           cx="276.19992"
+           cy="468.79611"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7906"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="276.19992"
+           cy="468.79611"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7908"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="267.82553"
+           y="486.54828"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7910"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">C</text>
+        <ellipse
+           cx="268.2981"
+           cy="455.92706"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7912"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="268.2981"
+           cy="455.92706"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7914"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="260.16327"
+           y="473.27686"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7916"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">A</text>
+        <ellipse
+           cx="263.76553"
+           cy="441.69144"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7918"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="263.76553"
+           cy="441.69144"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7920"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="255.76814"
+           y="458.5961"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7922"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">C</text>
+        <ellipse
+           cx="262.84665"
+           cy="426.85669"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7924"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="262.84665"
+           cy="426.85669"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7926"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="254.87711"
+           y="443.29752"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7928"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">G</text>
+        <ellipse
+           cx="265.59091"
+           cy="412.22256"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7930"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="265.59091"
+           cy="412.22256"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7932"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="257.53818"
+           y="428.20581"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7934"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">A</text>
+        <ellipse
+           cx="271.85046"
+           cy="398.57797"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7936"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="271.85046"
+           cy="398.57797"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7938"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="263.60794"
+           y="414.13455"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7940"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">C</text>
+        <ellipse
+           cx="281.28775"
+           cy="386.65851"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7942"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="281.28775"
+           cy="386.65851"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7944"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="272.75906"
+           y="401.84241"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7946"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">A</text>
+        <ellipse
+           cx="293.3941"
+           cy="377.10675"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7948"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="293.3941"
+           cy="377.10675"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7950"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="284.49838"
+           y="391.99197"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7952"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">C</text>
+        <ellipse
+           cx="307.51678"
+           cy="370.43762"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7954"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="307.51678"
+           cy="370.43762"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7956"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="298.19287"
+           y="385.11432"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7958"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">U</text>
+        <ellipse
+           cx="322.8945"
+           cy="367.01071"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7960"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="322.8945"
+           cy="367.01071"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7962"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="313.10434"
+           y="381.58026"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7964"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">A</text>
+        <ellipse
+           cx="338.69821"
+           cy="367.01071"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7966"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="338.69821"
+           cy="367.01071"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7968"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="328.42886"
+           y="381.58026"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7970"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">G</text>
+        <ellipse
+           cx="354.07593"
+           cy="370.43762"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7972"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="354.07593"
+           cy="370.43762"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7974"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="343.34033"
+           y="385.11432"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7976"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">C</text>
+        <ellipse
+           cx="368.19864"
+           cy="377.10675"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7978"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="368.19864"
+           cy="377.10675"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7980"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="357.03482"
+           y="391.99197"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7982"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">A</text>
+        <ellipse
+           cx="380.30496"
+           cy="386.65851"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7984"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="380.30496"
+           cy="386.65851"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7986"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="368.77408"
+           y="401.84241"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7988"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">G</text>
+        <ellipse
+           cx="389.74228"
+           cy="398.57797"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7990"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="389.74228"
+           cy="398.57797"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7992"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="377.92526"
+           y="414.13455"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text7994"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">U</text>
+        <ellipse
+           cx="396.00183"
+           cy="412.22256"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle7996"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="396.00183"
+           cy="412.22256"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle7998"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="383.99503"
+           y="428.20581"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text8000"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">C</text>
+        <ellipse
+           cx="398.74609"
+           cy="426.85669"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle8002"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="398.74609"
+           cy="426.85669"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle8004"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="386.65607"
+           y="443.29752"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text8006"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">A</text>
+        <ellipse
+           cx="397.82721"
+           cy="441.69144"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle8008"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="397.82721"
+           cy="441.69144"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle8010"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="385.76505"
+           y="458.5961"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text8012"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">G</text>
+        <ellipse
+           cx="393.29465"
+           cy="455.92706"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle8014"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="393.29465"
+           cy="455.92706"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle8016"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="381.3699"
+           y="473.27686"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text8018"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">U</text>
+        <ellipse
+           cx="385.39279"
+           cy="468.79611"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle8020"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="385.39279"
+           cy="468.79611"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle8022"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="373.70767"
+           y="486.54828"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text8024"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">G</text>
+        <ellipse
+           cx="374.54764"
+           cy="479.6048"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle8026"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="374.54764"
+           cy="479.6048"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle8028"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="363.19131"
+           y="497.69495"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text8030"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">U</text>
+        <ellipse
+           cx="361.34381"
+           cy="487.77042"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle8032"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="361.34381"
+           cy="487.77042"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle8034"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="350.38785"
+           y="506.11588"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text8036"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">C</text>
+        <ellipse
+           cx="346.49319"
+           cy="492.85281"
+           stroke="none"
+           stroke-width="1.03127"
+           fill="#f0f0f0"
+           id="circle8038"
+           rx="5.3175697"
+           ry="5" />
+        <ellipse
+           cx="346.49319"
+           cy="492.85281"
+           stroke="#595959"
+           stroke-width="1.03127"
+           fill="none"
+           id="circle8040"
+           rx="5.3175697"
+           ry="5" />
+        <text
+           x="335.98752"
+           y="511.35721"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#000000"
+           id="text8042"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">A</text>
+        <line
+           x1="313.26004"
+           y1="500.15067"
+           x2="312.03375"
+           y2="505.0159"
+           stroke="#3f3f3f"
+           stroke-width="1.03127"
+           id="line8044" />
+        <text
+           x="300.78912"
+           y="531.42664"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#3f3f3f"
+           id="text8046"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">1</text>
+        <line
+           x1="275.48596"
+           y1="381.51169"
+           x2="271.6181"
+           y2="378.08047"
+           stroke="#3f3f3f"
+           stroke-width="1.03127"
+           id="line8048" />
+        <text
+           x="257.75674"
+           y="387.68839"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#3f3f3f"
+           id="text8050"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">10</text>
+        <line
+           x1="406.70895"
+           y1="426.42059"
+           x2="412.01752"
+           y2="426.12988"
+           stroke="#3f3f3f"
+           stroke-width="1.03127"
+           id="line8052" />
+        <text
+           x="407.24655"
+           y="442.09824"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#3f3f3f"
+           id="text8054"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">20</text>
+        <line
+           x1="348.33267"
+           y1="500.15067"
+           x2="349.55899"
+           y2="505.0159"
+           stroke="#3f3f3f"
+           stroke-width="1.03127"
+           id="line8056" />
+        <text
+           x="340.74402"
+           y="531.42664"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="7.5px"
+           fill="#3f3f3f"
+           id="text8058"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.62241px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967992)">26</text>
+        <text
+           x="322.26611"
+           y="540.08563"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="18px"
+           fill="#000000"
+           id="text8060"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.37719px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#000000;stroke-width:1.03127"
+           transform="scale(1.0312681,0.96967995)">(A) Circular representation</text>
+        <g
+           id="g8844"
+           transform="matrix(0.71510976,0.0010943,0.00642344,0.81108061,186.25972,232.06501)">
+          <line
+             x1="15"
+             y1="105.1"
+             x2="18.4"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8476" />
+          <line
+             x1="28.4"
+             y1="105.1"
+             x2="31.799999"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8478" />
+          <line
+             x1="41.799999"
+             y1="105.1"
+             x2="45.200001"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8480" />
+          <line
+             x1="55.200001"
+             y1="105.1"
+             x2="58.599998"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8482" />
+          <line
+             x1="68.599998"
+             y1="105.1"
+             x2="72"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8484" />
+          <line
+             x1="82"
+             y1="105.1"
+             x2="85.400002"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8486" />
+          <line
+             x1="95.400002"
+             y1="105.1"
+             x2="98.800003"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8488" />
+          <line
+             x1="108.8"
+             y1="105.1"
+             x2="112.2"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8490" />
+          <line
+             x1="122.2"
+             y1="105.1"
+             x2="125.6"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8492" />
+          <line
+             x1="135.60001"
+             y1="105.1"
+             x2="139"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8494" />
+          <line
+             x1="149"
+             y1="105.1"
+             x2="152.39999"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8496" />
+          <line
+             x1="162.39999"
+             y1="105.1"
+             x2="165.8"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8498" />
+          <line
+             x1="175.8"
+             y1="105.1"
+             x2="179.2"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8500" />
+          <line
+             x1="189.2"
+             y1="105.1"
+             x2="192.60001"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8502" />
+          <line
+             x1="202.60001"
+             y1="105.1"
+             x2="206"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8504" />
+          <line
+             x1="216"
+             y1="105.1"
+             x2="219.39999"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8506" />
+          <line
+             x1="229.39999"
+             y1="105.1"
+             x2="232.8"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8508" />
+          <line
+             x1="242.8"
+             y1="105.1"
+             x2="246.2"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8510" />
+          <line
+             x1="256.20001"
+             y1="105.1"
+             x2="259.60001"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8512" />
+          <line
+             x1="269.60001"
+             y1="105.1"
+             x2="273"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8514" />
+          <line
+             x1="283"
+             y1="105.1"
+             x2="286.39999"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8516" />
+          <line
+             x1="296.39999"
+             y1="105.1"
+             x2="299.79999"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8518" />
+          <line
+             x1="309.79999"
+             y1="105.1"
+             x2="313.20001"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8520" />
+          <line
+             x1="323.20001"
+             y1="105.1"
+             x2="326.60001"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8522" />
+          <line
+             x1="336.60001"
+             y1="105.1"
+             x2="340"
+             y2="105.1"
+             stroke="#595959"
+             stroke-width="1"
+             id="line8524" />
+          <path
+             d="m 23.4,105.1 a 154,100.1 0 0 1 308,0"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             id="path8526" />
+          <path
+             d="m 36.8,105.1 a 140.75,91.4875 0 0 1 281.5,0"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             id="path8528" />
+          <path
+             d="m 50.2,105.1 a 127.25,82.7125 0 0 1 254.5,0"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             id="path8530" />
+          <path
+             d="m 63.6,105.1 a 114,74.1 0 0 1 228,0"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             id="path8532" />
+          <path
+             d="m 77,105.1 a 100.5,65.325 0 0 1 201,0"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             id="path8534" />
+          <path
+             d="m 90.4,105.1 a 80.5,52.325 0 0 1 161,0"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             id="path8536" />
+          <path
+             d="m 103.8,105.1 a 67,43.55 0 0 1 134,0"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             id="path8538" />
+          <path
+             d="m 117.2,105.1 a 53.5,34.775 0 0 1 107,0"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             id="path8540" />
+          <circle
+             cx="10"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8542" />
+          <circle
+             cx="10"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8544" />
+          <text
+             x="10"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8546"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">C</text>
+          <circle
+             cx="23.4"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8548" />
+          <circle
+             cx="23.4"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8550" />
+          <text
+             x="23.4"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8552"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">G</text>
+          <circle
+             cx="36.799999"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8554" />
+          <circle
+             cx="36.799999"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8556" />
+          <text
+             x="36.799999"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8558"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">G</text>
+          <circle
+             cx="50.200001"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8560" />
+          <circle
+             cx="50.200001"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8562" />
+          <text
+             x="50.200001"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8564"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">C</text>
+          <circle
+             cx="63.599998"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8566" />
+          <circle
+             cx="63.599998"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8568" />
+          <text
+             x="63.599998"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8570"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">A</text>
+          <circle
+             cx="77"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8572" />
+          <circle
+             cx="77"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8574" />
+          <text
+             x="77"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8576"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">C</text>
+          <circle
+             cx="90.400002"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8578" />
+          <circle
+             cx="90.400002"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8580" />
+          <text
+             x="90.400002"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8582"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">G</text>
+          <circle
+             cx="103.8"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8584" />
+          <circle
+             cx="103.8"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8586" />
+          <text
+             x="103.8"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8588"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">A</text>
+          <circle
+             cx="117.2"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8590" />
+          <circle
+             cx="117.2"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8592" />
+          <text
+             x="117.2"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8594"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">C</text>
+          <circle
+             cx="130.60001"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8596" />
+          <circle
+             cx="130.60001"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8598" />
+          <text
+             x="130.60001"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8600"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">A</text>
+          <circle
+             cx="144"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8602" />
+          <circle
+             cx="144"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8604" />
+          <text
+             x="144"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8606"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">C</text>
+          <circle
+             cx="157.39999"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8608" />
+          <circle
+             cx="157.39999"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8610" />
+          <text
+             x="157.39999"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8612"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">U</text>
+          <circle
+             cx="170.8"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8614" />
+          <circle
+             cx="170.8"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8616" />
+          <text
+             x="170.8"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8618"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">A</text>
+          <circle
+             cx="184.2"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8620" />
+          <circle
+             cx="184.2"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8622" />
+          <text
+             x="184.2"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8624"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">G</text>
+          <circle
+             cx="197.60001"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8626" />
+          <circle
+             cx="197.60001"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8628" />
+          <text
+             x="197.60001"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8630"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">C</text>
+          <circle
+             cx="211"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8632" />
+          <circle
+             cx="211"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8634" />
+          <text
+             x="211"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8636"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">A</text>
+          <circle
+             cx="224.39999"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8638" />
+          <circle
+             cx="224.39999"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8640" />
+          <text
+             x="224.39999"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8642"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">G</text>
+          <circle
+             cx="237.8"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8644" />
+          <circle
+             cx="237.8"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8646" />
+          <text
+             x="237.8"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8648"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">U</text>
+          <circle
+             cx="251.2"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8650" />
+          <circle
+             cx="251.2"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8652" />
+          <text
+             x="251.2"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8654"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">C</text>
+          <circle
+             cx="264.60001"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8656" />
+          <circle
+             cx="264.60001"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8658" />
+          <text
+             x="264.60001"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8660"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">A</text>
+          <circle
+             cx="278"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8662" />
+          <circle
+             cx="278"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8664" />
+          <text
+             x="278"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8666"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">G</text>
+          <circle
+             cx="291.39999"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8668" />
+          <circle
+             cx="291.39999"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8670" />
+          <text
+             x="291.39999"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8672"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">U</text>
+          <circle
+             cx="304.79999"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8674" />
+          <circle
+             cx="304.79999"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8676" />
+          <text
+             x="304.79999"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8678"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">G</text>
+          <circle
+             cx="318.20001"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8680" />
+          <circle
+             cx="318.20001"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8682" />
+          <text
+             x="318.20001"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8684"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">U</text>
+          <circle
+             cx="331.60001"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8686" />
+          <circle
+             cx="331.60001"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8688" />
+          <text
+             x="331.60001"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8690"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">C</text>
+          <circle
+             cx="345"
+             cy="105.1"
+             r="5"
+             stroke="none"
+             stroke-width="1"
+             fill="#f0f0f0"
+             id="circle8692" />
+          <circle
+             cx="345"
+             cy="105.1"
+             r="5"
+             stroke="#595959"
+             stroke-width="1"
+             fill="none"
+             id="circle8694" />
+          <text
+             x="345"
+             y="108.1"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#000000"
+             id="text8696"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">A</text>
+          <line
+             x1="10"
+             y1="112.6"
+             x2="10"
+             y2="117.6"
+             stroke="#3f3f3f"
+             stroke-width="1"
+             id="line8698" />
+          <text
+             x="10"
+             y="128.10001"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#3f3f3f"
+             id="text8700"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">1</text>
+          <line
+             x1="130.60001"
+             y1="112.6"
+             x2="130.60001"
+             y2="117.6"
+             stroke="#3f3f3f"
+             stroke-width="1"
+             id="line8702" />
+          <text
+             x="130.60001"
+             y="128.10001"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#3f3f3f"
+             id="text8704"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">10</text>
+          <line
+             x1="264.60001"
+             y1="112.6"
+             x2="264.60001"
+             y2="117.6"
+             stroke="#3f3f3f"
+             stroke-width="1"
+             id="line8706" />
+          <text
+             x="264.60001"
+             y="128.10001"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#3f3f3f"
+             id="text8708"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">20</text>
+          <line
+             x1="345"
+             y1="112.6"
+             x2="345"
+             y2="117.6"
+             stroke="#3f3f3f"
+             stroke-width="1"
+             id="line8710" />
+          <text
+             x="345"
+             y="128.10001"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="7.5px"
+             fill="#3f3f3f"
+             id="text8712"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.58167px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">26</text>
+          <text
+             x="177.5"
+             y="146.3"
+             text-anchor="middle"
+             font-family="Verdana"
+             font-size="18px"
+             fill="#000000"
+             id="text8714" />
+          <text
+             xml:space="preserve"
+             id="text8852"
+             style="font-style:normal;font-weight:normal;font-size:18.38929999999999865px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8854);fill:#000000;fill-opacity:1;stroke:none;" />
+        </g>
+        <text
+           xml:space="preserve"
+           id="text8846"
+           style="font-style:normal;font-weight:normal;font-size:15.32890000000000086px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8848);fill:#000000;fill-opacity:1;stroke:none;" />
+        <text
+           x="156.10077"
+           y="524.05981"
+           text-anchor="middle"
+           font-family="Verdana"
+           font-size="18px"
+           fill="#000000"
+           id="text8060-9"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.15351px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#000000">(D) Dot-bracket representation</text>
+      </g>
+      <text
+         xml:space="preserve"
+         id="text8896"
+         style="font-style:normal;font-weight:normal;font-size:13.06819999999999915px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8898);fill:#000000;fill-opacity:1;stroke:none;"
+         transform="matrix(0.79853455,0,0,0.77492522,-65.531471,51.223475)"><tspan
+           x="71.439453"
+           y="229.36783"><tspan>C</tspan><tspan
+             style="fill:#0000ff">GGCACGAC</tspan><tspan>ACUAGCA</tspan><tspan
+             style="fill:#0000ff">GUC</tspan><tspan>A</tspan><tspan
+             style="fill:#0000ff">GUGUC</tspan><tspan>A</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:12.8226px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.32057"
+         x="-6.0479398"
+         y="337.77332"
+         id="text8904"
+         transform="scale(1.4161685,0.70613066)"><tspan
+           id="tspan8902"
+           x="-6.0479398"
+           y="337.77332"
+           style="stroke-width:0.32057"
+           sodipodi:role="line">.<tspan
+   style="fill:#0000ff;stroke-width:0.32057"
+   id="tspan8948">((((((((</tspan>.......<tspan
+   style="fill:#0000ff;stroke-width:0.32057"
+   id="tspan8950">)))</tspan>.<tspan
+   style="fill:#0000ff;stroke-width:0.32057"
+   id="tspan8952">)))))</tspan>.</tspan></text>
+    </g>
+  </g>
+</svg>

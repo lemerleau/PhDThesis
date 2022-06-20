@@ -1,47 +1,43 @@
 %************************************************
 \chapter{RAFFT: Efficient prediction of fast-folding pathways of RNAs}\label{ch:rafft}
 %************************************************
-
-In this chapter, we propose a novel heuristic algorithm to predict an ensemble of metastable RNA secondary structures for a given sequence $S$. The algorithm is inspired by the kinetic partitioning mechanism, by which molecules follow alternative folding pathways to their native structure, some much faster than others. Similarly, our algorithm \texttt{RAFFT} generates an ensemble of concurrent folding pathways ending in multiple metastable structures for each given sequence. 
-%The ensemble structures are then used as a finite ensemble states in which the RNA sequence can be at a given time and the energy difference from one state to another is then used to derive a stem rate model. Using this stem rate mode
-%When analyzing $50$ predicted metastable structures per sequence, we found near-native predictions for RNAs of length $\leq 200$ nucleotides, matching the performance of recent deep-learning-based structure prediction methods. Our algorithm also acts as a folding kinetic ansatz, which we tested on two RNAs: the coronavirus frameshifting stimulation element (CFSE) and a classic bi-stable sequence. For the CFSE, an ensemble of $68$ distinct structures computed by \texttt{RAFFT} allowed us to produce complete folding kinetic trajectories, whereas known methods require evaluating millions of sub-optimal structures to achieve this result. For the second application, only $46$ distinct structures were required to reproduce the kinetics, whereas known methods required a sample of $20,000$ structures. Thanks to he fast Fourier transform on which \texttt{RAFFT} is based, these computations are efficient, with complexity $\mathcal{O}(L^2 \log L)$. 
-
+This chapter introduces a novel heuristic algorithm to predict an ensemble of metastable RNA secondary structures for a given sequence $\phi$. The algorithm is inspired by the kinetic partitioning mechanism, by which molecules follow alternative folding pathways to their native structure, some much faster than others. Similarly, our algorithm \texttt{RAFFT} generates an ensemble of concurrent folding pathways ending in multiple metastable structures for each given sequence. We then use the ensemble structures as finite ensemble states in which the RNA sequence can be at a given time, and the energy difference from one state to another is then used to derive a stem rate model. Therefore, our algorithm also acts as a folding kinetic ansatz. 
 \section{Material and Methods}
-In this section of our work, we describe \texttt{RAFFT}'s algorithm and the full pseudo code is given.
+In this section of our work, we describe \texttt{RAFFT}'s algorithm and the kinetics ansatz derived from that.
 \subsection{\texttt{RAFFT}'s  algorithm description}
-\texttt{RAFFT} starts from a sequence of nucleotides \(S=(S_1\dots S_L)\) of length \(L\), and its associated unfolded structure $\sigma$. We first create a numerical representation of \(S\) where each nucleotide is replaced by a unit vector of $4$ components:
+\texttt{RAFFT} starts from a sequence of nucleotides \(\phi=(\phi_1\dots \phi_L)\) of length \(L\), and its associated unfolded structure $\sigma$. We first create a numerical representation of \(\phi\) where each nucleotide is replaced by a unit vector of $4$ components:
 \begin{equation}
 \begin{split}
-A \rightarrow \begin{pmatrix} 1\\ 0\\ 0\\ 0 \end{pmatrix},
-U \rightarrow \begin{pmatrix} 0\\ 0\\ 0\\ 1 \end{pmatrix},
-C \rightarrow \begin{pmatrix} 0\\ 1\\ 0\\ 0 \end{pmatrix},
-G \rightarrow \begin{pmatrix} 0\\ 0\\ 1\\ 0 \end{pmatrix}
+\text{A} \rightarrow \begin{pmatrix} 1\\ 0\\ 0\\ 0 \end{pmatrix},
+\text{U} \rightarrow \begin{pmatrix} 0\\ 0\\ 0\\ 1 \end{pmatrix},
+\text{C} \rightarrow \begin{pmatrix} 0\\ 1\\ 0\\ 0 \end{pmatrix},
+\text{G} \rightarrow \begin{pmatrix} 0\\ 0\\ 1\\ 0 \end{pmatrix}
 \end{split}
 \end{equation}
 This encoding gives us a (\(4 \times L\))-matrix we call \(X\), where each row corresponds to a nucleotide as shown below:
 \begin{equation}
-X = \begin{pmatrix} X^A\\ X^C\\ X^G\\ X^U \end{pmatrix} = \begin{pmatrix} X^A(1) &X^A(2) &\dots &X^A(L) \\ X^C(1) &X^C(2) &\dots &X^C(L)\\ X^G(1) &X^G(2) &\dots &X^G(L)\\ X^U(1) &X^U(2) &\dots &X^U(L) \end{pmatrix}
+X = \begin{pmatrix} X^{\text{A}}\\ X^{\text{C}}\\ X^{\text{G}}\\ X^{\text{U}} \end{pmatrix} = \begin{pmatrix} X^{\text{A}}(1) &X^{\text{A}}(2) &\dots &X^{\text{A}}(L) \\ X^{\text{C}}(1) &X^{\text{C}}(2) &\dots &X^{\text{C}}(L)\\ X^{\text{G}}(1) &X^{\text{G}}(2) &\dots &X^{\text{G}}(L)\\ X^{\text{U}}(1) &X^{\text{U}}(2) &\dots &X^{\text{U}}(L) \end{pmatrix}
 \end{equation}
-For example, \(X^A(i) = 1\) if \(S_i = A\). Next, we create a second copy \(\bar{S}=(\bar{S_L}\dots \bar{S_1})\) for which we reversed the sequence order. Then, each nucleotide of \(\bar{S}\) is replaced by one of the following unit vectors:
+For example, \(X^{\text{A}}(i) = 1\) if \(\phi_i = \text{A}\). Next, we create a second copy \(\bar{\phi}=(\bar{\phi_L}\dots \bar{\phi_1})\) for which we reversed the sequence order. Then, each nucleotide of \(\bar{\phi}\) is replaced by one of the following unit vectors:
 \begin{equation}
 \begin{split}
-\bar{A} \rightarrow \begin{pmatrix} 0\\ 0\\ 0\\ w_{\scalebox{0.5}{AU}}\\ \end{pmatrix},
-\bar{U} \rightarrow \begin{pmatrix} w_{\scalebox{0.5}{AU}}\\ w_{\scalebox{0.5}{GU}}\\ 0\\ 0\\ \end{pmatrix},
-\bar{C} \rightarrow \begin{pmatrix} 0\\ 0\\ w_{\scalebox{0.5}{GC}}\\ 0\\ \end{pmatrix},
-\bar{G} \rightarrow \begin{pmatrix} 0\\ w_{\scalebox{0.5}{GC}}\\ 0\\ w_{\scalebox{0.5}{GU}}\\ \end{pmatrix}.
+\bar{\text{A}} \rightarrow \begin{pmatrix} 0\\ 0\\ 0\\ w_{\scalebox{0.5}{AU}}\\ \end{pmatrix},
+\bar{\text{U}} \rightarrow \begin{pmatrix} w_{\scalebox{0.5}{AU}}\\ w_{\scalebox{0.5}{GU}}\\ 0\\ 0\\ \end{pmatrix},
+\bar{\text{C}} \rightarrow \begin{pmatrix} 0\\ 0\\ w_{\scalebox{0.5}{GC}}\\ 0\\ \end{pmatrix},
+\bar{\text{G}} \rightarrow \begin{pmatrix} 0\\ w_{\scalebox{0.5}{GC}}\\ 0\\ w_{\scalebox{0.5}{GU}}\\ \end{pmatrix}.
 \end{split}
 \end{equation}
-\(\bar{A}\) (respectively \(\bar{U}, \bar{C}, \bar{G}\)) is the complementary of \(A\) (respectively \(U, C, G\)). \(w_{AU}\), \(w_{GC}\), \(w_{GU}\) represent the weights associated with each canonical base pair, and they are chosen empirically. We call this complementary copy \(\bar{X}\), the mirror of \(X\).
+\(\bar{\text{A}}\) (respectively \(\bar{\text{U}}, \bar{\text{U}}, \bar{\text{G}}\)) is the complementary of \(\text{A}\) (respectively \(\text{U}, \text{C}, \text{G}\)). \(w_{AU}\), \(w_{GC}\), \(w_{GU}\) represent the weights associated with each canonical base pair, and they are chosen empirically. We call this complementary copy \(\bar{X}\), the mirror of \(X\).
 
 To search for stems, we use the complementary relation between \(X\) and \(\bar{X}\) with the correlation function \(\text{cor}(k)\). This correlation is defined as the sum of individual \(X\) and \(\bar{X}\) row correlations:
 \begin{equation}
-\text{cor}(k)=\sum_{\alpha \in \{A,U,C,G\}}c_{X^{\alpha},\bar{X}^{\alpha}}(k),
+\text{cor}(k)=\sum_{\alpha \in \{\text{A},\text{U},\text{C},\text{G}\}}c_{X^{\alpha},\bar{X}^{\alpha}}(k),
 \end{equation}
 where a row correlation between \(X\) and \(\bar{X}\) is given by:
 \begin{equation}
 c_{X^\alpha,\bar{X}^\alpha}(k) = \sum\limits_{\substack{1\leq i \leq L\\1 \leq i + k \leq L}} \frac{X^\alpha(i) \bar{X}^\alpha(i+k)}{\text{min}(k, 2 L-k)}.
 \end{equation}
-For each \(\alpha \in \{A,U,C,G\}\), \(X^\alpha(i) \times \bar{X}^\alpha(i+k)\) is non zero if sites \(i\) and \(i+k\) can form a base pair, and will have the value of the chosen weight as described above. If all the weights are set to $1$, \(\text{cor}(k)\) gives the frequency of base pairs for a positional lag \(k\). Although the correlation naively requires \(O(L^2)\) operations, it can take advantage of the FFT which reduces its complexity to \(\mathcal{O}(L\;\text{log}(L))\).
+For each \(\alpha \in \{\text{A},\text{U},\text{C},\text{G}\}\), \(X^\alpha(i) \times \bar{X}^\alpha(i+k)\) is non zero if sites \(i\) and \(i+k\) can form a base pair, and will have the value of the chosen weight as described above. If all the weights are set to $1$, \(\text{cor}(k)\) gives the frequency of base pairs for a positional lag \(k\). Although the correlation naively requires \(O(L^2)\) operations, it can take advantage of the FFT which reduces its complexity to \(\mathcal{O}(L\;\text{log}(L))\).
 
 Large \(\text{cor}(k)\) values between the two copies indicate positional lags \(k\) where the frequency of base pairs is likely to be high. However, this does not allow to determine the exact stem positions. Hence, we use a sliding window strategy to search for the largest stem within the positional lag (since the copies are symmetrical, we only need to slide over one-half of the positional lag). Once the largest stem is identified, we compute the free energy change associated with the formation of that stem. Next, we perform the same search for the \(n\) highest correlation values, which gives us \(n\) potential stems. Then, we define as the current structure the stem with the lowest free energy. Here, free energies were computed using Turner2004 energy parameters through ViennaRNA package API \cite{lorenz11_vienn_packag}.
 
@@ -53,99 +49,98 @@ Large \(\text{cor}(k)\) values between the two copies indicate positional lags \
 \end{figure*}
 
 We are now left with two independent parts, the interior and the exterior of the newly formed stem. If the exterior part is composed of two fragments, they are concatenated into one. Then, we apply recursively the same procedure on the two parts independently in a ``Breadth-First" fashion to form new consecutive base pairs. The procedure stops when no base pair formation can improve the energy. When multiple stems can be formed in these independent fragments, we combine all of them and pick the composition with the best overall stability. If too many compositions can be formed, we restrict this to the $10^4$ bests in terms of energy. Figure \ref{algo_desc} shows an example of execution to illustrate the procedure. 
-
-The algorithm described so far tends to be stuck in the first local minima found along the folding trajectory. To alleviate this, we implemented a stacking procedure where the \(N\) best trajectories are stored in a stack and evolved in parallel. Like the initial version, the algorithm starts with the unfolded structure; then, the \(N\) best potential stems are stored in the first stack. From these \(N\) structures, the procedure tries to add stems in the unpaired regions left and saves the \(N\) best structures formed. Once no stem can be formed, the algorithm stops and output the structure with the best energy found among the structures stored in the last stack. This algorithm leads to the construction of a graph we call a \emph{fast-folding graph}. In this graph, two structures are connected if the transition from one to another corresponds to the formation of a stem or if the two structures are identical. Figure \ref{fast_path_graph} shows an example of a \emph{fast-folding graph} produced by \texttt{RAFFT} for $N=5$.
-
-
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=1\linewidth]{../res/images/rafft/fast_paths_graph.png}
 	\caption{\label{fast_path_graph}\textbf{Fast folding graph constructed using \texttt{RAFFT}.} In this example, the sequence is folded in two steps. The algorithm starts with the unfolded structure on the left. The \(N=5\) best stems are stored in stack 1. From stack 1, multiple stems formation are considered, but only the \(N=5\) best are stored in stack 2. Structures are ordered (from top to bottom) by energy in each stack. All secondary structure visualizations were obtained using \texttt{VARNA} \cite{darty09_varna}.}
 \end{figure}
-\subsection{\texttt{RAFFT}'s pseudo code and data structures}
-To summarise the above description, we present here a detailed pseudocode of the heuristic implemented in \texttt{RAFFT}. 
-\subsubsection{Data structures}
-To facilitate the implementation of \texttt{RAFFT}'s algorithm, we define three data structures. 
-\begin{itemize}
-	\item Global parameters: Our algorithm takes as input a set of global parameters $\mathbb{G}$ which includes \\
-	\hspace*{0.2cm} $S$ : RNA sequence $S \in \{A,U,C,G\}^L$\\
-	\hspace*{0.2cm} $m$ : Number of FFT modes to be analysed\\
-	\hspace*{0.2cm} $k$ : Maximum number of structures to store\\
-	\hspace*{0.2cm} $b$ : Maximum number of children structures\\
-	\hspace*{0.2cm} $h$ : Minimum hairpin size\\
-	\hspace*{0.2cm} $E_m$ : Minimum stem energy\\
-	\hspace*{0.2cm} $T$ : Folding temperature\\
-	\hspace*{0.2cm} $W_{GC}$ : Weight associated to $GC$ and $CG$ base pairs\\
-	\hspace*{0.2cm} $W_{AU}$ : Weight associated to $AU$ and $UA$ base pairs\\
-	\hspace*{0.2cm} $W_{GU}$ : Weight associated to $UG$ and $GU$ base pairs\\
-	\hspace*{0.2cm} $L$ : Length of the RNA sequence $S$\\
-	\hspace*{0.2cm} $F_c$ : Folding compound of $S$\\
-	\hspace*{0.2cm} $M$ : Energy parameter model $S$. 
-	
-	
-	\item Unpaired node object: For each stem created an inner and outer unpaired part of sequence is generated. To store them and for the sake of traceability we use an object called "unpaired" which includes the following attributes \\
-	\hspace*{0.2cm} $X$ : A ($4\times L$)-Matrix encoding of $S$ \\
-	\hspace*{0.2cm} $\bar{X}$ : The mirror encoding of $X$ \\
-	\hspace*{0.2cm} $uP$ : The unpaired position list.\\
-	\hspace*{0.2cm} 
-	
-	\item Structure node object \\
-	\hspace*{0.2cm} $\sigma$ : The RNA structure string representation \\
-	\hspace*{0.2cm} $L_{bp}$ : List of pairing position\\
-	\hspace*{0.2cm} $E$ : Energy of the RNA secondary structure $\sigma$\\
-	\hspace*{0.2cm} $C$ : List of children structures formed from $\sigma$\\
-	\hspace*{0.2cm} $U$ : List of unpaired nodes to be combined to form children\\
-	\\ 
-	\hspace*{0.2cm}\textbf{Procedure} buildStructure(): \\
-	\hspace*{0.2cm}\textbf{Procedure} createNode(): 
-\end{itemize}
 
-\subsubsection{\texttt{RAFFT}'s Pseudocode }
-\begin{algorithm}[H]
-	\KwData{$R_0 $: \textsc{Structure}, $R$, $\mathbb{G}$, $d$, $S_e $}
-	\KwResult{$R_0$ : \textsc{Structure}}
-	
-	$\mathcal{S}$ : \textsc{List<Structure>}\;
-	$C_a : \textsc{List<Node>}$\;
-	$C_t : \textsc{List<Structure>} $\;
-	
-	\For{ $ \sigma \in R$}{
-		$U_t := \{U_1, \dots U_{|U|}\}$ where $U_i = \textbf{createNodes}(\sigma_{U_i}, G)$\;
-		\If{$U_t \neq \varnothing$}{
-			Add $( \sigma, U_t)$ to $C_a$\;
-		}
-	}
-	
-	\For{ $ (\sigma, U_t) \in C_a$}{
-		$U_n := \textbf{genComb}(U_t)$ \;
-		\While{$i<G.b$}{
-			$\sigma' := \textbf{Structure}(L_{bp}:=\{\}, N:=\{\} )$\;
-			\For{$(n_i, n_o, L_{bp}', E')  \in N_t[i]$}{
-				Add $n_i, n_o \to \sigma' .N$\;
-				Add ($L_{bp}'\setminus \sigma' .L_{bp})  \to \sigma' .L_{bp}$
-			}
-			$\sigma_s, E_t := \sigma' . \textbf{buildStructure}(\{\},G.F_c, G.L)$\;
-			
-			\If{$\sigma_s \not \in S_e $}{
-				$\sigma' .dot := \sigma_s  $\;
-				$\sigma' .E := E_t  $\;
-				Add $\sigma \to C_t, S_e,\mathcal{S}$\;
-				$i := i +1$\;
-				
-			}
-			
-		}
-		\If{$C_t \neq \varnothing $}{
-			Sort $C_t$ respect to the energies $E$\; 
-			Add the $G.k$ best of $C_t$ to the children of $\sigma$ ($\sigma .C := C_t[:G.k]$)\; 
-		}
-	}
-	Add the preview structures found to the new ones ($\mathcal{S}:= R+ \mathcal{S}$) \;
-	Sort $\mathcal{S}$ respect to the energies $E$\;
-	Replace $\mathcal{S}$ with the best $G.k$; structures ($\mathcal{S} := \mathcal{S}[:G.k]$)\; 
+The algorithm described so far tends to be stuck in the first local minima found along the folding trajectory. To alleviate this, we implemented a stacking procedure where the \(N\) best trajectories are stored in a stack and evolved in parallel. Like the initial version, the algorithm starts with the unfolded structure; then, the \(N\) best potential stems are stored in the first stack. From these \(N\) structures, the procedure tries to add stems in the unpaired regions left and saves the \(N\) best structures formed. Once no stem can be formed, the algorithm stops and output the structure with the best energy found among the structures stored in the last stack. This algorithm leads to the construction of a graph we call a \emph{fast-folding graph}. In this graph, two structures are connected if the transition from one to another corresponds to the formation of a stem or if the two structures are identical. Figure \ref{fast_path_graph} shows an example of a \emph{fast-folding graph} produced by \texttt{RAFFT} for $N=5$.
 
-	\caption{\textbf{RAFFT} }
-\end{algorithm}
+%\subsection{\texttt{RAFFT}'s pseudo code and data structures}
+%To summarise the above description, we present here a detailed pseudocode of the heuristic implemented in \texttt{RAFFT}. 
+%\subsubsection{Data structures}
+%To facilitate the implementation of \texttt{RAFFT}'s algorithm, we define three data structures. 
+%\begin{itemize}
+%	\item Global parameters: Our algorithm takes as input a set of global parameters $\mathbb{G}$ which includes \\
+%	\hspace*{0.2cm} $S$ : RNA sequence $S \in \{A,U,C,G\}^L$\\
+%	\hspace*{0.2cm} $m$ : Number of FFT modes to be analysed\\
+%	\hspace*{0.2cm} $k$ : Maximum number of structures to store\\
+%	\hspace*{0.2cm} $b$ : Maximum number of children structures\\
+%	\hspace*{0.2cm} $h$ : Minimum hairpin size\\
+%	\hspace*{0.2cm} $E_m$ : Minimum stem energy\\
+%	\hspace*{0.2cm} $T$ : Folding temperature\\
+%	\hspace*{0.2cm} $W_{GC}$ : Weight associated to $GC$ and $CG$ base pairs\\
+%	\hspace*{0.2cm} $W_{AU}$ : Weight associated to $AU$ and $UA$ base pairs\\
+%	\hspace*{0.2cm} $W_{GU}$ : Weight associated to $UG$ and $GU$ base pairs\\
+%	\hspace*{0.2cm} $L$ : Length of the RNA sequence $S$\\
+%	\hspace*{0.2cm} $F_c$ : Folding compound of $S$\\
+%	\hspace*{0.2cm} $M$ : Energy parameter model $S$. 
+	
+	
+%	\item Unpaired node object: For each stem created an inner and outer unpaired part of sequence is generated. To store them and for the sake of traceability we use an object called "unpaired" which includes the following attributes \\
+%	\hspace*{0.2cm} $X$ : A ($4\times L$)-Matrix encoding of $S$ \\
+%	\hspace*{0.2cm} $\bar{X}$ : The mirror encoding of $X$ \\
+%	\hspace*{0.2cm} $uP$ : The unpaired position list.\\
+%	\hspace*{0.2cm} 
+	
+%	\item Structure node object \\
+%	\hspace*{0.2cm} $\sigma$ : The RNA structure string representation \\
+%	\hspace*{0.2cm} $L_{bp}$ : List of pairing position\\
+%	\hspace*{0.2cm} $E$ : Energy of the RNA secondary structure $\sigma$\\
+%	\hspace*{0.2cm} $C$ : List of children structures formed from $\sigma$\\
+%	\hspace*{0.2cm} $U$ : List of unpaired nodes to be combined to form children\\
+%	\\ 
+%	\hspace*{0.2cm}\textbf{Procedure} buildStructure(): \\
+%	\hspace*{0.2cm}\textbf{Procedure} createNode(): 
+%\end{itemize}
+
+%\subsubsection{\texttt{RAFFT}'s Pseudocode }
+%\begin{algorithm}[H]
+%	\KwData{$R_0 $: \textsc{Structure}, $R$, $\mathbb{G}$, $d$, $S_e $}
+%	\KwResult{$R_0$ : \textsc{Structure}}
+%	
+%	$\mathcal{S}$ : \textsc{List<Structure>}\;
+%	$C_a : \textsc{List<Node>}$\;
+%	$C_t : \textsc{List<Structure>} $\;
+%	
+%	\For{ $ \sigma \in R$}{
+%		$U_t := \{U_1, \dots U_{|U|}\}$ where $U_i = \textbf{createNodes}(\sigma_{U_i}, G)$\;
+%		\If{$U_t \neq \varnothing$}{
+%			Add $( \sigma, U_t)$ to $C_a$\;
+%		}
+%	}
+%	
+%	\For{ $ (\sigma, U_t) \in C_a$}{
+%		$U_n := \textbf{genComb}(U_t)$ \;
+%		\While{$i<G.b$}{
+%			$\sigma' := \textbf{Structure}(L_{bp}:=\{\}, N:=\{\} )$\;
+%			\For{$(n_i, n_o, L_{bp}', E')  \in N_t[i]$}{
+%				Add $n_i, n_o \to \sigma' .N$\;
+%				Add ($L_{bp}'\setminus \sigma' .L_{bp})  \to \sigma' .L_{bp}$
+%			}
+%			$\sigma_s, E_t := \sigma' . \textbf{buildStructure}(\{\},G.F_c, G.L)$\;
+%			
+%			\If{$\sigma_s \not \in S_e $}{
+%				$\sigma' .dot := \sigma_s  $\;
+%				$\sigma' .E := E_t  $\;
+%				Add $\sigma \to C_t, S_e,\mathcal{S}$\;
+%				$i := i +1$\;
+%				
+%			}
+%			
+%		}
+%		\If{$C_t \neq \varnothing $}{
+%			Sort $C_t$ respect to the energies $E$\; 
+%			Add the $G.k$ best of $C_t$ to the children of $\sigma$ ($\sigma .C := C_t[:G.k]$)\; 
+%		}
+%	}
+%	Add the preview structures found to the new ones ($\mathcal{S}:= R+ \mathcal{S}$) \;
+%	Sort $\mathcal{S}$ respect to the energies $E$\;
+%	Replace $\mathcal{S}$ with the best $G.k$; structures ($\mathcal{S} := \mathcal{S}[:G.k]$)\; 
+%
+%	\caption{\textbf{RAFFT} }
+%\end{algorithm}
 
 \subsection{Kinetic ansatz}
 The folding kinetic ansatz used here is derived from the fast-folding graph and allows us to model the slow processes in RNA folding. As described in Figure \ref{fast_path_graph}, transitions can occur from left to right (and right to left) but not vertically. The fast-folding graph follows the idea that parallel pathways quickly reach their endpoints; however, when the endpoints are non-native states, this ansatz allows slowly folding back into the native state \cite{pan97_foldin_rna_invol_paral_pathw}. 
@@ -156,18 +151,18 @@ In contrast to traditional kinetics approaches, the connected structures in the 
 \begin{equation}
 \label{Eq:metropolis}
 k_{i\rightarrow j} = \begin{cases}
-k_0 \times \text{min}(1, \text{exp}(-\beta \Delta (E_{i \rightarrow j}))),& \text{if } \sigma_i \in \mathcal{M}(\sigma_j) \\
+k_0 \times \text{min}(1, \text{exp}(-\beta \Delta (\Delta G_{i \rightarrow j}))),& \text{if } \sigma_i \in \mathcal{M}(\sigma_j) \\
 0,& \text{else }
 \end{cases},
 \end{equation}
-where \(\Delta E_{i\rightarrow j} = E_j - E_i\) is the free energy change between structure \(\sigma_i\) and \(\sigma_j\). Here, \(k_0\) is a conversion constant that we set to $1$ for the sake of simplicity and we initialize the population \(p_i(0)\) with only unfolded structures; therefore, the trajectory represents a complete folding process. The frequency of a structure \(\sigma_i\) evolves according to the master Equation \ref{Eq:kenetics}.
+where \(\Delta \Delta G_{i\rightarrow j} = \Delta G_j - \Delta G_i\) is the free energy change between structure \(\sigma_i\) and \(\sigma_j\). Here, \(k_0\) is a conversion constant that we set to $1$ for the sake of simplicity and we initialize the population \(p_i(0)\) with only unfolded structures; therefore, the trajectory represents a complete folding process. The frequency of a structure \(\sigma_i\) evolves according to the master Equation \ref{Eq:kenetics}.
 
 Due to this approximation, we referred to our approach as a \textit{kinetic ansatz}
 \subsection{Benchmark datasets. }
 
-To build the dataset for the folding task application, we started from the \texttt{ArchiveII} dataset derived from multiple sources \cite{andronescu08_rna_stran,brown98_ribon_p_datab,bellaousov10_probk,daub08_rna_wikip,damberger94_compar_datab_group_i_intron_struc,zwieb00_tmrdb,zwieb03_tmrdb,waring84_asses_model_intron_rna_secon,specht97_compil_rrna_rrna_gene_sequen,sprinzl98_compil_trna_sequen_sequen_trna_genes,sloma16_exact_calcul_loop_format_probab,schnare96_compr_compar_struc_charac_eukar,mathews99_expan_sequen_depen_therm_param,samuelsson99_signal_recog_partic_datab_srpdb,gutell93_compil_large_subun_like_ribos_rna_struc,gutell94_collec_small_subun_like_ribos_rna_struc,gardner09_rfam}. We first removed all the structures with pseudoknots, since the tools considered here do not handle these loops. Next, using the Turner2004 energy parameters, we evaluated the structures' energies and removed all the unstable structures: structures with energies $\Delta G_s > 0$. This dataset is composed of $2,698$ sequences with their corresponding known structures. $240$ sequences were found multiple times (from $2$ to $8$ times); $19$ of them were mapped to different structures. For the sequences that appeared with different structures, we picked the structure with the lowest energy. In the end we arrived at a dataset with $2,296$ sequences-structures.
+To build the dataset for the folding task application, we started from the \texttt{ArchiveII} dataset derived from multiple sources \cite{andronescu08_rna_stran,brown98_ribon_p_datab,bellaousov10_probk,daub08_rna_wikip,damberger94_compar_datab_group_i_intron_struc,zwieb00_tmrdb,zwieb03_tmrdb,waring84_asses_model_intron_rna_secon,specht97_compil_rrna_rrna_gene_sequen,sprinzl98_compil_trna_sequen_sequen_trna_genes,sloma16_exact_calcul_loop_format_probab,schnare96_compr_compar_struc_charac_eukar,mathews99_expan_sequen_depen_therm_param,samuelsson99_signal_recog_partic_datab_srpdb,gutell93_compil_large_subun_like_ribos_rna_struc,gutell94_collec_small_subun_like_ribos_rna_struc,gardner09_rfam}. We first removed all the structures with pseudoknots, since the tools considered here do not handle these loops. Next, using the Turner2004 energy parameters, we evaluated the structures' energies and removed all the unstable structures: structures with energies $\Delta G > 0$. This dataset is composed of $2,698$ sequences with their corresponding known structures. $240$ sequences were found multiple times (from $2$ to $8$ times); $19$ of them were mapped to different structures. For the sequences that appeared with different structures, we picked the structure with the lowest energy. In the end we arrived at a dataset with $2,296$ sequences-structures.
 
-We used the coronavirus frameshifting stimulation element (CFSE) RNA sequence and classic bi-stable sequence \textbf{GGCCCCUUUGGGGGCCAGACCCCUAAAGGGGUC}.
+For validation of our kinetic ansatz, we used the coronavirus frameshifting stimulation element (CFSE) RNA sequence and classic bi-stable sequence \textbf{GGCCCCUUUGGGGGCCAGACCCCUAAAGGGGUC}.
 
 \subsection{Structure prediction protocols}
 
@@ -190,16 +185,7 @@ Further more, we used a Principal Component Analysis (PCA) to visualize the loop
 \section{Experimental results }
 \subsection{ \texttt{RAFFT}'s run time and scalability}
 
-The complexity of \texttt{RAFFT}'s algorithm depends on the number and size of the stems formed. The main operations performed for each stem formed are: (1) the evaluation of the correlation function \(\text{cor}(k)\), (2) the sliding-window search for stems, and (3) the energy evaluation. We based our approximate complexity on the correlation evaluation since it is the more computationally demanding step; the other operations only contribute a multiplicative constant at most. The best case is the trivial structure composed of one large stem where the algorithm stops after evaluating the correlation on the complete sequence. At the other extreme, the worst case is one where at most \(L/2\) stems of size $1$ (exactly one base pair peer stems) can be formed. The approximate complexity therefore depends on 
-
-\begin{equation}
-	\label{Eq:complexity}
-	\sum_{i=0}^{L/2} (L-2i) \log(L-2i) \ = \mathcal{O}(L^2\log{L})
-\end{equation}
-
-We compared \texttt{RAFFT}'s execution time to the classical cubic-time algorithms represented by \texttt{CONTRAfold} (Version 2.02), \texttt{RNAstructure} (Version 2.0), \texttt{RNAfold} (Version 2.4.13) and the recent improved DP tool \texttt{LinearFold} (Version 1.0). Figure \ref{Fig:time_comp} shows the execution time of the \texttt{RUST} implementation of \texttt{RAFFT} and the four above-mentioned tools for $30$ random generated sequences of various lengths.  When comparing \texttt{RAFFT} implementation to the standard DP tools, the execution time of \texttt{RAFFT} scales slower (with an exponent $\approx 2$) with the sequence length whereas the standard DP execution times are cubic. In contrast, the execution time of the improved DP implemented by \texttt{LinearFold} scales linearly with the sequence length. Only when considering a stack size of $1$, that \texttt{RAFFT} execution time is lower than the one of \texttt{LinearFold} for sequence of lengths less than $L=10^4$.
-
-\begin{figure}[H]
+\begin{figure}[t!]
 	\centering
 	\includegraphics[width=1.0\linewidth]{../res/images/rafft/All_CPU_time.pdf}
 	\caption{\label{Fig:time_comp}\textbf{Execution time comparisons}. For samples of
@@ -208,9 +194,18 @@ We compared \texttt{RAFFT}'s execution time to the classical cubic-time algorith
 		non-linear regression. RAFFT denotes the naive algorithm where only $N=1$ structure can be saved per stack.}
 \end{figure}
 
+The complexity of \texttt{RAFFT}'s algorithm depends on the number and size of the stems formed. The main operations performed for each stem formed are: (1) the evaluation of the correlation function \(\text{cor}(k)\), (2) the sliding-window search for stems, and (3) the energy evaluation. We based our approximate complexity on the correlation evaluation since it is the more computationally demanding step; the other operations only contribute a multiplicative constant at most. The best case is the trivial structure composed of one large stem where the algorithm stops after evaluating the correlation on the complete sequence. At the other extreme, the worst case is one where at most \(L/2\) stems of size $1$ (exactly one base pair peer stems) can be formed. The approximate complexity therefore depends on 
+
+\begin{equation}
+	\label{Eq:complexity}
+	\sum_{i=0}^{L/2} (L-2i) \log(L-2i) \ = \mathcal{O}(L^2\log{L})
+\end{equation}
+
+We compared \texttt{RAFFT}'s execution time to the classical cubic-time algorithms represented by \texttt{CONTRAfold} (Version 2.02), \texttt{RNAstructure} (Version 2.0), \texttt{RNAfold} (Version 2.4.13) and the recent improved DP tool \texttt{LinearFold} (Version 1.0). Figure \ref{Fig:time_comp} shows the execution time of the \texttt{RUST} implementation of \texttt{RAFFT} and the four above-mentioned tools for $30$ random generated sequences of various lengths.  When comparing \texttt{RAFFT} implementation to the standard DP tools, the execution time of \texttt{RAFFT} scales slower (with an exponent $\approx 2$) with the sequence length whereas the standard DP execution times are cubic. In contrast, the execution time of the improved DP implemented by \texttt{LinearFold} scales linearly with the sequence length. Only when considering a stack size of $1$, that \texttt{RAFFT} execution time is lower than the one of \texttt{LinearFold} for sequence of lengths less than $L=10^4$ (See Appendix A?).
+
 We also analyse the scalability of \texttt{RAFFT} computational time with respect to its critical parameters (the number  of positional lag $n$ and the stack size $N$).  Figure \ref{Fig:scalability} shows for both different stack sizes and number of positional lags, \texttt{RAFFT} execution time against the sequence length. For both stack size and number of positional lags, the execution time scales almost with the same exponent ($\approx 2$).
 
-\begin{figure}[h]
+\begin{figure}[t!]
 	\centering
 	\includegraphics[width=1.0\linewidth]{../res/images/rafft/CPU_time.png}
 	\caption{\label{Fig:scalability}\textbf{Impact of the number of positional lags $n$ and the stack size $N$
@@ -222,7 +217,7 @@ We also analyse the scalability of \texttt{RAFFT} computational time with respec
 \end{figure} 
 
 \subsection{Accuracy of the predicted structural ensemble}
-We started by analyzing the prediction performances with respect to sequence lengths: we averaged the performances at fixed sequence length. Figure \ref{perf_fig} shows the performance in predicted positive values (PPV) and sensitivity for the three methods. It shows that the ML method (\texttt{Mxfold2}) consistently outperformed \texttt{RAFFT} and the other predictions. When comparing only the MFE predictions produced using the DP tools, \texttt{LinearFold} outperformed all other tools (\texttt{RNAfold} and \texttt{RNAstructure}) for both short and long sequences. The $t$-test between the ML and the most used MFE prediction tool (\texttt{RNAfold}) revealed not only a significant difference (p-value \(\approx\) $10$\textsuperscript{$-12$}) but also a substantial improvement of $14.5\%$ in PPV. \texttt{RAFFT} showed performances similar to \texttt{RNAfold}; however, \texttt{RAFFT} is significantly less accurate ($p$-value \(\approx\) $0.0002$), with a drastic loss of performance for sequences of length greater than $300$ nucleotides (See also Table \ref{Tab:average_perf}).
+We started by analyzing the prediction performances with respect to sequence lengths: we averaged the performances at fixed sequence length. Figure \ref{perf_fig} shows the performance in predicted positive values (PPV) and sensitivity for the five methods. It shows that the ML method (\texttt{Mxfold2}) consistently outperformed \texttt{RAFFT} and the other predictions. When comparing only the MFE predictions produced using the DP tools, \texttt{LinearFold} outperformed all other tools (\texttt{RNAfold} and \texttt{RNAstructure}) for both short and long sequences. The $t$-test between the ML and the most used MFE prediction tool (\texttt{RNAfold}) revealed not only a significant difference (p-value \(\approx\) $10$\textsuperscript{$-12$}) but also a substantial improvement of $14.5\%$ in PPV. \texttt{RAFFT} showed performances similar to \texttt{RNAfold}; but, \texttt{RAFFT} is significantly less accurate ($p$-value \(\approx\) $0.0002$), with a drastic loss of performance for sequences of length greater than $300$ nucleotides (See also Table \ref{Tab:average_perf}).
 
 However, are there relevant structures in the ensemble predicted by our method? To address this question we retained the structure with the best score among the $50$ recorded structures per sequence. We obtained an average PPV of $60.0\%$ and an average sensitivity of $62.8\%$ over all the dataset. The gain in terms of PPV/sensitivity is especially pronounced for sequences of length $\leq 200$ nucleotides, indicating the presence of biologically more relevant structures in the predicted ensemble than the thermodynamically most stable one (PPV was =$79.4\%$, and sensitivity=$81.2\%$). The average scores are shown in Table \ref{Tab:average_perf}. We also investigated the relation to the number of bases between paired bases (base pair spanning), but we found no striking effect, as already pointed out in one previous study \cite{amman13_troub_long_range_base_pairs_rna_foldin}.
 
@@ -259,10 +254,10 @@ However, are there relevant structures in the ensemble predicted by our method? 
 \begin{figure*}[t!]
 	\centering
 	\includegraphics[width=1.\linewidth]{../res/images/rafft/accuracy.pdf}
-	\caption{\label{perf_fig} \textbf{\texttt{RAFFT}'s performance on folding task.} (A) PPV \emph{vs} sequence length. In the left panels, \texttt{RAFFT} (in light blue) shows the scores when for the structure (out of $N=50$ predictions) with the lowest free energy, whereas \texttt{RAFFT}* (in blue) shows the best PPV score in that ensemble. (B) Sensitivity \emph{vs} sequence length.}
+	\caption{\label{perf_fig} \textbf{\texttt{RAFFT}'s performance on folding task.} (A) PPV \emph{vs} sequence length. In the top panel, \texttt{RAFFT} (in light blue) shows the PPV score distributions when for the structure (out of $N=50$ predictions) with the lowest free energy, whereas \texttt{RAFFT}* (in blue) shows the best PPV score in that ensemble. (B) Sensitivity \emph{vs} sequence length.}
 \end{figure*}
 
-All methods performed poorly on two groups of sequences: one group of $80$ nucleotides long RNAs, and the second group of around $200$ nucleotides (three examples of such sequences are shown in the Appendix A3.1 ). Both groups have large unpaired regions, which for the first group lead to structures with average free energies $9.8\ \textrm{kcal/mol}$ according to our dataset. The PCA analysis of the native structure space, shown in Figure \ref{perf_fig}, reveals a propensity for interior loops and the presence of large unpaired regions like hairpins or external loops. Figure \ref{perf_fig} shows the structure space produced by \texttt{Mxfold2}, which seems close to the native structure space. In contrast, the structure spaces produced by \texttt{RAFFT} and \texttt{RNAfold} are similar and more diverse.
+All methods performed poorly on two groups of sequences: one group of $80$ nucleotides long RNAs, and the second group of around $200$ nucleotides (three examples of such sequences are shown in the Appendix A3.1 ). Both groups have large unpaired regions, which for the first group lead to structures with average free energies $9.8\ \textrm{kcal/mol}$ according to our dataset. The PCA analysis of the native structure space, shown in Figure \ref{perf_pca}, reveals a propensity for interior loops and the presence of large unpaired regions like hairpins or external loops. Figure \ref{perf_pca} shows the structure space produced by \texttt{Mxfold2}, which seems close to the native structure space. In contrast, the structure spaces produced by \texttt{RAFFT} and \texttt{RNAfold} are similar and more diverse.
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=.9\linewidth]{../res/images/rafft/perf_pca.png}
@@ -288,26 +283,14 @@ From the fast-folding graph produced using \texttt{RAFFT}, the transition rates 
 	\caption{\label{treekin}\textbf{Folding kinetics of CFSE using \texttt{Treekin}. }A) Barrier tree of the CFSE. From a set of $1.5\times10^6$ sub-optimal structures, $40$ local minima were found,  connected through saddle points. The tree shows two alternative structures separated by a high barrier with the global minimum (MFE structure) on the right side. (B) Folding kinetics with initial population $I_1$. Starting from an initial population of $I_1$, as the initial frequency  decreases, the others increase, and gradually the MFE structure is the only one populated.  (C) Folding kinetics with initial population $I_2$. When starting with a population of $I_2$, the native structure (labelled \textbf{Nat.1} ) is observable, and gets kinetically trapped for a long time due to the high energy barrier separating it from the MFE structure.}
 \end{figure*}
 
-Our kinetic simulation was then compared to \texttt{Treekin} \cite{flamm02_barrier_trees_degen_lands}. First, we generated \(1.5 \times 10^6\) sub-optimal structures up to $15 \ \textrm{kcal/mol}$ above the MFE structure using \texttt{RNAsubopt} \cite{lorenz11_vienn_packag}. Since the MFE is $\Delta G_s=-25.8 \ \textrm{kcal/mol}$, the unfolded structure could not be sampled. Second, the ensemble of structures is coarse-grained into $40$ competing basins using the tool \texttt{barriers} \cite{flamm02_barrier_trees_degen_lands}, with the connectivity between basins represented as a barrier tree (see Figure \ref{treekin}A). When using \texttt{Treekin}, the choice of the initial population is not straightforward. Therefore we resorted to two initial structures $I_1$ and $I_2$ (see Figure \ref{treekin}B and \ref{treekin}C, respectively). In Figure \ref{treekin}B, the trajectories show that only the kinetics initialized in the structure $I_2$ can capture the complete folding dynamics of CFSE, in which the two metastable structures are visible. Thus, in order to produce a folding kinetics in which the native and the MFE structures are visible, the kinetic simulation performed using \texttt{Treekin} required a particular initial condition and a barrier tree representation of the energy landscape built from a set of  $1.5 \times 10^6$ structures. By contrast, using the fast-folding graph produced by \texttt{RAFFT}, which consists only of $68$ distinct structures, our kinetic simulation produces complete folding dynamics starting from a population of unfolded structure.
-
-As a second illustrative example, we applied both kinetic models to the classic bi-stable sequence. For \texttt{Treekin}, we first sampled the whole space of \(20 \times 10^3\) sub-optimal structures from the unfolded state to the MFE structure, and from that set, $40$ basins were also computed using \texttt{barriers}. The barrier tree in Figure \ref{class_examp} shows the bi-stable landscape, where the two deepest minima are denoted $S_A$ and $S_B$. As in the first application, we also chose two initializations with the structures denoted $I_1$ and $I_2$ in Figure \ref{class_examp}A and \ref{class_examp}B. Secondly, we simulate the kinetics starting from the two initial conditions (See Figure \ref{class_examp}B). When starting from $I_2$, the slow-folding dynamics is visible:  $S_B$ first gets kinetically trapped, and the MFE structure ($S_A$) only takes over later on. For our kinetic ansatz, we started by constructing the fast-folding graph using \texttt{RAFFT}, consisting of only $46$ distinct structures. The resulting kinetics, shown in Figure \ref{class_examp}B' was found qualitatively close to the barrier kinetics initialized with structure $I_2$. Once again, with few as $48$ structures, our proposed kinetic ansatz can produce complete folding dynamics starting from a population of unfolded structure.
-
-\begin{figure*}[t!]
+\begin{figure*}[t]
 	\centering
 	\includegraphics[width=0.9\linewidth]{../res/images/rafft/kine_bi_sta.png}
 	\caption{\label{class_examp}\textbf{\texttt{RAFFT} \emph{vs} \texttt{Treekin}: folding kinetics of a bi-stable RNA sequence.} (A) Barrier tree for the bi-stable example sequence. The local minima and the corresponding barriers are computed from the complete enumeration of the structure space. The bi-stability is visible on the barrier tree through the two branches separated by a high barrier.  (B) Folding kinetics trajectories. The left plot shows the folding dynamics starting from a population with $I_1$, and the right size is the kinetics when the population is initialized in structure $I_2$. When starting from $I_1$, $S_A$ is quickly populated; starting from $I_2$, the bi-stability is more apparent.  (A') Fast-folding graph using \texttt{RAFFT}. A maximum of $N=20$ structures are stored in a stack at each step and overall $46$ distinct structures are visited. (B') Folding kinetics trajectory obtained from the fast-folding graph (indices are different from the barrier tree indices). The dynamics starts with a population with only unfolded structure, and slowly, $S_B$ is populated and gets trapped for a long time before the MFE structure $S_A$ becomes populated.}
 \end{figure*}
+Our kinetic simulation was then compared to \texttt{Treekin} \cite{flamm02_barrier_trees_degen_lands}. First, we generated \(1.5 \times 10^6\) sub-optimal structures up to $15 \ \textrm{kcal/mol}$ above the MFE structure using \texttt{RNAsubopt} \cite{lorenz11_vienn_packag}. Since the MFE is $\Delta G_s=-25.8 \ \textrm{kcal/mol}$, the unfolded structure could not be sampled. Second, the ensemble of structures is coarse-grained into $40$ competing basins using the tool \texttt{barriers} \cite{flamm02_barrier_trees_degen_lands}, with the connectivity between basins represented as a barrier tree (see Figure \ref{treekin}A). When using \texttt{Treekin}, the choice of the initial population is not straightforward. Therefore we resorted to two initial structures $I_1$ and $I_2$ (see Figure \ref{treekin}B and \ref{treekin}C, respectively). In Figure \ref{treekin}B, the trajectories show that only the kinetics initialized in the structure $I_2$ can capture the complete folding dynamics of CFSE, in which the two metastable structures are visible. Thus, in order to produce a folding kinetics in which the native and the MFE structures are visible, the kinetic simulation performed using \texttt{Treekin} required a particular initial condition and a barrier tree representation of the energy landscape built from a set of  $1.5 \times 10^6$ structures. By contrast, using the fast-folding graph produced by \texttt{RAFFT}, which consists only of $68$ distinct structures, our kinetic simulation produces complete folding dynamics starting from a population of unfolded structure.
+
+As a second illustrative example, we applied both kinetic models to the classic bi-stable sequence. For \texttt{Treekin}, we first sampled the whole space of \(20 \times 10^3\) sub-optimal structures from the unfolded state to the MFE structure, and from that set, $40$ basins were also computed using \texttt{barriers}. The barrier tree in Figure \ref{class_examp} shows the bi-stable landscape, where the two deepest minima are denoted $S_A$ and $S_B$. As in the first application, we also chose two initializations with the structures denoted $I_1$ and $I_2$ in Figure \ref{class_examp}A and \ref{class_examp}B. Secondly, we simulate the kinetics starting from the two initial conditions (See Figure \ref{class_examp}B). When starting from $I_2$, the slow-folding dynamics is visible:  $S_B$ first gets kinetically trapped, and the MFE structure ($S_A$) only takes over later on. For our kinetic ansatz, we started by constructing the fast-folding graph using \texttt{RAFFT}, consisting of only $46$ distinct structures. The resulting kinetics, shown in Figure \ref{class_examp}B' was found qualitatively close to the barrier kinetics initialized with structure $I_2$. Once again, with few as $48$ structures, our proposed kinetic ansatz can produce complete folding dynamics starting from a population of unfolded structure.
 
 \section{Conclusion}
 We have proposed a method for RNA structure and dynamics predictions called \texttt{RAFFT}. Our method was inspired by the experimental observation of parallel fast-folding pathways. We designed an algorithm that produces parallel folding pathways, in which stems are formed sequentially, to mimic this observation. Then, to model the slow part of the folding process, we proposed a kinetic ansatz that exploits the parallel fast-folding pathways predicted.
-
-First, we compared the algorithm performance for the folding task. Two structure estimates were compared with our method: the Thermodynamic-based tools computed using \texttt{RNAfold}, \texttt{LinearFold}, \texttt{RNAstructure} and the ML estimate using \texttt{MxFold2} and \texttt{CONTRAfold}. When we considered the lowest energy structure, the comparison of \texttt{RAFFT} to existing tools confirmed the overall validity of our approach. In more detail, comparison with thermodynamic/ML models yielded the following results. First, the ML predictions performed consistently better than both \texttt{RAFFT} and other approaches, where the PPV $=70.4\%$ and sensitivity $=77.1\%$ on average. Second, the ML methods produced loops, such as long hairpins or external loops. We argue that the density of those loops correlate with the ones in the benchmark dataset, which a PCA analysis revealed too. In contrast, the density of loops was lower in the structure spaces produced by \texttt{RAFFT} and other thermodynamic-based methods, implying some over-fitting in the ML model. Finally, known structures obtained through covariation analysis reflect structures \textit{in vivo} conditions. Therefore, the structures predicted by ML methods may not only result from their sequences alone but also from their molecular environment, e.g. chaperones. We expect the thermodynamic methods to provide a more robust framework for the study of sequence-to-structure relations.
-With respect to thermodynamic-based tools, we obtained a substantial gain of performance when analyzing \(N=50\) predicted structures per sequence and not only the lowest energy one. This gain was even more remarkable for sequences with fewer than $200$ nucleotides, reaching the accuracy of ML predictions. 
-
-So how does \texttt{RAFFT} predictions contain structures that are more relevant than the MFE, although these structures are less thermodynamically stable? The interplay of three effects may explain this finding. First, the MFE structure may not be relevant because active structures can be in kinetic traps. Second, \texttt{RAFFT} forms a set of pathways that cover the free energy landscape until they reach local minima, yielding multiple long-lived structures accessible from the unfolded state. Third, the energy function is not perfect, so that the MFE structures computed by minimizing it may not in fact be the most stable. 
-
-We also showed that the fast-folding graph produced by \texttt{RAFFT} can be used to reproduce state-of-the-art kinetics, at least qualitatively. Our method demonstrated three main benefits. First, the kinetics can be drawn from as few as $68$ structures, whereas the barrier tree may require millions. Second, the kinetics ansatz describes the complete folding mechanism starting from the unfolded state. Third, for the length range tested here, the procedure did not require any additional coarse-graining into basins. (Longer RNAs might require such a coarse-graining step, in which structures connected in the fast-folding graph are merged together).
-
-Based on our results, we believe that the proposed method is a robust heuristic for structure prediction and folding dynamics. The folding landscape depicted by \texttt{RAFFT} was designed to follow the kinetic partitioning mechanism, where multiple folding pathways span the folding landscape. This approach has shown good predictive potential. Furthermore, we derived a kinetic ansatz from the fast-folding graph to model the slow part of the folding dynamics. It was shown to approximate the usual kinetics framework qualitatively, although using many fewer structures. 
-
-However, further improvements and extensions of the algorithm may be investigated. For starters, the choice of stems is limited to the largest in each positional lag, a greedy choice which may not be optimal. Furthermore, we have constructed parallel pathways leading to a diversity of accessible structures, but we have not given any thermodynamic-based criterion to identify which are more likely to resemble the native structure. We suggest using an ML-optimized score to this effect. Our method can also find applications in RNA design, where the design procedure could start with the identification of long-lived intermediates and use them as target structures. We also believe that mirror encoding can be helpful in phylogenetic analysis. Indeed, the correlation spectra \(\text{cor}(k)\) computed here contained global information of base-pairing that can be used as a similarity measure.

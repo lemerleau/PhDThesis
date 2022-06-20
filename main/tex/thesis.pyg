@@ -1,0 +1,1 @@
+	$ python aRNAque.py -t "((....)).((....))"   -bp "GC2"  -sm "NED" -ft "vrn"

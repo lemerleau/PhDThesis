@@ -43,14 +43,16 @@
 % Note: Make all your adjustments in here
 %*******************************************************
 \input{classicthesis-config}
-\setcounter{chapter}{-1}
+\setcounter{chapter}{0}
 %********************************************************************
 % Bibliographies
 %*******************************************************
 \addbibresource{Bibliography.bib}
 \addbibresource[label=ownpubs]{AMiede_Publications.bib}
-\includeonly{Chapters/Chapter02}
-
+%\includeonly{Chapters/Chapter03,Chapters/Chapter07}
+% \includeonly{FrontBackmatter/Publications,FrontBackmatter/Abstract,Chapters/Chapter01, Chapters/Chapter0A}
+%\includeonly{FrontBackmatter/Abstract}
+%\includeonly{FrontBackmatter/Abstract,Chapters/Chapter01;Chapters/Chapter07}
 %********************************************************************
 % Hyphenation
 %*******************************************************
@@ -60,6 +62,8 @@
 % GO!GO!GO! MOVE IT!
 %*******************************************************
 \begin{document}
+
+\linenumbers
 \frenchspacing
 \raggedbottom
 \selectlanguage{american} % american ngerman
@@ -88,27 +92,42 @@
 %\setcounter{page}{90}
 % use \cleardoublepage here to avoid problems with pdfbookmark
 \cleardoublepage
-\include{Chapters/Chapter0}
+%\include{Chapters/Chapter0}
 \include{Chapters/Chapter01}
 %\include{Chapters/Chapter04}
 \cleardoublepage
-\ctparttext{You can put some informational part preamble text here.}
+\ctparttext{This first part of our thesis provides a literature review on existing computational tools addressing the prediction of RNA secondary structure, and it presents our proposed tool \texttt{RAFFT}. Chapter \ref{ch:rafft} contains figures and ideas that have previously appeared in our publication:
+\begin{itemize}
+	\item  \cite{opuu2021rafft} Vaitea Opuu, \textbf{Nono SC Merleau}, and Matteo Smerlak(2021). 
+	\emph{RAFFT: Efficient prediction of RNA folding pathways using the fast Fourier transform.} In: \textit{bioRxiv} (\textcolor{green}{Submitted})
+\end{itemize}
+}
+
+
 \part{RNA folding}\label{pt:result}
 \include{Chapters/Chapter02}
 \include{Chapters/Chapter06}
+\ctparttext{This second part of our thesis fucuses only on the inverse folding of RNA secondary structures. It contains figures and ideas that have previously appeared in our publications:
+\begin{itemize}
+	
+	\item \cite{merleau2021simple} \textbf{Nono SC Merleau} and Matteo Smerlak (2021). \emph{A simple evolutionary algorithm guided by local mutations for an efficient RNA design}. In: Proceedings of the Genetic and Evolutionary Computation Conference. pp. 1027-1034. (\textcolor{green}{Published})
+		
+	\item \cite{merleau2022evolutionary} \textbf{Nono SC Merleau}  and Matteo Smerlak (2022). \emph{An evolutionary algorithm for inverse RNA folding inspired by Lévy flights} In: \textit{bioRxiv} (\textcolor{green}{Submited and Accepted}) (At BMC Bioinformatics). 
+\end{itemize}
+}
 \part{RNA Design}
 \include{Chapters/Chapter03}
 \include{Chapters/Chapter07}
 %\include{multiToC} % <--- just debug stuff, ignore for your documents
 % ********************************************************************
-\part{Discussion and Perspective}\label{discusion}
+\part{General conclusion and discussions }\label{discusion}
 \include{Chapters/Chapter08}
 % Backmatter
 %*******************************************************
 \appendix
 %\renewcommand{\thechapter}{\alph{chapter}}
 \cleardoublepage
-\part{Appendix}
+%\part{Appendix}
 \include{Chapters/Chapter0A}
 %********************************************************************
 % Other Stuff in the Back

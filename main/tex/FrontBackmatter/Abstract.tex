@@ -10,19 +10,26 @@
 \let\cleardoublepage\relax
 
 \chapter*{Abstract}
-\textcolor{red}{TODEO: }
-Write the abstract here.
-\begin{center}
-\url{https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html}
-\end{center}
+The understanding of biological processes at the molecular level has grown immensely since the discovery of structural conformations of DNA in the early 1953s by Watson and Crick. Later, they formulated the central dogma of molecular biology that describes the flow of information between DNA, RNA, and protein. 
 
+On the one hand, the dogmatic statement that proteins are the only entities that can perform enzymatic functions within organisms has undergone a significant revision in the last few decades. More recent studies also revealed that DNAs could perform some catalytic reactions. In addition to proteins, specific RNA molecules, namely the non-coding RNAs, have accounted for their implications in most vital chemical reactions in living systems so far exclusive to proteins.
+
+On the other hand, advancements in developing sophisticated techniques for sequencing data and intensive lab experiments have led to identifying more non-coding RNAs involved in realizing many essential biological functions and their implications in many diseases. The advancements in studying RNA molecules and the current COVID-19 pandemic situation have contributed more to shifting the attention from DNA and protein to RNAs. Many studies revealed that the non-coding RNA functions are performed by high-level structures that often depend on their low-level structures, such as the secondary structure. This thesis studies the computational folding mechanism and inverse folding of non-coding RNAs at the secondary level. 
+
+Computationally, folding an RNA molecule to its secondary structure involves finding the one with the minimum free energy in the space of all possible secondary structures. In contrast, the inverse problem consists of searching in the space of RNA sequences for those whose minimum free energy structures are similar to a given target structure. Addressing both problems often requires an energy function that allows mapping each RNA molecule and a probable secondary structure to a free energy value. Such an energy function often relies on thermodynamic parameters experimentally measured. In this thesis, our contribution is twofold: (1) \texttt{RAFFT} for efficient prediction of pseudoknot-free RNA folding pathways using the fast Fourier transform; (2) \texttt{aRNAque}, an evolutionary algorithm inspired by Lévy flights for RNA inverse folding with or without pseudoknot. 
+
+The first tool, \texttt{RAFFT}, implements a novel heuristic to predict RNA secondary structure formation pathways that has two components: (i) a folding algorithm and (ii) a kinetic ansatz. When considering the best prediction in the ensemble of $50$ secondary structures predicted by \texttt{RAFFT}, its performance matches one of the recent deep-learning-based structure prediction methods. \texttt{RAFFT} also acts as a folding kinetic ansatz, which we tested on two RNAs: the coronavirus frameshifting stimulation element (CFSE) and a classic bi-stable sequence. In both test cases, only fewer structures were required to reproduce the full kinetics, whereas known methods required a sample of $20,000$ structures. 
+
+The second tool, \texttt{aRNAque}, implements an Evolutionary Algorithm (EA) inspired by the Lévy flights mechanism, which supports pseudoknotted target structures. The number of point mutations at every step of \texttt{aRNAque}'EA is drawn from a Zipf distribution. Therefore, our proposed method increases the diversity of designed RNA sequences and reduces the average number of evaluations of the evolutionary algorithm. The overall performance showed improved empirical results compared to existing tools through intensive benchmarks on both pseudoknot and pseudoknot-free datasets. 
+
+In conclusion, we highlight some promising extensions of the versatile \texttt{RAFFT}'s method to RNA-RNA interaction studies. We also provide an outlook of both tools' implications in studying evolutionary dynamics. 
 \vfill
 
-\begin{otherlanguage}{ngerman}
-\pdfbookmark[1]{Zusammenfassung}{Zusammenfassung}
-\chapter*{Zusammenfassung}
-Kurze Zusammenfassung des Inhaltes in deutscher Sprache\dots
-\end{otherlanguage}
+%\begin{otherlanguage}{ngerman}
+%\pdfbookmark[1]{Zusammenfassung}{Zusammenfassung}
+%\chapter*{Zusammenfassung}
+%Kurze Zusammenfassung des Inhaltes in deutscher Sprache\dots
+%\end{otherlanguage}
 
 \endgroup
 
