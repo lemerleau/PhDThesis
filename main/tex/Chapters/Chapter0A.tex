@@ -1,299 +1,155 @@
-\chapter{Appendix}
-%\chapter*{\texttt{aRNAque}}
+\chapter{\texttt{RAFFT} Appendices}
 
+\section{\texttt{RAFFT} example calls}
 
-\section{\texttt{aRNAque's GC-content parameters}}
+\texttt{RAFFT}  computes the fast-folding paths for a given sequence. Starting from the wholly unfolded structure, it quickly identifies stems using the FFT-based technique.
 
-The GC-content is controlled in \texttt{aRNAque} using the mutation parameters $P_C$ and $P_N$. The following table gives the corresponding mutation parameters to the four regimes of GC-content values used for our benchmark. 
-\begin{table}[H]
-	\centering
-	\caption{\textbf{Mutation parameters used in \texttt{aRNAque} to control the GC--content values}.}
-	\hspace*{-2.5cm}
-	\begin{tabular}{|c|c|c|c|}
-		\hline
-		GC--content values& $P_C$& $P_N$&\texttt{aRNAque's key } \\
-		\hline 
-		$0.25$& $\{0.125, 0.125, 0.3, 0.3, 0.075, 0.075\}$ &$\{0.125, 0.125, 0.375, 0.375\}$&GC25 \\
-		\hline
-		$0.25$& $\{0.25, 0.25, 0.2, 0.2, 0.05, 0.05\}$ &$\{0.25, 0.25, 0.25, 0.5\}$ &GC50\\
-		\hline
-		$0.75$& $\{0.375, 0.375, 0.1, 0.1, 0.025, 0.025\}$ &$\{0.375, 0.375, 0.125, 0.125\}$&GC75 \\
-		\hline
-		$1.0$& $\{0.5,0.5,0.0,0.0,0.0,0.0\}$ &$\{0.5,0.5,0.,0.\}$&GC \\
-		\hline
-	\end{tabular}
-	
-	\label{tab:my_label}
-\end{table}
-\section{Benchmark on \texttt{Eterna100} dataset}
+For example, we can use the following commands on the Coronavirus frameshifting stimulation element obtained from RFAM:
 
-For each of the benchmarks on the \texttt{Eterna100} datasets, We ran the first benchmark using the default \texttt{aRNAque}'s parameter configuration. And then, the unsolved structures are sorted out to run a second benchmark with a maximum number of generations set at $5000$. \texttt{aRNAque}'s performance presented in the paper is a combination of all the designed sequences for each realisation.
-
-\section{General EA benchmark parameters  }
-The same hardware resources and the same computer are used for all the benchmarks listed in the following table. A supercomputer with $40$-Core Intel Xeon E5-2698 v4 at 2.2 GHz and 512 GB of  RAM with a Debian OS. 
-\begin{table}[H]
-	%\vspace{-1.1cm}
-	
-	\caption{\textbf{Evolutionary algorithm parameter for each benchmarks}.}
-	\hspace{-4cm}
-	\begin{tabular}{|p{2.7cm}|p{2cm}|p{2cm}|p{2cm}|p{4.3cm}|p{2cm}|}
-		\hline
-		Benchmark&Population size&\# of generations (T)& Stopping criterion& Mutation parameter&\# of runs per target \\
-		\hline
-		PseudoBase++ (\texttt{IPknot})& $100$& $200$& 
-		$
-		\begin{aligned}
-				&t=T \\
-				&\max (f) = 0
-		\end{aligned}
-		$
-		& 	
-		$
-		\begin{aligned}
-		&c=1.5 \\
-		&P_N=\{0.7,0.1,0.1,.1\}\\
-		&P_C=\{0.4, 0.5, 0.1, 0,0,0\}
-		\end{aligned}
-		$
-		&20 \\
-		\hline
-		PseudoBase++ (\texttt{Hotknots})& $100$& $200$& 
-		$
-		\begin{aligned}
-			&t=T \\
-			&\max (f) = 0
-		\end{aligned}
-		$
-		&
-		 $
-		 \begin{aligned}
-		 &c=1.5 \\
-		 &P_N=\{0.7,0.1,0.1,.1\}\\
-		 &P_C=\{0.4, 0.5, 0.1, 0,0,0\}
-		 \end{aligned}
-		 $
-		 &20\\
-		\hline
-		PseudoBase++ GC--content (\texttt{IPknot})& $100$& $200$& 
-		$
-		\begin{aligned}
-		&t=T \\
-		&\max (f) = 0
-		\end{aligned}
-		$
-		& 
-		$
-		\begin{aligned}
-		&c=1.5 \\
-		&P_N=\{0.7,0.1,0.1,.1\}\\
-		&P_C=\{0.4, 0.5, 0.1, 0,0,0\}
-		\end{aligned}
-		$
-		&20 \\
-		\hline
-		Tuning Parameter (\texttt{Binomial,\texttt{IPknot} })& $100$& $200$& 
-		$
-		\begin{aligned}
-		&t=T \\
-		&\max (f) = 0
-		\end{aligned}
-		$
-		& 
-		$
-		\begin{aligned}
-		&\mu\in [0,0.2]; c=None \\
-		&P_N=\{0.7,0.1,0.1,.1\}\\
-		&P_C=\{0.4, 0.5, 0.1, 0,0,0\}
-		\end{aligned}
-		$
-		&20 \\
-		\hline
-		Tuning Parameter (\texttt{L\'evy}, \texttt{IPknot})& $100$& $200$& 
-		$
-		\begin{aligned}
-		&t=T \\
-		&\max (f) = 0
-		\end{aligned}
-		$
-		&
-		$
-		\begin{aligned}
-		&c\in [1,2]; \mu=None \\
-		&P_N=\{0.7,0.1,0.1,.1\}\\
-		&P_C=\{0.4, 0.5, 0.1, 0,0,0\}
-		\end{aligned}
-		$ 
-		&20 \\
-		\hline
-		\texttt{Eterna100-V1} (OP, \texttt{RNAfold})& $100$& $5000$& 
-		$
-		\begin{aligned}
-			&t=T \\
-			&\max (f) = 0
-		\end{aligned}
-		$	
-		& 
-		$
-		\begin{aligned}
-		&c=7 \\
-		&P_N=\{0.7,0.1,0.1,.1\}\\
-		&P_C=\{0.4, 0.5, 0.1, 0,0,0\}
-		\end{aligned}
-		$ 
-		&5 \\
-		\hline
-		\texttt{Eterna100-V1} (L\'evy, \texttt{RNAfold})& $100$& $5000$& 
-		$
-		\begin{aligned}
-		&t=T \\
-		&\max (f) = 0
-		\end{aligned}
-		$
-		&
-		$
-		\begin{aligned}
-			&c=1\\
-			&P_N=\{0.7,0.1,0.1,0.1\}\\
-			&P_C=\{0.4, 0.5, 0.1, 0,0,0\}
-		\end{aligned}
-		$
-		&5 \\
-		\hline
-		\texttt{Eterna100-V2} (OP, \texttt{RNAfold})& $100$& $5000$& 
-		$
-		\begin{aligned}
-		&t=T \\
-		&\max (f) = 0
-		\end{aligned}
-		$
-		& 
-		$
-		\begin{aligned}
-		&c=7 \\
-		&P_N=\{0.7,0.1,0.1,.1\}\\
-		&P_C=\{0.4, 0.5, 0.1, 0,0,0\}
-		\end{aligned}
-		$ 
-		&5\\
-		\hline
-		\texttt{Eterna100-V2} (L\'evy, \texttt{RNAfold})& $100$& $5000$& 
-		$	
-		\begin{aligned}
-		&t=T \\
-		&\max (f) = 0
-		\end{aligned}
-		$
-		&
-		$
-		\begin{aligned}
-		&c=1.5 \\
-		&P_N=\{0.7,0.1,0.1,.1\}\\
-		&P_C=\{0.4, 0.5, 0.1, 0,0,0\}
-		\end{aligned}
-		$ 
-		&5 \\
-		\hline
-	\end{tabular}
-	\label{tab:EA_parameter}
-\end{table}
-
-\section{Other benchmark on \texttt{Eterna100-V1}}
-The results on \texttt{Eterna100-V1} presented in the paper are the best of all the benchmarks we have performed. Since our mutation scheme relies on the nucleotide distributions which implicitly control the GC--content of the designed sequences, to obtain our results, we first selected an arbitrary set of pairs $\{P_N, P_C\}$  and benchmark \texttt{aRNAque} on \texttt{Eterna100-V1} for each of them. The success rate measures the fraction of sequences successfully folding into the target structure. Table \ref{tab:bp} shows the different parameters we considered and the corresponded input key parameter using the call of \texttt{aRNAque} script.  Summary of the benchmark presented in Table \ref{tab:summary} is obtained by launching for each target structure $5$ independent runs, with a population size of $100$ and a maximum number of generations of $5000$. The energy parameter used here was the Turner1999. The dashes in the table mean the benchmarks have not been performed for the parameters.
-\begin{table}[H]
-	\caption{\textbf{Different parameters for the base pair distributions}}
-	\vspace*{0.5cm}
-	\centering
-	\begin{tabular}[H]{|c|c|c|}
-		\hline 
-		\textbf{Key}&\textbf{$P_N = \{p_A, p_G, p_U, p_C\}$ }& \textbf{$P_C = \{p_{GC}, p_{CG}, p_{AU}, p_{UA}, p_{GU},p_{UG}\}$}\\
-		\hline 
-		$ALL$ & $P_N = \{0.25, 0.25, 0.25, 0.25\}$ & $P_C = \{0.2, 0.2, 0.1, 0.1, 0.2,0.2\}$\\
-		\hline
-		$GC$& $P_N = \{0.25, 0.25, 0.25, 0.25\}$ & $P_C = \{0.5, 0.5, 0, 0, 0,0\}$\\
-		\hline
-		$GC_1$& $P_N = \{0.25, 0.65, 0.05, 0.05\}$ & $P_C = \{0.4, 0.5, 0.1, 0, 0,0\}$\\
-		\hline
-		$GC_2$ & $P_N = \{0.7, 0.1, 0.1, 0.1\}$ & $P_C = \{0.4, 0.5, 0.1, 0, 0,0\}$\\
-		\hline
-		$GC_3$ & $P_N = \{0.75, 0.1, 0.1, 0.05\}$ & $P_C = \{0.4, 0.5, 0.1, 0, 0,0\}$\\
-		\hline
-		$GC_4$ & $P_N = \{0.95, 0, 0.05, 0\}$ & $P_C = \{0.4, 0.4, 0.2, 0, 0,0\}$\\
-		\hline
-		$GC_5$& $P_N = \{0.7, 0.1, 0.1, 0.1\}$ & $P_C = \{0.3, 0.2, 0.2, 0.1, 0.1,0.1\}$\\
-		\hline
-	\end{tabular}
-	\label{tab:bp}
-\end{table}
-
-\begin{table}[H]
-	\caption{\textbf{Success percentage on \texttt{Eterna100} datasets for each set of mutation parameters}.}
-	\centering
-	\vspace*{0.5cm}
-	\hspace*{-3cm}
-	\begin{tabular}[H]{|c|c|p{30mm}|p{25mm}|p{60mm}|}
-		\hline 
-		\textbf{Tools} &\textbf{BP param}&\textbf{Mutation param}& \textbf{Percentage of success}&\textbf{$\#(Med(gen_{Zipf}) < Med(gen_{op})) $} \newline \textbf{ $\#(Med(gen_{Zipf}) > Med(gen_{op}) )$}\\
-		\hline 
-		\texttt{aRNAque} & $ALL$& Zipf ($c=1$ )\newline One point & $67\%$ \newline $81\%$ & $7(\# 4)$ \newline $64(\# 4)$\\
-		\hline
-		\texttt{aRNAque} & $GC$& Zipf ($c=1$ )\newline One point  & $80\%$ \newline $90\%$ &$43(\# 10)$ \newline $30(\# 474)$ \\
-		\hline
-		\texttt{aRNAque} & $GC_1$& Zipf ($c=1$ ) \newline One point  & $84\%$ \newline $90\%$ &$29(\# 4)$ \newline $33(\# 7)$ \\
-		\hline
-		\texttt{aRNAque} &  $GC_2$&Zipf ($c=1$ ) \newline One point &  $89\%$ \newline $91\%$ & $61(\# 10)$ \newline $19(\# 1920)$ \\
-		\hline
-		\texttt{aRNAque} &  $GC_3$ & Zipf ($c=1$ )  \newline One point  &  $88\%$ \newline $--$& $--$ \newline $--$\\
-		\hline
-		\texttt{aRNAque} & $GC_4$& Zipf ($c=1$ )\newline One point &  $--$ \newline $--$ & $--$ \newline $--$\\
-		\hline
-		\texttt{aRNAque} &  $GC_5$& Zipf ($c=1$ )  \newline One point &  $82\%$ \newline $83\%$ &$44(\# 9)$ \newline $30(\# 145)$ \\
-		\hline
-		\textbf{Total}  & -- & Zipf ($c=1$ ) \newline One point  \newline RNAinverse &$\textbf{90\%}$ \newline $\textbf{92\%}$ \newline $\textbf{87\%}$ &\\
-		\hline
-	\end{tabular}
-	\label{tab:summary}
-\end{table}
-
-\section{Tools patching}
-To be able to perform our benchmarks, some slight modifications was made on \texttt{HotKnots} and \texttt{antaRNA}. Details about the modifications are provided in this section.
-\begin{itemize}
-	\item \texttt{antaRNA}: The change was made at the line 1178 column 7, where the line \textcolor{red}{args = 'HotKnots -m CC -s ' + sequence} was replaced by to \textcolor{green}{args = './HotKnots -m CC -s ' + sequence}.
-	\item \texttt{HotKnots}: to run \texttt{HotKnots}, we have to move \texttt{aRNAque} to the bin directory. To avoid that, we updated the source code and recompiled a new bin that does not require to move \texttt{aRNAque} to the bin directory of \texttt{HotKnots}. We have uploaded the patched version of \texttt{HotKnots} in a third-part folder in \texttt{aRNAque}'s repository for benchmark reproduction.
-	
-	\textbf{NB:} The patches do not affect the folding algorithm. It consisted of avoiding the use of relative paths in \texttt{HotKnots}. 
-\end{itemize}
-
-
-\section{\texttt{aRNAque} example calls}
-
-\texttt{aRNAque} computes the RNA inverse folding problem for different classes of structure complexities. 
-
-
-\noindent For a pseudo-knot free target secondary structure: 
+\noindent to display only the final structures
 
 \noindent \rule{12cm}{0.4pt}
-\begin{lstlisting}[language=bash]
-$ python aRNAque.py -t "((....)).((....))"   
-			-bp "GC2"
-			-sm "NED" 
-			-ft "v"
-			--job 5
+\begin{lstlisting}[language=bash, caption={Command line to run \texttt{RAFFT} executable after installation}]
+$ rafft -s GGGUUUGCGGUGUAAGUGCAGCCCGUCUUACACCGUGCGGCACAGGCA 
+-ms 5 
 \end{lstlisting}
 \rule{12cm}{0.4pt}
 
-\noindent Here, 
-
-
-\noindent A result to this call could look like this: 
+\noindent to display the visited/saved intermediates
 
 \noindent \rule{12cm}{0.4pt}
-\begin{lstlisting}[language=bash]
-GCUACGGCACCGUCAGG | ((....)).((....)) | -2.8 | 1.0
-GGGGGACCACCGGUGGG | ((....)).((....)) | -2.5 | 1.0
-GGGCCACCAGCGAAAGC | ((....)).((....)) | -2.2 | 1.0
-GGAAAUCCACCGGAAGG | ((....)).((....)) | -1.4 | 1.0
-GCAAGAGCGCCGCAAGG | ((....)).((....)) | -1.2 | 1.0
+\begin{lstlisting}[language=bash, caption={Command line to run \texttt{RAFFT} executable after installation}]
+$ rafft -s GGGUUUGCGGUGUAAGUGCAGCCCGUCUUACACCGUGCGGCACAGGCA 
+-ms 5 
+--traj
+\end{lstlisting}
+\rule{12cm}{0.4pt}
+
+\noindent The result to this call could look like this: 
+
+\noindent \rule{12cm}{0.4pt}
+\begin{lstlisting}[language=bash, caption={\texttt{RAFFT}'s output results}]
+GGGUUUGCGGUGUAAGUGCAGCCCGUCUUACACCGUGCGGCACAGGCA
+# ---------0----------
+................................................    0.0
+# ---------1----------
+.....(((((((((((..........)))))))))))...........  -14.0
+(((((..............)))))........................   -4.6
+...............((((....................)))).....   -3.4
+....(((((.......)))))...........................   -2.8
+......((((............))))......................   -2.5
+# ---------2----------
+..((((((((((((((.((.....))))))))))))).))).......  -15.8
+.....(((((((((((.((.....)))))))))))))..((....)).  -15.5
+.....(((((((((((..........)))))))))))...........  -14.0
+(((((.(((.......))))))))...........(((.......)))  -11.2
+(((((.(((.......))))))))((((...............)))).  -10.4
+# ---------3----------
+..((((((((((((((.((.....))))))))))))).))).......  -15.8
+.....(((((((((((.((.....)))))))))))))..((....)).  -15.5
+.....(((((((((((..........)))))))))))...........  -14.0
+(((((.(((.......))))))))((((....((....))...)))).  -13.0
+(((((.(((.......))))))))((((......(((...))))))).  -11.2
 \end{lstlisting}
 \noindent \rule{12cm}{0.4pt}
 
-\noindent Where the columns shows respectively the designed sequences, the MFE structures, their free energy and the fitness to the target ( See Equation \ref{eq:fitness})
+\noindent where the columns shows respectively the predicted structures and their free energies.
+
+\section{Kinetic comparison}
+\label{app:sec:kinetic}
+According to the RNA structure thermodynamics, one RNA molecule can adopt a
+structure $\mathcal{S}$ with probability $p(\mathcal{S}) \propto \text{exp}(-\beta \Delta G(\mathcal{S}))$,
+where \(\beta\) is the inverse thermal energy (mol/kcal). To measure the quality
+of the ensemble of structures proposed by our method, we measured: (1) the
+average probability of each structures in the ensemble, then (2) the diversity
+of these structures.
+
+The probability coverage $PC$ given by $PC(\mathcal{S}) = \frac{1}{|\Omega|}\sum_{\mathcal{S}\in
+	\Sigma} p(\mathcal{S})$. $\Omega$ is the ensemble of structures sampled by a given
+method. We compared, for various random sequences, the probability coverage to
+methods based on Boltzmann sampling
+\cite{hofacker03_vienn_rna_secon_struc_server,entzian2021rnaxplorer}. We
+generated ensembles of $10^2, 10^3$, and $10^4$ structures per sequence denoted
+respectively SB100, SB1K, and SB10K. In addition, we also compared to
+\texttt{RNAxplorer}, a tool also based on a biased Boltzmann sampling.
+
+\begin{figure}[t!] \centering
+	\includegraphics[width=1.\linewidth]{../res/images/rafft/prob_ent.png}
+	\caption{\label{struct_ens_char}\textbf{Structure ensemble characterization.} The upper
+		part shows the average probability summed over the ensembles of structures
+		predicted per sequence with different methods. The bottom part shows the
+		average positional entropy of structures using the dot-bracket notation.}
+\end{figure}
+
+All structures are represented in the dot-bracket notation. In the dot-bracket
+notation, one structure has $\Delta_{\sigma}=\{(, ., )\}$ symbols at each position. Given
+these three symbols, we propose the following positional entropy measure
+$\Delta S=\frac{1}{L}\sum f_i(\Delta_{\sigma}) \times \text{log}(f_i(\Delta_{\sigma}))$, where $f_i(\Delta_{\sigma})$ is the frequency of a symbol $\delta_{\sigma}$ at position $i$ in the ensemble of structure proposed.
+
+Figure \ref{struct_ens_char} shows the probability coverage and the positional
+entropy measure per method. It shows comparable sampling performances for fairly
+size sequences ($\approx 10^2$ nucleotides); and a comparable diversity.
+
+\section{\texttt{RAFFT} performance analysis for a stacking size of $200$}
+The heuristic method implemented in \texttt{RAFFT} relies on two critical parameters: the stacking size and the number of positional lag. In this section, we analyse the performance of \texttt{RAFFT} for 100 positional lags and 200 secondary structures stored in the stack. \autoref{app:perf_fig} shows the performance of \texttt{RAFFT} compared to both \ac{ML} (\texttt{Mxfold2}) and \ac{MFE} (\texttt{RNAfold}) methods. When choosing the best of the 200 predictions, \texttt{RAFF} performance is similar to \texttt{RNAfold} whereas, \texttt{Mxfold} outperformed both \texttt{RAFFT} and \texttt{RNAfold}. 
+\hspace{-2cm}
+\begin{figure}[t!]
+	\centering
+	\subfloat[]{\includegraphics[scale=.7]{../res/images/rafft/fold_perf_ppv_200.png}}\\
+	%\hspace{-2cm}
+	\subfloat[]{\includegraphics[scale=.7]{../res/images/rafft/fold_perf_sens_200.png}}
+	\caption{\textbf{Positive predictive values and sensitivity results\label{app:perf_fig}.}
+		RAFFT (blue) displayed the best energy found. RAFFT*(200) shows the best score found among 200 saved structures. Left pans show the density (sequence-wise) of the accuracy measures.}
+\end{figure}
+
+\section{\texttt{RAFFT} performance analysis with various values of loop minimum energy contribution}
+Structures are added to the stacks by searching for a consecutive number of base-pairs for each selected positional lag. In the best case, it forms a stem, but in some cases, when the base-pairs are not consecutive, different loops are formed, i.e. bulges or hairpins. Therefore, adding a loop to the existing structure depends on its energy contribution. For a loop to be added to the current secondary structure, its energy should be less than a threshold value. In this section, we analyse the influence of this parameter on \texttt{RAFFT} performance. \autoref{app:perf_min_energy} show the \ac{PPV} and sensitivity performances with respect to the sequence lengths. The results show similar performance for loop energy parameters taken from $0$ to $5$.
+\begin{figure}[t!]
+	%\hspace{-4cm}
+	\subfloat[]{\includegraphics[scale=.7]{../res/images/rafft/rafft_perf_ppv_minenergy.png}}\\
+	%\hspace{-4cm}
+	\subfloat[]{\includegraphics[scale=.7]{../res/images/rafft/rafft_perf_sens_minenergy.png}}
+	\caption{\textbf{Predictive performance of RAFFT with various values of minimum energy contribution required for loop formation\label{app:perf_min_energy}.}
+	Positive values for this parameter causes RAFFT to accept destabilizing loops, therefore being less greedy than per default. The performance of RAFFT was not observed to be positively affected by allowing sub-optimal loop formation.}
+\end{figure}
+
+\section{Percentage of correct base-pairs well predicted}
+We analyse in this section the performance of \texttt{RAFFT} compared to both \ac{MFE} (\texttt{RNAfold}) and \ac{ML} (\texttt{Mxfold2}) predictions in terms of percentage of correct base-pairs predicted.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.\linewidth]{../res/images/rafft/bp_spanning.png}
+	\caption{\textbf{Base pair spanning.} It shows the percent of base pairs predicted found in the known structures per number of nucleotides between them.}
+\end{figure}
+
+\section{Some Secondary structures with long unpaired regions}
+To investigate the region of the structure space where the thermodynamic model tends to fail, we computed the composition of the known structures. Loop type lengths were computed in percentages. \autoref{perf_pca} shows those compositions' \ac{PCA}. From the \ac{PCA}, we observed that the known structures are distributed in the structure space toward interior loops. Also, some natural structures, as shown in figure \ref{diff_struct}, have large unpaired loops. The centre of mass in the principal component space is located in between the high-density stacking and interior loops. This shows that the dataset contains many elongated structures.
+\begin{figure}[t!]
+	\centering
+	\subfloat[\texttt{srp\_Synt.wolf.\_CP000448}]{
+		\begin{tikzpicture}
+		\node (s11) at (0cm,3cm) {\subfloat[RAFFT]{\includegraphics[scale=0.04]{../res/images/rafft/illed_img/srp_Heli_fft.png}}};
+		\node (s12) at (3cm,3cm) {\subfloat[MFE]{\includegraphics[scale=0.04]{../res/images/rafft/illed_img/srp_Heli_mfe.png}}};
+		\node (s13) at (0cm,0cm) {\subfloat[ML]{\includegraphics[scale=0.09]{../res/images/rafft/illed_img/srp_Heli_mle.png}}};
+		\node (s14) at (3cm,0cm) {\subfloat[Native]{\includegraphics[scale=0.09]{../res/images/rafft/illed_img/srp_Heli_wts.png}}};
+		\end{tikzpicture}
+	}
+	\subfloat[\texttt{srp\_Meth.mari.\_CP000745}]{
+		\begin{tikzpicture}
+		\node (s11) at (0cm,3cm) {\subfloat[RAFFT]{\includegraphics[scale=0.10]{../res/images/rafft/illed_img/srp_Meth_fft.png}}};
+		\node (s12) at (3cm,3cm) {\subfloat[MFE]{\includegraphics[scale=0.10]{../res/images/rafft/illed_img/srp_Meth_mfe.png}}};
+		\node (s13) at (0cm,0cm) {\subfloat[ML]{\includegraphics[scale=0.10]{../res/images/rafft/illed_img/srp_Meth_mle.png}}};
+		\node (s14) at (3cm,0cm) {\subfloat[Native]{\includegraphics[scale=0.10]{../res/images/rafft/illed_img/srp_Meth_wts.png}}};
+		\end{tikzpicture}
+	}\\
+	\subfloat[\texttt{tmRNA\_Cyan.mero.\_AY286123\_1\-236}]{
+		\begin{tikzpicture}
+		\node (s11) at (0cm,0cm) {\subfloat[RAFFT]{\includegraphics[scale=0.08]{../res/images/rafft/illed_img/tmRNA_Cyan_fft.png}}};
+		\node (s12) at (3cm,0cm) {\subfloat[MFE]{\includegraphics[scale=0.08]{../res/images/rafft/illed_img/tmRNA_Cyan_mfe.png}}};
+		\node (s13) at (6cm,0cm) {\subfloat[ML]{\includegraphics[scale=0.1]{../res/images/rafft/illed_img/tmRNA_Cyan_mle.png}}};
+		\node (s14) at (9cm,0cm) {\subfloat[Native]{\includegraphics[scale=0.1]{../res/images/rafft/illed_img/tmRNA_Cyan_wts.png}}};
+		\end{tikzpicture}
+	}
+	
+	\caption{\textbf{Structures found to be difficult to predict with the thermodynamic model.} The sequence name where extracted directly from the dataset. Native is the known structure.\label{diff_struct}}
+\end{figure}
+

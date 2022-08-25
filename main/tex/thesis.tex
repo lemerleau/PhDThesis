@@ -39,6 +39,7 @@
                 BCOR=5mm,paper=a4,fontsize=12pt,dvipsnames
                 ]{scrreprt}
 
+
 %********************************************************************
 % Note: Make all your adjustments in here
 %*******************************************************
@@ -49,10 +50,11 @@
 %*******************************************************
 \addbibresource{Bibliography.bib}
 \addbibresource[label=ownpubs]{AMiede_Publications.bib}
-%\includeonly{Chapters/Chapter03,Chapters/Chapter07}
+%\includeonly{Chapters/Chapter01}%,Chapters/Chapter07}
 % \includeonly{FrontBackmatter/Publications,FrontBackmatter/Abstract,Chapters/Chapter01, Chapters/Chapter0A}
 %\includeonly{FrontBackmatter/Abstract}
-%\includeonly{FrontBackmatter/Abstract,Chapters/Chapter01;Chapters/Chapter07}
+%\includeonly{FrontBackmatter/Abstract,Chapters/Chapter01,FrontBackmatter/Contents,Chapters/Chapter03, Chapters/Chapter06}
+%\includeonly{FrontBackmatter/Acknowledgments, Chapters/Chapter0A,Chapters/Chapter0B }
 %********************************************************************
 % Hyphenation
 %*******************************************************
@@ -63,7 +65,8 @@
 %*******************************************************
 \begin{document}
 
-\linenumbers
+%number each line for correction purposes.
+%\linenumbers
 \frenchspacing
 \raggedbottom
 \selectlanguage{american} % american ngerman
@@ -71,6 +74,8 @@
 %\setbibpreamble{}
 \pagenumbering{roman}
 \pagestyle{plain}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
 %********************************************************************
 % Frontmatter
 %*******************************************************
@@ -86,7 +91,7 @@
 %********************************************************************
 % Mainmatter
 %*******************************************************
-\cleardoublepage
+ \cleardoublepage
 \pagestyle{scrheadings}
 \pagenumbering{arabic}
 %\setcounter{page}{90}
@@ -96,45 +101,50 @@
 \include{Chapters/Chapter01}
 %\include{Chapters/Chapter04}
 \cleardoublepage
-\ctparttext{This first part of our thesis provides a literature review on existing computational tools addressing the prediction of RNA secondary structure, and it presents our proposed tool \texttt{RAFFT}. Chapter \ref{ch:rafft} contains figures and ideas that have previously appeared in our publication:
+\ctparttext{This first part of our thesis provides a literature review on existing computational tools addressing the prediction of \ac{RNA} secondary structure, and it presents our proposed tool \texttt{RAFFT}. \autoref{ch:rafft} contains figures and ideas that have previously appeared in our publication:
 \begin{itemize}
-	\item  \cite{opuu2021rafft} Vaitea Opuu, \textbf{Nono SC Merleau}, and Matteo Smerlak(2021). 
-	\emph{RAFFT: Efficient prediction of RNA folding pathways using the fast Fourier transform.} In: \textit{bioRxiv} (\textcolor{green}{Submitted})
+	\item  \cite{opuu2021rafft} Vaitea Opuu, \textbf{Nono SC Merleau},Vincent Messow and Matteo Smerlak(2021). 
+	\emph{RAFFT: Efficient prediction of RNA folding pathways using the fast Fourier transform.} In: \textit{bioRxiv} (\textcolor{green}{Submitted and accepted}) (PLoS Comp. Biol.)
 \end{itemize}
 }
 
 
-\part{RNA folding}\label{pt:result}
+\part{RNA folding}\label{pt:folding}
 \include{Chapters/Chapter02}
 \include{Chapters/Chapter06}
-\ctparttext{This second part of our thesis fucuses only on the inverse folding of RNA secondary structures. It contains figures and ideas that have previously appeared in our publications:
+\ctparttext{This second part of our thesis fucuses only on the inverse folding of \ac{RNA} secondary structures. It contains figures and ideas that have previously appeared in our publications:
 \begin{itemize}
 	
 	\item \cite{merleau2021simple} \textbf{Nono SC Merleau} and Matteo Smerlak (2021). \emph{A simple evolutionary algorithm guided by local mutations for an efficient RNA design}. In: Proceedings of the Genetic and Evolutionary Computation Conference. pp. 1027-1034. (\textcolor{green}{Published})
 		
-	\item \cite{merleau2022evolutionary} \textbf{Nono SC Merleau}  and Matteo Smerlak (2022). \emph{An evolutionary algorithm for inverse RNA folding inspired by Lévy flights} In: \textit{bioRxiv} (\textcolor{green}{Submited and Accepted}) (At BMC Bioinformatics). 
+	\item \cite{merleau2022evolutionary} \textbf{Nono SC Merleau}  and Matteo Smerlak (2022). \emph{An evolutionary algorithm for inverse RNA folding inspired by Lévy flights} In: \textit{BMC Bioinformatics}, 23. 1 (\textcolor{green}{Published)}. 
 \end{itemize}
 }
-\part{RNA Design}
+\part{RNA Design}\label{pt:inversefolding}
 \include{Chapters/Chapter03}
 \include{Chapters/Chapter07}
 %\include{multiToC} % <--- just debug stuff, ignore for your documents
 % ********************************************************************
 \part{General conclusion and discussions }\label{discusion}
 \include{Chapters/Chapter08}
+\include{Chapters/Chapter09}
 % Backmatter
 %*******************************************************
 \appendix
 %\renewcommand{\thechapter}{\alph{chapter}}
 \cleardoublepage
-%\part{Appendix}
+\part{Appendix}
 \include{Chapters/Chapter0A}
+\include{Chapters/Chapter0B}
 %********************************************************************
 % Other Stuff in the Back
 %*******************************************************
 \cleardoublepage\include{FrontBackmatter/Bibliography}
-\cleardoublepage\include{FrontBackmatter/Declaration}
-\cleardoublepage\include{FrontBackmatter/Colophon}
+\cleardoublepage\include{FrontBackmatter/mybiblio}
+\includepdf{../../documents/Erklärungen.pdf}
+\includepdf{../../documents/Selbstständigkeitserklärung.pdf}
+\includepdf{../../documents/Short_CV.pdf}
+
 % ********************************************************************
 % Game Over: Restore, Restart, or Quit?
 %*******************************************************

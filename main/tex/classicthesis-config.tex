@@ -19,6 +19,7 @@
 \PassOptionsToPackage{utf8}{inputenc}
   \usepackage{inputenc}
 
+\usepackage{amsthm}
 \usepackage{lineno}
 \PassOptionsToPackage{
 flag=-shell-escape
@@ -29,6 +30,7 @@ flag=-shell-escape
   \usepackage{fontenc}
   
 \usepackage[noend]{algpseudocode}
+%\usepackage{tocloft}
 
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \usepackage{marginnote}
@@ -42,7 +44,7 @@ flag=-shell-escape
 % (see ClassicThesis.pdf for more information):
 % ****************************************************************************************************
 \PassOptionsToPackage{
-  drafting=true,    % print version information on the bottom of the pages
+  drafting=false,    % print version information on the bottom of the pages
   tocaligned=false, % the left column of the toc will be aligned (no indentation)
   dottedtoc=false,  % page numbers in ToC flushed right
   eulerchapternumbers=true, % use AMS Euler for chapter font (otherwise Palatino)
@@ -58,8 +60,9 @@ flag=-shell-escape
 % ****************************************************************************************************
 % 2. Personal data and user ad-hoc commands (insert your own data here)
 % ****************************************************************************************************
-\newcommand{\myTitle}{Folding and Inverse forlding of RNA molecules\xspace}
-\newcommand{\mySubtitle}{An heuristic exploration \xspace}
+\newcommand{\myTitle}{From RNA folding to inverse folding: a computational study\xspace}
+\newcommand{\mytitleDE}{Von der RNA-Faltung zur inversen Faltung: eine computergestützte Studie}
+\newcommand{\mySubtitle}{A computational studyn \xspace}
 \newcommand{\myDegree}{Master of science (MSc.)\xspace}
 \newcommand{\myName}{Nono Saha Cyrille Merleau \xspace}
 \newcommand{\myProf}{Dr. Matteo Smerlak\xspace}
@@ -69,8 +72,15 @@ flag=-shell-escape
 \newcommand{\myDepartment}{Structure of Evolution\xspace}
 \newcommand{\myUni}{University of Leipzig\xspace}
 \newcommand{\myLocation}{Leipzig\xspace}
-\newcommand{\myTime}{June 2022\xspace}
-\newcommand{\myVersion}{1.0}
+\newcommand{\myTime}{August 2022\xspace}
+\newcommand{\myVersion}{3.0}
+\newcommand{\mefirst}{Cyrille Merleau}
+\newcommand{\melast}{Nono Saha}
+\newcommand{\mystreet}{Kohlenstr. 16}
+\newcommand{\mycity}{0407 Leipzig}
+\newcommand{\mytel}{015257082636}
+\newcommand{\myemail}{nonosaha@mis.mpg.de}
+\renewcommand{\year}{2022}
 
 % ********************************************************************
 % Setup, finetuning, and useful commands
@@ -94,7 +104,10 @@ flag=-shell-escape
 %\PassOptionsToPackage{spanish,es-lcroman}{babel}
     \usepackage{babel}
 
+\usepackage{pdflscape}
 \usepackage{csquotes}
+\PassOptionsToPackage{
+	bibliographystyle= unsrt}{natbib}
 \PassOptionsToPackage{%
   %backend=biber,bibencoding=utf8, %instead of bibtex
   backend=bibtex8,bibencoding=ascii,%
@@ -109,7 +122,7 @@ flag=-shell-escape
   natbib=true % natbib compatibility mode (\citep and \citet still work)
 }{biblatex}
     \usepackage{biblatex}
-
+\usepackage{pdfpages}
 \PassOptionsToPackage{fleqn}{amsmath}       % math environments and more by the AMS
   \usepackage{amsmath}
 % ********************************************************************
